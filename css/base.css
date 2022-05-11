@@ -438,7 +438,7 @@
 	}
 	.taglist {
 		clear: both;
-		background-image: url('../images/tag.png');
+/*		background-image: url('../images/tag.png');*/
 		background-repeat: no-repeat;
 		background-position: left 4px;
 		padding-left: 23px;
