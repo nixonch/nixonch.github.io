@@ -538,7 +538,11 @@
 	}
 	.summary .toc .email {
 		margin-bottom: 0.4em;
-		color: #E8822E !important;
+		color: #CEAD57 !important;
+	}
+	.telegram {
+		margin-bottom: 0.4em;
+		color: #2FA4E7 !important;
 	}
 	.summary .toc .email .arobase {
 		color: #9d5921 !important;
