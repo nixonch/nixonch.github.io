@@ -377,9 +377,6 @@
 	a img {
 		border: 1px solid #555;
 	}
-	a:hover img {
-		background-color:	rgb(214, 141, 76);
-	}
 	.right {
 		text-align: right;
 	}
