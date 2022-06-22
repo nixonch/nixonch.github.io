@@ -487,6 +487,7 @@
 	}
 	.summary {
 		background-color: black;
+		width: 251px;
 		position: fixed;
 		top: 0;
 		bottom: 0;
