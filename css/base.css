@@ -364,6 +364,7 @@
 	}
 	.toc a, .column a {
 		text-decoration: none;
+		font-weight: 300;
 		padding: 1px 0.3em;
 		border-radius: 2px;
 		color: #bf7b43;
