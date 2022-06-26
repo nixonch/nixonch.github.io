@@ -81,12 +81,12 @@
 		font-weight: 300;
 		font-size: 13px;
 	}
-	h2 {
+	column h2 {
 		color: #D98641 !important;
 		text-shadow: 0 1px 4px #ccc;
 		font-size: 16px !important;
 	}
-	h2 a {
+	column h2 a {
 		text-shadow: none;
 	}
 	h5 {
