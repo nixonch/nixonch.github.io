@@ -60,7 +60,7 @@
 
 /* #Basic Styles
 ================================================== */
-	body {
+	body, .summary p, .toc {
 		background: #fff;
 		/*font: 14px/21px "Muli", "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 		font: 14px/20px "Muli", "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
