@@ -306,9 +306,12 @@
 	.myname .scheme {
 		display:none;
 	}
+	.infos p {
+		font-size: 90%;
+}
 	.infos {
 		margin-top: 50px;
-		font-size: 90% !important;
+		font-size: 90%;
 		line-height: 1.3em;
 		display:none;
 	}
