@@ -359,15 +359,15 @@
 		margin-top: 3em;
 		margin-bottom: 3em;
 	}
-	.column a {
+	.toc a, .column a {
 		text-decoration: none;
 		padding: 1px 0.3em;
 		border-radius: 2px;
 		color: #bf7b43;
 	}
-	.column a:hover {
+	.toc a:hover, .column a:hover {
 		background-color: rgb(214, 141, 76);
-		color: white !important;
+		color: white;
 		box-shadow: 1px 1px 6px #ddd;
 	}
 	.column h2 a {
