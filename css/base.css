@@ -306,7 +306,7 @@
 	.myname .scheme {
 		display:none;
 	}
-	.infos p a {
+	.infos p a, .infos a {
 		font-size: 90% !important;
 		font-weight: 300;
 }
