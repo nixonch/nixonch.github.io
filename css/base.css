@@ -93,7 +93,7 @@
 		color: #252525;
 	}
 	h1 a, .column h2 a, .column h3 a, .column h4 a, h5 a, h6 a { font-weight: inherit; }
-	h1 { font-size: 38px; line-height: 50px; margin-bottom: 14px;}
+	.column h1 { font-size: 38px; line-height: 50px; margin-bottom: 14px;}
 	.column h2 { font-size: 26px; line-height: 40px; margin-bottom: 10px; }
 	.column h3 { font-size: 26px; line-height: 34px; margin-bottom: 8px; }
 	.column h4 { font-size: 18px; line-height: 30px; margin-bottom: 4px; }
@@ -296,7 +296,7 @@
 	.half-bottom { margin-bottom: 10px !important; }
 	.add-bottom { margin-bottom: 20px !important; }
 
-	h1 {
+	.column h1 {
 		margin-top: 40px !important;
 	}
 	.myname {
