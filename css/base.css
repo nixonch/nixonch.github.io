@@ -61,9 +61,11 @@
 /* #Basic Styles
 ================================================== */
 	body, .summary p, .toc {
-		background: #fff;
 		/*font: 14px/21px "Muli", "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 		font: 14px/20px "Muli", "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+	body {
+		background: #fff;
 		font-weight: 300;
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
