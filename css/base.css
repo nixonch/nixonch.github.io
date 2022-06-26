@@ -60,7 +60,7 @@
 
 /* #Basic Styles
 ================================================== */
-	body, .summary p, .toc, .column {
+	body, .toc, .column {
 		/*font: 14px/21px "Muli", "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 		font: 14px/20px "Muli", "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-weight: 300;
@@ -503,6 +503,7 @@
 		padding: 0 20px;
 		margin: 0;
 		margin-bottom: 0.5em;
+		font-size: 18px;
 	}
 	.summary .addr {
 		color: #aaa;
