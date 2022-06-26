@@ -82,10 +82,9 @@
 		font-size: 13px;
 	}
 	h2 {
-		color: #bf7b43;
-		color: #D98641;
+		color: #D98641 !important;
 		text-shadow: 0 1px 4px #ccc;
-		font-size: 16px;
+		font-size: 16px !important;
 	}
 	h2 a {
 		text-shadow: none;
@@ -361,13 +360,13 @@
 		margin-bottom: 3em;
 	}
 	a {
-		text-decoration: none;
+		text-decoration: none !important;
 		padding: 1px 0.3em;
 		border-radius: 2px;
-		color: #bf7b43;
+		color: #bf7b43 !important;
 	}
 	a:hover {
-		background-color:	rgb(214, 141, 76);
+		background-color: rgb(214, 141, 76);
 		color: white !important;
 		box-shadow: 1px 1px 6px #ddd;
 	}
