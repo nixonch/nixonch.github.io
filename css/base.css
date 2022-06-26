@@ -73,11 +73,11 @@
 
 /* #Typography
 ================================================== */
-	h1, h2, h3, h4, h5, h6 {
+	.column h1, .column h2, .column h3, .column h4, h5, h6 {
 		color: black;
 		font-family: "Open Sans", "Georgia", "Times New Roman", serif;
 		font-weight: 300; }
-	h4, h5, h6 {
+	.column h4, .column h5, .column h6 {
 		font-weight: 300;
 		font-size: 13px;
 	}
@@ -92,11 +92,11 @@
 	h5 {
 		color: #252525;
 	}
-	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+	h1 a, .column h2 a, .column h3 a, .column h4 a, h5 a, h6 a { font-weight: inherit; }
 	h1 { font-size: 38px; line-height: 50px; margin-bottom: 14px;}
-	h2 { font-size: 26px; line-height: 40px; margin-bottom: 10px; }
-	h3 { font-size: 26px; line-height: 34px; margin-bottom: 8px; }
-	h4 { font-size: 18px; line-height: 30px; margin-bottom: 4px; }
+	.column h2 { font-size: 26px; line-height: 40px; margin-bottom: 10px; }
+	.column h3 { font-size: 26px; line-height: 34px; margin-bottom: 8px; }
+	.column h4 { font-size: 18px; line-height: 30px; margin-bottom: 4px; }
 	h5 { font-size: 15px; line-height: 24px; }
 	h6 { font-size: 14px; line-height: 21px; }
 	.subheader {
