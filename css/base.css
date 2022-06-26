@@ -308,16 +308,15 @@
 	}
 	.infos p a {
 		font-size: 90% !important;
+		font-weight: 300;
 }
 	.infos {
+		padding-left: 0.6em;
 		margin-top: 50px;
 		font-size: 90%;
+		font-weight: 300;
 		line-height: 1.3em;
 		display:none;
-	}
-	.infos .contact {
-		padding-left: 0.6em;
-		font-size: 110%;
 	}
 	.infos p {
 		margin-bottom: 1em;
