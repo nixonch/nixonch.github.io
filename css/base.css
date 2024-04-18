@@ -78,7 +78,7 @@
 	.column h1, .column h2, .column h3, .column h4, h5, h6 {
 		color: black;
 		font-family: "Open Sans", "Georgia", "Times New Roman", serif;
-		font-weight: 300;
+/*		font-weight: 300;*/
 	}
 	.column h4, .column h5, .column h6 {
 		font-weight: 300;
