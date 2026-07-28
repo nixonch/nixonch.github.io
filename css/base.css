@@ -312,6 +312,7 @@
 		font-weight: 300;
 }
 	.infos {
+		box-sizing: border-box;
 		padding-left: 0.6em;
 		margin-top: 50px;
 		font-size: 90%;
