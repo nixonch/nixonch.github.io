@@ -605,6 +605,11 @@
 			display: block;
 		}
 	}
+	@media only screen and (max-width: 767px) {
+		.projects-title-break {
+			display: none;
+		}
+	}
 	@page {
 		margin: 1.5cm 1cm 1.5cm 1cm;
 	}
@@ -648,8 +653,7 @@ h4 {
 		}
 		hr {
 			border-style: none;
-			margin-bottom: 2cm;
-			margin-top: 2cm;
+			margin: 0.4cm 0;
 		}
 		li .tag {
 			font-size: 100%;
@@ -692,7 +696,7 @@ h4 {
 			margin:  0 !important;
 		}
 		.column h3 {
-			margin-top: 1cm !important;
+			margin-top: 0.35cm !important;
 		}
 		.column h3 .date span {
 			box-shadow: none !important;
@@ -710,7 +714,7 @@ h4 {
 			padding-top: 0;
 		}
 		.column h4 {
-			padding-top: 1cm !important;
+			padding-top: 0.2cm !important;
 		}
 		.column h3 + h4 {
 			padding-top: 0 !important;
@@ -726,6 +730,7 @@ h4 {
 			color: black !important;
 		}
 		.infos {
+			display: block !important;
 			padding-top: 4mm !important;
 		}
 		.row {
