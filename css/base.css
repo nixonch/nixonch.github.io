@@ -324,6 +324,28 @@
 		margin-bottom: 1em;
 		padding-left: 0.3em;
 	}
+	.infos .contact-list {
+		display: grid;
+		grid-template-columns: max-content max-content;
+		width: max-content;
+		max-width: 100%;
+	}
+	.contact-line {
+		display: contents;
+	}
+	.contact-product {
+		padding-right: 0.4em;
+		text-align: right;
+	}
+	.contact-site > * {
+		margin-top: 1.3em;
+	}
+	.telegram-label {
+		color: #439ed3;
+	}
+	.whatsapp-label {
+		color: #25d366;
+	}
 	/*.column .h3:not(:first-child) {*/
 	.column h3 {
 		margin-top: 1em;
@@ -547,6 +569,10 @@
 		margin-bottom: 0.4em;
 		color: #439ed3 !important;
 	}
+	.summary .toc .whatsapp {
+		margin-bottom: 0.4em;
+		color: #25d366 !important;
+	}
 	.summary .toc .email .arobase {
 		color: #CEAD57 !important;
 		padding-left: 0.1em;
@@ -560,6 +586,11 @@
 	footer {
 		padding: 6em 2em ;
 		margin: 10em 2em;
+	}
+	@media screen {
+		.education-tail:target {
+			min-height: 100vh;
+		}
 	}
 	.star-3:before {
 		content: "★★★";
@@ -606,6 +637,12 @@
 		}
 	}
 	@media only screen and (max-width: 767px) {
+		.infos {
+			padding-left: 0;
+		}
+		.infos .contact-list {
+			padding-left: 0;
+		}
 		.projects-title-break {
 			display: none;
 		}
@@ -654,6 +691,9 @@ h4 {
 		hr {
 			border-style: none;
 			margin: 0.4cm 0;
+		}
+		.column hr {
+			margin: 1.75em 0 0.5em;
 		}
 		li .tag {
 			font-size: 100%;
