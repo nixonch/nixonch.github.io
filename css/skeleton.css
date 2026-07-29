@@ -129,7 +129,8 @@
 
     /* Note: Design for a width of 320px */
 
-    @media only screen and (max-width: 767px) {
+    /* Include fractional viewport widths that browsers may round to 767px. */
+    @media only screen and (max-width: 767.99px) {
         .container { width: 90%; }
         .container .columns,
         .container .column { margin: 0; }
@@ -179,7 +180,7 @@
 
     /* Note: Design for a width of 480px */
 
-    @media only screen and (min-width: 480px) and (max-width: 767px) {
+    @media only screen and (min-width: 480px) and (max-width: 767.99px) {
         .container { width: 90%; }
         .container .columns,
         .container .column { margin: 0; }
