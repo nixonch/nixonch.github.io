@@ -337,14 +337,24 @@
 		padding-right: 0.4em;
 		text-align: right;
 	}
+	.infos a.contact-product {
+		padding-left: 0;
+		padding-right: 0.4em;
+	}
 	.contact-site > * {
 		margin-top: 1.3em;
 	}
-	.telegram-label {
+	.contact-arrow {
+		transform: translateY(-0.2em);
+	}
+	.infos .telegram-label {
 		color: #439ed3;
 	}
-	.whatsapp-label {
+	.infos .whatsapp-label {
 		color: #25d366;
+	}
+	.infos .email-label {
+		color: inherit;
 	}
 	/*.column .h3:not(:first-child) {*/
 	.column h3 {
