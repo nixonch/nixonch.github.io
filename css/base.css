@@ -738,6 +738,7 @@ h4 {
 			padding: 0 !important;
 			margin: 0 !important;
 			display: table;
+			table-layout: fixed;
 			width: 100% !important;
 			border-collapse: collapse;
 			border-spacing: 0;
@@ -749,20 +750,21 @@ h4 {
 			margin: 0 !important;
 		}
 		.one-third.column:not(.infos) {
-			width: 3.8cm !important;
+			box-sizing: border-box;
+			width: 6.2cm !important;
 			display: table-cell !important;
-			padding: 0 !important;
+			padding: 0 0.3cm 0 0 !important;
 			margin: 0 !important;
-			float: left;
+			float: none;
 			vertical-align: top;
 		}
 		.two-thirds.column:not(.myname) {
+			box-sizing: border-box;
 			margin: 0;
 			display: table-cell !important;
 			padding: 0 !important;
-			width: 23cm !important;
+			width: 20.6cm !important;
 			float: none;
-			width: 100%;
 			vertical-align: top;
 		}
 	}
