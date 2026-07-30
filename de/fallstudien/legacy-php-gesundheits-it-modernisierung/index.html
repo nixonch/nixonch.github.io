@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <title>Modernisierung geschäftskritischer Legacy-PHP-Software im Gesundheitswesen — Nick Mitin</title>
+    <meta name="description" content="Schrittweise Modernisierung von Apotheken- und Gesundheitsanwendungen durch kontrollierte Integrationsgrenzen, automatisierte Tests, Logging und produktionsnahen Betrieb." />
+    <meta name="author" content="Nick Mitin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://nixonch.github.io/de/fallstudien/legacy-php-gesundheits-it-modernisierung/" />
+    <link rel="alternate" hreflang="en" href="https://nixonch.github.io/en/case-studies/legacy-php-healthcare-modernization/" />
+    <link rel="alternate" hreflang="de" href="https://nixonch.github.io/de/fallstudien/legacy-php-gesundheits-it-modernisierung/" />
+    <link rel="alternate" hreflang="es" href="https://nixonch.github.io/es/casos/modernizacion-php-legacy-software-sanitario/" />
+    <link rel="alternate" hreflang="x-default" href="https://nixonch.github.io/en/case-studies/legacy-php-healthcare-modernization/" />
+    <script id="article-structured-data" type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "@id": "https://nixonch.github.io/de/fallstudien/legacy-php-gesundheits-it-modernisierung/#article",
+        "headline": "Modernisierung geschäftskritischer Legacy-PHP-Software im Gesundheitswesen",
+        "description": "Schrittweise Modernisierung von Apotheken- und Gesundheitsanwendungen durch kontrollierte Integrationsgrenzen, automatisierte Tests, Logging und produktionsnahen Betrieb.",
+        "url": "https://nixonch.github.io/de/fallstudien/legacy-php-gesundheits-it-modernisierung/",
+        "mainEntityOfPage": "https://nixonch.github.io/de/fallstudien/legacy-php-gesundheits-it-modernisierung/",
+        "inLanguage": "de",
+        "datePublished": "2026-07-30",
+        "dateModified": "2026-07-30",
+        "author": {
+          "@type": "Person",
+          "@id": "https://nixonch.github.io/#person",
+          "name": "Nick Mitin",
+          "url": "https://nixonch.github.io/"
+        },
+        "about": [
+          "PHP",
+          "CakePHP",
+          "MySQL/MariaDB",
+          "Incremental modernization",
+          "External API integration",
+          "PHPUnit",
+          "Fixtures",
+          "Mocked integrations",
+          "Structured logging",
+          "Linux",
+          "systemd"
+        ]
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/base.css?v=20260730-8" />
+    <link rel="stylesheet" href="/css/case-study.css?v=20260730" />
+    <link rel="shortcut icon" href="/images/mn.ico">
+  </head>
+  <body>
+    <main class="case-study-shell">
+      <a class="case-study-back" href="/">&larr; Zurück zum Lebenslauf</a>
+      <header class="case-study-header">
+        <p class="case-study-label">Technische Fallstudie</p>
+        <h1>Modernisierung geschäftskritischer Legacy-PHP-Software im Gesundheitswesen</h1>
+        <p class="case-study-lead">Schrittweise Modernisierung von Apotheken- und Gesundheitsanwendungen durch kontrollierte Integrationsgrenzen, automatisierte Tests, Logging und produktionsnahen Betrieb.</p>
+      </header>
+      <article class="case-study-article">
+        <section class="case-study-section">
+          <h2>Ausgangssituation</h2>
+          <p>Geschäftskritische Apothekensoftware verbindet häufig langlebigen Anwendungscode, aktuelle CakePHP-Komponenten, datenbankgestützte Abläufe und externe Systeme, die nicht gleichzeitig ersetzt werden können. Das Hauptrisiko ist nicht das Alter allein, sondern die Änderung vernetzter Abläufe ohne ausreichende Beobachtbarkeit und Regressionstests.</p>
+          <p>Die Anwendungen enthielten moderne und ältere CakePHP-Strukturen, darunter Table- und Entity-Modelle, und unterstützten tägliche Arzneimittel- und Bestandsprozesse.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Modernisierungsansatz</h2>
+          <p>Ich setze auf schrittweise Änderungen entlang klarer Integrationsgrenzen statt auf eine disruptive Komplettneuentwicklung. Externe Dienste werden hinter eindeutigen Schnittstellen isoliert, Fehlerzustände sichtbar gemacht und neue Funktionen in kleinen, prüf- und testbaren Einheiten eingeführt.</p>
+          <p>Wenn alte und neue Anwendungsstrukturen nebeneinander bestehen, respektiert die Implementierung das vorhandene Datenmodell und verschiebt neue Logik gleichzeitig in Bereiche mit klareren Verantwortlichkeiten.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Schutz vor Regressionen</h2>
+          <p>PHPUnit-Tests, Datenbank-Fixtures und simulierte externe Integrationen schützen Geschäftsabläufe und Fehlerpfade. Integrationstests prüfen das Verhalten über Anwendungs- und Servicegrenzen hinweg; strukturierte Logs liefern Hinweise, wenn sich das Produktivverhalten von der Testumgebung unterscheidet.</p>
+          <p>Diese Kombination ist bei Gesundheits- und Apothekensoftware besonders wichtig, weil eine technisch erfolgreiche Anfrage dennoch eine fachliche Ablehnung darstellen kann, die explizit behandelt werden muss.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Verantwortung im Produktivbetrieb</h2>
+          <p>Die Modernisierung umfasst auch die Linux-Dienste, die die Anwendung unterstützen. systemd-Konfiguration, Neustartverhalten, Betriebsprotokolle und Fehleranalyse in Produktion werden als Bestandteil der ausgelieferten Software behandelt.</p>
+          <p>So entsteht ein sicherer Weg zur Weiterentwicklung etablierter Systeme: Neue Integrationen und Abläufe können ergänzt werden, ohne die gesamte Anwendung mit hohem Risiko ersetzen zu müssen.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Technologien und Konzepte</h2>
+          <ul class="case-study-tags">
+            <li>PHP</li>
+            <li>CakePHP</li>
+            <li>MySQL/MariaDB</li>
+            <li>Incremental modernization</li>
+            <li>External API integration</li>
+            <li>PHPUnit</li>
+            <li>Fixtures</li>
+            <li>Mocked integrations</li>
+            <li>Structured logging</li>
+            <li>Linux</li>
+            <li>systemd</li>
+          </ul>
+        </section>
+        <section class="case-study-section case-study-related-section">
+          <h2>Weitere Fallstudien</h2>
+          <ul class="case-study-related">
+            <li><a href="https://nixonch.github.io/de/fallstudien/wwks2-apothekenlager-integration/">WWKS2-Integration mit einem automatisierten Apothekenlager</a></li>
+            <li><a href="https://nixonch.github.io/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/">securPharm/NMVS-Integration zur Arzneimittelverifikation</a></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DTEFEE6838');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Integración securPharm/NMVS: experiencia transferible a SEVeM — Nick Mitin</title>
+    <meta name="description" content="Integración productiva de flujos de farmacia con el NMVS alemán para verificación, dispensación, reversión y gestión robusta de errores, con patrones técnicos transferibles al entorno español SEVeM." />
+    <meta name="author" content="Nick Mitin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://nixonch.github.io/es/casos/securpharm-nmvs-verificacion-medicamentos/" />
+    <link rel="alternate" hreflang="en" href="https://nixonch.github.io/en/case-studies/securpharm-nmvs-medication-verification/" />
+    <link rel="alternate" hreflang="de" href="https://nixonch.github.io/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/" />
+    <link rel="alternate" hreflang="es" href="https://nixonch.github.io/es/casos/securpharm-nmvs-verificacion-medicamentos/" />
+    <link rel="alternate" hreflang="x-default" href="https://nixonch.github.io/en/case-studies/securpharm-nmvs-medication-verification/" />
+    <script id="article-structured-data" type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "@id": "https://nixonch.github.io/es/casos/securpharm-nmvs-verificacion-medicamentos/#article",
+        "headline": "Integración securPharm/NMVS: experiencia transferible a SEVeM",
+        "description": "Integración productiva de flujos de farmacia con el NMVS alemán para verificación, dispensación, reversión y gestión robusta de errores, con patrones técnicos transferibles al entorno español SEVeM.",
+        "url": "https://nixonch.github.io/es/casos/securpharm-nmvs-verificacion-medicamentos/",
+        "mainEntityOfPage": "https://nixonch.github.io/es/casos/securpharm-nmvs-verificacion-medicamentos/",
+        "inLanguage": "es",
+        "datePublished": "2026-07-30",
+        "dateModified": "2026-07-30",
+        "author": {
+          "@type": "Person",
+          "@id": "https://nixonch.github.io/#person",
+          "name": "Nick Mitin",
+          "url": "https://nixonch.github.io/"
+        },
+        "about": [
+          "securPharm",
+          "NMVS",
+          "EMVS",
+          "JSON-RPC",
+          "HTTP",
+          "cURL",
+          "HMAC",
+          "GS1 DataMatrix",
+          "GTIN",
+          "PPN",
+          "Structured logging",
+          "Fallback workflows"
+        ]
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/base.css?v=20260730-8" />
+    <link rel="stylesheet" href="/css/case-study.css?v=20260730" />
+    <link rel="shortcut icon" href="/images/mn.ico">
+  </head>
+  <body>
+    <main class="case-study-shell">
+      <a class="case-study-back" href="/">&larr; Volver al CV</a>
+      <header class="case-study-header">
+        <p class="case-study-label">Caso técnico</p>
+        <h1>Integración securPharm/NMVS: experiencia transferible a SEVeM</h1>
+        <p class="case-study-lead">Integración productiva de flujos de farmacia con el NMVS alemán para verificación, dispensación, reversión y gestión robusta de errores, con patrones técnicos transferibles al entorno español SEVeM.</p>
+      </header>
+      <article class="case-study-article">
+        <section class="case-study-section">
+          <h2>Contexto</h2>
+          <p>Los envases de medicamentos con receta de la cadena legal se verifican contra un repositorio nacional. En una aplicación de farmacia, esta comprobación debe integrarse en los procesos existentes de recepción y dispensación sin ocultar errores del repositorio ni dejar ambiguo el estado del envase.</p>
+          <p>La integración se implementó en producción para el entorno alemán securPharm/NMVS. El diseño se apoya en el marco europeo EMVS, por lo que sus patrones de lectura de GS1 DataMatrix, identificación de producto, autenticación y tratamiento de respuestas son reutilizables al adaptar una solución para SEVeM.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Diseño de la integración</h2>
+          <p>Desarrollé una integración JSON-RPC sobre HTTP/cURL con solicitudes firmadas mediante HMAC. Procesa datos GS1/DataMatrix con identificadores GTIN y PPN y admite verificación, dispensación o desactivación y operaciones de reversión.</p>
+          <p>La integración diferencia los fallos de transporte, las respuestas del repositorio y los resultados de negocio. Así, el flujo de farmacia puede decidir si continúa, reintenta, utiliza un procedimiento alternativo aprobado o requiere intervención del operador.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Errores y trazabilidad</h2>
+          <p>Los logs estructurados registran el contexto relevante y el resultado sin repartir los detalles del protocolo por toda la aplicación. La gestión explícita de errores y los flujos alternativos hacen visible y diagnosticable cualquier funcionamiento degradado.</p>
+          <p>Las pruebas unitarias y de integración cubren operaciones correctas, solicitudes rechazadas, fallos de comunicación y respuestas simuladas del repositorio.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Relevancia para España</h2>
+          <p>La experiencia productiva se obtuvo con securPharm/NMVS en Alemania. Como SEVeM forma parte de la misma arquitectura europea EMVS y utiliza los mismos conceptos operativos—identificadores únicos, verificación, desactivación, reversión, comunicación autenticada y gestión de alertas—este patrón de integración puede adaptarse al entorno español sin partir de cero.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Tecnologías y conceptos</h2>
+          <ul class="case-study-tags">
+            <li>securPharm</li>
+            <li>NMVS</li>
+            <li>EMVS</li>
+            <li>JSON-RPC</li>
+            <li>HTTP</li>
+            <li>cURL</li>
+            <li>HMAC</li>
+            <li>GS1 DataMatrix</li>
+            <li>GTIN</li>
+            <li>PPN</li>
+            <li>Structured logging</li>
+            <li>Fallback workflows</li>
+          </ul>
+        </section>
+        <section class="case-study-section case-study-related-section">
+          <h2>Otros casos prácticos</h2>
+          <ul class="case-study-related">
+            <li><a href="https://nixonch.github.io/es/casos/integracion-wwks2-almacen-farmacia/">Integración WWKS2 con un almacén automatizado de farmacia</a></li>
+            <li><a href="https://nixonch.github.io/es/casos/modernizacion-php-legacy-software-sanitario/">Modernización de software sanitario crítico basado en PHP legacy</a></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DTEFEE6838');
+    </script>
+  </body>
+</html>

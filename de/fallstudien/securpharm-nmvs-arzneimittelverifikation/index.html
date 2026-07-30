@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <title>securPharm/NMVS-Integration zur Arzneimittelverifikation — Nick Mitin</title>
+    <meta name="description" content="Integration von Apothekenabläufen mit dem deutschen NMVS für Arzneimittelverifikation, Ausbuchung, Rücknahme und robuste Fehlerbehandlung." />
+    <meta name="author" content="Nick Mitin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://nixonch.github.io/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/" />
+    <link rel="alternate" hreflang="en" href="https://nixonch.github.io/en/case-studies/securpharm-nmvs-medication-verification/" />
+    <link rel="alternate" hreflang="de" href="https://nixonch.github.io/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/" />
+    <link rel="alternate" hreflang="es" href="https://nixonch.github.io/es/casos/securpharm-nmvs-verificacion-medicamentos/" />
+    <link rel="alternate" hreflang="x-default" href="https://nixonch.github.io/en/case-studies/securpharm-nmvs-medication-verification/" />
+    <script id="article-structured-data" type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "@id": "https://nixonch.github.io/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/#article",
+        "headline": "securPharm/NMVS-Integration zur Arzneimittelverifikation",
+        "description": "Integration von Apothekenabläufen mit dem deutschen NMVS für Arzneimittelverifikation, Ausbuchung, Rücknahme und robuste Fehlerbehandlung.",
+        "url": "https://nixonch.github.io/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/",
+        "mainEntityOfPage": "https://nixonch.github.io/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/",
+        "inLanguage": "de",
+        "datePublished": "2026-07-30",
+        "dateModified": "2026-07-30",
+        "author": {
+          "@type": "Person",
+          "@id": "https://nixonch.github.io/#person",
+          "name": "Nick Mitin",
+          "url": "https://nixonch.github.io/"
+        },
+        "about": [
+          "securPharm",
+          "NMVS",
+          "EMVS",
+          "JSON-RPC",
+          "HTTP",
+          "cURL",
+          "HMAC",
+          "GS1 DataMatrix",
+          "GTIN",
+          "PPN",
+          "Structured logging",
+          "Fallback workflows"
+        ]
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/base.css?v=20260730-8" />
+    <link rel="stylesheet" href="/css/case-study.css?v=20260730" />
+    <link rel="shortcut icon" href="/images/mn.ico">
+  </head>
+  <body>
+    <main class="case-study-shell">
+      <a class="case-study-back" href="/">&larr; Zurück zum Lebenslauf</a>
+      <header class="case-study-header">
+        <p class="case-study-label">Technische Fallstudie</p>
+        <h1>securPharm/NMVS-Integration zur Arzneimittelverifikation</h1>
+        <p class="case-study-lead">Integration von Apothekenabläufen mit dem deutschen NMVS für Arzneimittelverifikation, Ausbuchung, Rücknahme und robuste Fehlerbehandlung.</p>
+      </header>
+      <article class="case-study-article">
+        <section class="case-study-section">
+          <h2>Ausgangssituation</h2>
+          <p>Verschreibungspflichtige Arzneimittelpackungen in der legalen Lieferkette werden gegen ein nationales Repository geprüft. In einer Apothekenanwendung muss diese Prüfung in bestehende Wareneingangs- und Abgabeprozesse passen, ohne Fehler des Repositories zu verbergen oder den Packungsstatus unklar zu lassen.</p>
+          <p>Die implementierte Integration war für die deutsche securPharm/NMVS-Umgebung bestimmt. Sie musste GS1-DataMatrix-Daten lesen, unterschiedliche Produktkennungen unterstützen, Anfragen authentifizieren und Antworten des Repositories für die umgebende Anwendung eindeutig darstellen.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Integrationsdesign</h2>
+          <p>Ich entwickelte eine JSON-RPC-Integration über HTTP/cURL mit HMAC-signierten Anfragen. Sie verarbeitet GS1/DataMatrix-Daten mit GTIN- und PPN-Kennungen und unterstützt Verifikation, Ausbuchung bei der Abgabe sowie Rücknahmeaktionen.</p>
+          <p>Transportfehler, Repository-Antworten und fachliche Ergebnisse werden getrennt behandelt. Dadurch kann der Apothekenprozess entscheiden, ob er fortfährt, einen erneuten Versuch startet, einen freigegebenen Fallback verwendet oder eine manuelle Prüfung verlangt.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Fehlerbehandlung und Nachvollziehbarkeit</h2>
+          <p>Strukturierte Logs erfassen den relevanten Anfragekontext und das Ergebnis, ohne Protokolldetails in der gesamten Geschäftsanwendung zu verteilen. Explizite Fehlerbehandlung und Fallback-Abläufe machen einen eingeschränkten Betrieb sichtbar und analysierbar.</p>
+          <p>Unit- und Integrationstests decken erfolgreiche Vorgänge, abgewiesene Anfragen, Kommunikationsfehler und simulierte Repository-Antworten ab.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Europäische Übertragbarkeit</h2>
+          <p>Die produktive Implementierung erfolgte gegen das deutsche securPharm/NMVS. Die zugrunde liegenden Konzepte—EMVS-Anbindung, eindeutige Identifikatoren, Verifikation, Ausbuchung, Rücknahme, authentifizierte Kommunikation und alarmbewusste Abläufe—sind auch für Software relevant, die mit anderen nationalen Systemen wie dem spanischen SEVeM verbunden wird.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Technologien und Konzepte</h2>
+          <ul class="case-study-tags">
+            <li>securPharm</li>
+            <li>NMVS</li>
+            <li>EMVS</li>
+            <li>JSON-RPC</li>
+            <li>HTTP</li>
+            <li>cURL</li>
+            <li>HMAC</li>
+            <li>GS1 DataMatrix</li>
+            <li>GTIN</li>
+            <li>PPN</li>
+            <li>Structured logging</li>
+            <li>Fallback workflows</li>
+          </ul>
+        </section>
+        <section class="case-study-section case-study-related-section">
+          <h2>Weitere Fallstudien</h2>
+          <ul class="case-study-related">
+            <li><a href="https://nixonch.github.io/de/fallstudien/wwks2-apothekenlager-integration/">WWKS2-Integration mit einem automatisierten Apothekenlager</a></li>
+            <li><a href="https://nixonch.github.io/de/fallstudien/legacy-php-gesundheits-it-modernisierung/">Modernisierung geschäftskritischer Legacy-PHP-Software im Gesundheitswesen</a></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DTEFEE6838');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>WWKS2 integration with an automated pharmacy warehouse — Nick Mitin</title>
+    <meta name="description" content="An asynchronous service connecting pharmacy software with BD Rowa storage systems through WWKS2, TCP, XML, and recoverable message processing." />
+    <meta name="author" content="Nick Mitin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://nixonch.github.io/en/case-studies/wwks2-pharmacy-warehouse-integration/" />
+    <link rel="alternate" hreflang="en" href="https://nixonch.github.io/en/case-studies/wwks2-pharmacy-warehouse-integration/" />
+    <link rel="alternate" hreflang="de" href="https://nixonch.github.io/de/fallstudien/wwks2-apothekenlager-integration/" />
+    <link rel="alternate" hreflang="es" href="https://nixonch.github.io/es/casos/integracion-wwks2-almacen-farmacia/" />
+    <link rel="alternate" hreflang="x-default" href="https://nixonch.github.io/en/case-studies/wwks2-pharmacy-warehouse-integration/" />
+    <script id="article-structured-data" type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "@id": "https://nixonch.github.io/en/case-studies/wwks2-pharmacy-warehouse-integration/#article",
+        "headline": "WWKS2 integration with an automated pharmacy warehouse",
+        "description": "An asynchronous service connecting pharmacy software with BD Rowa storage systems through WWKS2, TCP, XML, and recoverable message processing.",
+        "url": "https://nixonch.github.io/en/case-studies/wwks2-pharmacy-warehouse-integration/",
+        "mainEntityOfPage": "https://nixonch.github.io/en/case-studies/wwks2-pharmacy-warehouse-integration/",
+        "inLanguage": "en",
+        "datePublished": "2026-07-30",
+        "dateModified": "2026-07-30",
+        "author": {
+          "@type": "Person",
+          "@id": "https://nixonch.github.io/#person",
+          "name": "Nick Mitin",
+          "url": "https://nixonch.github.io/"
+        },
+        "about": [
+          "PHP",
+          "WWKS2",
+          "BD Rowa",
+          "TCP/IP",
+          "XML",
+          "Asynchronous programming",
+          "Message correlation",
+          "Backpressure",
+          "Linux",
+          "systemd",
+          "PHPUnit"
+        ]
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/base.css?v=20260730-8" />
+    <link rel="stylesheet" href="/css/case-study.css?v=20260730" />
+    <link rel="shortcut icon" href="/images/mn.ico">
+  </head>
+  <body>
+    <main class="case-study-shell">
+      <a class="case-study-back" href="/">&larr; Back to CV</a>
+      <header class="case-study-header">
+        <p class="case-study-label">Technical case study</p>
+        <h1>WWKS2 integration with an automated pharmacy warehouse</h1>
+        <p class="case-study-lead">An asynchronous service connecting pharmacy software with BD Rowa storage systems through WWKS2, TCP, XML, and recoverable message processing.</p>
+      </header>
+      <article class="case-study-article">
+        <section class="case-study-section">
+          <h2>Context</h2>
+          <p>Pharmacy software must coordinate medication intake, storage, dispensing, returns, stock control, and operational tasks with an automated warehouse. The integration is part of daily pharmacy work, so connection failures and delayed responses cannot be treated as exceptional edge cases.</p>
+          <p>The warehouse interface used WWKS2 messages over a persistent TCP connection. Several requests could be in flight while responses arrived asynchronously, which made reliable message correlation and controlled buffering essential.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Engineering approach</h2>
+          <p>I built an asynchronous PHP service that separates pharmacy workflows from the device connection. It sends and receives XML messages, correlates responses with their originating requests, and maintains explicit queues instead of relying on synchronous request-response assumptions.</p>
+          <p>Buffering and backpressure prevent producers from overwhelming the connection. Retry rules and connection recovery handle transient failures while keeping the state of individual operations observable.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Reliability and operations</h2>
+          <p>The integration includes structured logging for message flow and failure analysis. Unit and integration tests use fixtures and mocked external behavior so that correlation, retries, and recovery paths can be exercised without requiring a physical warehouse system.</p>
+          <p>The service runs as a Linux-managed process with systemd, making startup, restart behavior, logs, and production troubleshooting part of the implementation rather than an afterthought.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Result</h2>
+          <p>The service provides a durable boundary between business workflows and warehouse automation. Pharmacy applications can initiate operational actions without embedding device-connection complexity throughout the application code.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Technologies and concepts</h2>
+          <ul class="case-study-tags">
+            <li>PHP</li>
+            <li>WWKS2</li>
+            <li>BD Rowa</li>
+            <li>TCP/IP</li>
+            <li>XML</li>
+            <li>Asynchronous programming</li>
+            <li>Message correlation</li>
+            <li>Backpressure</li>
+            <li>Linux</li>
+            <li>systemd</li>
+            <li>PHPUnit</li>
+          </ul>
+        </section>
+        <section class="case-study-section case-study-related-section">
+          <h2>Related case studies</h2>
+          <ul class="case-study-related">
+            <li><a href="https://nixonch.github.io/en/case-studies/securpharm-nmvs-medication-verification/">securPharm/NMVS medication verification integration</a></li>
+            <li><a href="https://nixonch.github.io/en/case-studies/legacy-php-healthcare-modernization/">Modernizing business-critical legacy PHP healthcare software</a></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DTEFEE6838');
+    </script>
+  </body>
+</html>

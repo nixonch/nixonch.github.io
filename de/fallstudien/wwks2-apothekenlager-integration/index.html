@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <title>WWKS2-Integration mit einem automatisierten Apothekenlager — Nick Mitin</title>
+    <meta name="description" content="Ein asynchroner Dienst verbindet Apothekensoftware über WWKS2, TCP, XML und wiederanlauffähige Nachrichtenverarbeitung mit BD-Rowa-Lagersystemen." />
+    <meta name="author" content="Nick Mitin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://nixonch.github.io/de/fallstudien/wwks2-apothekenlager-integration/" />
+    <link rel="alternate" hreflang="en" href="https://nixonch.github.io/en/case-studies/wwks2-pharmacy-warehouse-integration/" />
+    <link rel="alternate" hreflang="de" href="https://nixonch.github.io/de/fallstudien/wwks2-apothekenlager-integration/" />
+    <link rel="alternate" hreflang="es" href="https://nixonch.github.io/es/casos/integracion-wwks2-almacen-farmacia/" />
+    <link rel="alternate" hreflang="x-default" href="https://nixonch.github.io/en/case-studies/wwks2-pharmacy-warehouse-integration/" />
+    <script id="article-structured-data" type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "@id": "https://nixonch.github.io/de/fallstudien/wwks2-apothekenlager-integration/#article",
+        "headline": "WWKS2-Integration mit einem automatisierten Apothekenlager",
+        "description": "Ein asynchroner Dienst verbindet Apothekensoftware über WWKS2, TCP, XML und wiederanlauffähige Nachrichtenverarbeitung mit BD-Rowa-Lagersystemen.",
+        "url": "https://nixonch.github.io/de/fallstudien/wwks2-apothekenlager-integration/",
+        "mainEntityOfPage": "https://nixonch.github.io/de/fallstudien/wwks2-apothekenlager-integration/",
+        "inLanguage": "de",
+        "datePublished": "2026-07-30",
+        "dateModified": "2026-07-30",
+        "author": {
+          "@type": "Person",
+          "@id": "https://nixonch.github.io/#person",
+          "name": "Nick Mitin",
+          "url": "https://nixonch.github.io/"
+        },
+        "about": [
+          "PHP",
+          "WWKS2",
+          "BD Rowa",
+          "TCP/IP",
+          "XML",
+          "Asynchronous programming",
+          "Message correlation",
+          "Backpressure",
+          "Linux",
+          "systemd",
+          "PHPUnit"
+        ]
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/base.css?v=20260730-8" />
+    <link rel="stylesheet" href="/css/case-study.css?v=20260730" />
+    <link rel="shortcut icon" href="/images/mn.ico">
+  </head>
+  <body>
+    <main class="case-study-shell">
+      <a class="case-study-back" href="/">&larr; Zurück zum Lebenslauf</a>
+      <header class="case-study-header">
+        <p class="case-study-label">Technische Fallstudie</p>
+        <h1>WWKS2-Integration mit einem automatisierten Apothekenlager</h1>
+        <p class="case-study-lead">Ein asynchroner Dienst verbindet Apothekensoftware über WWKS2, TCP, XML und wiederanlauffähige Nachrichtenverarbeitung mit BD-Rowa-Lagersystemen.</p>
+      </header>
+      <article class="case-study-article">
+        <section class="case-study-section">
+          <h2>Ausgangssituation</h2>
+          <p>Apothekensoftware muss Wareneingang, Einlagerung, Abgabe, Rückgaben, Bestandskontrolle und operative Aufgaben mit einem automatisierten Lager koordinieren. Die Integration ist Teil des täglichen Apothekenbetriebs; Verbindungsabbrüche und verzögerte Antworten dürfen deshalb nicht wie seltene Ausnahmefälle behandelt werden.</p>
+          <p>Die Lagerschnittstelle verwendet WWKS2-Nachrichten über eine dauerhafte TCP-Verbindung. Mehrere Anfragen können gleichzeitig aktiv sein, während Antworten asynchron eintreffen. Eine zuverlässige Nachrichtenkorrelation und kontrollierte Pufferung sind daher entscheidend.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Technischer Ansatz</h2>
+          <p>Ich entwickelte einen asynchronen PHP-Dienst, der die Geschäftsabläufe der Apotheke von der Geräteverbindung trennt. Er sendet und empfängt XML-Nachrichten, ordnet Antworten den ursprünglichen Anfragen zu und verwaltet explizite Warteschlangen anstelle synchroner Request-Response-Annahmen.</p>
+          <p>Pufferung und Backpressure verhindern, dass Produzenten die Verbindung überlasten. Wiederholungsregeln und Verbindungswiederherstellung behandeln vorübergehende Fehler und halten gleichzeitig den Zustand einzelner Vorgänge nachvollziehbar.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Zuverlässigkeit und Betrieb</h2>
+          <p>Die Integration verwendet strukturierte Logs für Nachrichtenfluss und Fehleranalyse. Unit- und Integrationstests arbeiten mit Fixtures und simuliertem Verhalten externer Systeme, sodass Korrelation, Wiederholungen und Recovery-Pfade ohne physisches Lagersystem getestet werden können.</p>
+          <p>Der Dienst läuft als von systemd verwalteter Linux-Prozess. Start, Neustartverhalten, Protokollierung und Fehleranalyse im Produktivbetrieb sind damit Bestandteil der Lösung.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Ergebnis</h2>
+          <p>Der Dienst bildet eine belastbare Grenze zwischen Geschäftsprozessen und Lagerautomatisierung. Apothekenanwendungen können operative Aktionen auslösen, ohne die Komplexität der Geräteverbindung im gesamten Anwendungscode zu verteilen.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Technologien und Konzepte</h2>
+          <ul class="case-study-tags">
+            <li>PHP</li>
+            <li>WWKS2</li>
+            <li>BD Rowa</li>
+            <li>TCP/IP</li>
+            <li>XML</li>
+            <li>Asynchronous programming</li>
+            <li>Message correlation</li>
+            <li>Backpressure</li>
+            <li>Linux</li>
+            <li>systemd</li>
+            <li>PHPUnit</li>
+          </ul>
+        </section>
+        <section class="case-study-section case-study-related-section">
+          <h2>Weitere Fallstudien</h2>
+          <ul class="case-study-related">
+            <li><a href="https://nixonch.github.io/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/">securPharm/NMVS-Integration zur Arzneimittelverifikation</a></li>
+            <li><a href="https://nixonch.github.io/de/fallstudien/legacy-php-gesundheits-it-modernisierung/">Modernisierung geschäftskritischer Legacy-PHP-Software im Gesundheitswesen</a></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DTEFEE6838');
+    </script>
+  </body>
+</html>

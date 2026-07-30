@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Modernizing business-critical legacy PHP healthcare software — Nick Mitin</title>
+    <meta name="description" content="Incremental modernization of pharmacy and healthcare applications through controlled integration boundaries, automated tests, logging, and production-focused operations." />
+    <meta name="author" content="Nick Mitin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://nixonch.github.io/en/case-studies/legacy-php-healthcare-modernization/" />
+    <link rel="alternate" hreflang="en" href="https://nixonch.github.io/en/case-studies/legacy-php-healthcare-modernization/" />
+    <link rel="alternate" hreflang="de" href="https://nixonch.github.io/de/fallstudien/legacy-php-gesundheits-it-modernisierung/" />
+    <link rel="alternate" hreflang="es" href="https://nixonch.github.io/es/casos/modernizacion-php-legacy-software-sanitario/" />
+    <link rel="alternate" hreflang="x-default" href="https://nixonch.github.io/en/case-studies/legacy-php-healthcare-modernization/" />
+    <script id="article-structured-data" type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "@id": "https://nixonch.github.io/en/case-studies/legacy-php-healthcare-modernization/#article",
+        "headline": "Modernizing business-critical legacy PHP healthcare software",
+        "description": "Incremental modernization of pharmacy and healthcare applications through controlled integration boundaries, automated tests, logging, and production-focused operations.",
+        "url": "https://nixonch.github.io/en/case-studies/legacy-php-healthcare-modernization/",
+        "mainEntityOfPage": "https://nixonch.github.io/en/case-studies/legacy-php-healthcare-modernization/",
+        "inLanguage": "en",
+        "datePublished": "2026-07-30",
+        "dateModified": "2026-07-30",
+        "author": {
+          "@type": "Person",
+          "@id": "https://nixonch.github.io/#person",
+          "name": "Nick Mitin",
+          "url": "https://nixonch.github.io/"
+        },
+        "about": [
+          "PHP",
+          "CakePHP",
+          "MySQL/MariaDB",
+          "Incremental modernization",
+          "External API integration",
+          "PHPUnit",
+          "Fixtures",
+          "Mocked integrations",
+          "Structured logging",
+          "Linux",
+          "systemd"
+        ]
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/base.css?v=20260730-8" />
+    <link rel="stylesheet" href="/css/case-study.css?v=20260730" />
+    <link rel="shortcut icon" href="/images/mn.ico">
+  </head>
+  <body>
+    <main class="case-study-shell">
+      <a class="case-study-back" href="/">&larr; Back to CV</a>
+      <header class="case-study-header">
+        <p class="case-study-label">Technical case study</p>
+        <h1>Modernizing business-critical legacy PHP healthcare software</h1>
+        <p class="case-study-lead">Incremental modernization of pharmacy and healthcare applications through controlled integration boundaries, automated tests, logging, and production-focused operations.</p>
+      </header>
+      <article class="case-study-article">
+        <section class="case-study-section">
+          <h2>Context</h2>
+          <p>Business-critical pharmacy software often combines long-lived application code, current CakePHP components, database-backed workflows, and external systems that cannot all be replaced at once. The primary risk is not age by itself, but changing interconnected behavior without enough observability or regression protection.</p>
+          <p>The applications included both modern and legacy CakePHP patterns, including Table and Entity models, and supported daily medication and stock workflows.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Modernization approach</h2>
+          <p>I use incremental changes around clear integration boundaries instead of a disruptive rewrite. External services are isolated behind explicit interfaces, error handling is made visible, and new behavior is introduced in small units that can be reviewed and tested.</p>
+          <p>Where old and new application structures coexist, the implementation respects the existing data model while moving new logic toward clearer responsibilities.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Regression protection</h2>
+          <p>PHPUnit tests, database fixtures, and mocked external integrations protect business workflows and failure paths. Integration tests verify behavior across application and service boundaries, while structured logs provide evidence when production behavior differs from a test environment.</p>
+          <p>This combination is particularly important in healthcare and pharmacy software, where a technically successful request may still represent a business-level rejection that must be handled explicitly.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Production ownership</h2>
+          <p>Modernization also includes the Linux services that support the application. systemd configuration, restart behavior, operational logs, and production troubleshooting are treated as part of the delivered software.</p>
+          <p>The result is a safer path for extending established systems: new integrations and workflows can be added without requiring a high-risk replacement of the complete application.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Technologies and concepts</h2>
+          <ul class="case-study-tags">
+            <li>PHP</li>
+            <li>CakePHP</li>
+            <li>MySQL/MariaDB</li>
+            <li>Incremental modernization</li>
+            <li>External API integration</li>
+            <li>PHPUnit</li>
+            <li>Fixtures</li>
+            <li>Mocked integrations</li>
+            <li>Structured logging</li>
+            <li>Linux</li>
+            <li>systemd</li>
+          </ul>
+        </section>
+        <section class="case-study-section case-study-related-section">
+          <h2>Related case studies</h2>
+          <ul class="case-study-related">
+            <li><a href="https://nixonch.github.io/en/case-studies/wwks2-pharmacy-warehouse-integration/">WWKS2 integration with an automated pharmacy warehouse</a></li>
+            <li><a href="https://nixonch.github.io/en/case-studies/securpharm-nmvs-medication-verification/">securPharm/NMVS medication verification integration</a></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DTEFEE6838');
+    </script>
+  </body>
+</html>

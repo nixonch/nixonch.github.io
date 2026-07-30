@@ -2,6 +2,14 @@
   "use strict";
 
   var supportedLanguages = ["en", "de", "es", "fr", "uk", "ru"];
+  var languagePathAliases = {
+    en: "en",
+    de: "de",
+    es: "es",
+    fr: "fr",
+    uk: "uk",
+    ru: "ru"
+  };
   var cookieName = "resume_language";
   var cookieLifetime = 60 * 60 * 24 * 365;
 
@@ -68,6 +76,10 @@
       wellconstruction_item_2: "Built and evolved the system using Turbo Pascal → Object Pascal / Delphi, C++, and PostScript.",
       section_projects: "Selected Projects /",
       section_open_source: "Open Source",
+      case_studies_heading: "Healthcare Software Case Studies",
+      case_wwks2_title: "WWKS2 integration with an automated pharmacy warehouse",
+      case_nmvs_title: "securPharm/NMVS medication verification integration",
+      case_legacy_title: "Modernizing business-critical legacy PHP healthcare software",
       webrtc_role: "Author of WebRTC SIP Phone extension",
       webrtc_description: "Develop and maintain a JavaScript/WebRTC browser extension that lets call centers and other businesses place SIP calls by clicking phone numbers on web pages.",
       chrome_store: "Chrome Web Store:",
@@ -149,6 +161,10 @@
       wellconstruction_item_2: "Ich entwickelte das System mit Turbo Pascal → Object Pascal / Delphi, C++ und PostScript kontinuierlich weiter.",
       section_projects: "Ausgewählte Projekte /",
       section_open_source: "Open Source",
+      case_studies_heading: "Fallstudien zu Software im Gesundheitswesen",
+      case_wwks2_title: "WWKS2-Integration mit einem automatisierten Apothekenlager",
+      case_nmvs_title: "securPharm/NMVS-Integration zur Arzneimittelverifikation",
+      case_legacy_title: "Modernisierung geschäftskritischer Legacy-PHP-Software im Gesundheitswesen",
       webrtc_role: "Entwickler der Browsererweiterung WebRTC SIP Phone",
       webrtc_description: "Ich entwickle und pflege eine JavaScript-/WebRTC-Browsererweiterung, mit der Callcenter und andere Unternehmen per Klick auf Telefonnummern in Webseiten SIP-Anrufe starten können.",
       chrome_store: "Chrome Web Store:",
@@ -170,7 +186,7 @@
     },
     es: {
       meta_title: "Nick Mitin — Ingeniero de software sénior",
-      meta_description: "Ingeniero de software sénior especializado en backend PHP, integración de sistemas, automatización de farmacias, logística farmacéutica y servicios basados en Linux.",
+      meta_description: "Ingeniero de software sénior especializado en backend PHP, automatización de farmacias y verificación de medicamentos, con experiencia en securPharm/NMVS aplicable a SEVeM.",
       language_selector: "Elegir idioma",
       nav_summary: "Perfil",
       nav_skills: "Competencias técnicas",
@@ -181,7 +197,7 @@
       section_summary: "Perfil",
       summary_heading: "Backend en PHP e integración de sistemas",
       summary_lead: "Desarrollo y modernizo aplicaciones críticas para el negocio y sistemas heredados.",
-      summary_body: "Desde 2024, mi trabajo se centra en la automatización de farmacias, la verificación de medicamentos, la logística farmacéutica y los sistemas de almacén automatizados. También cuento con una amplia experiencia en VoIP, facturación de telecomunicaciones y servicios basados en Linux.",
+      summary_body: "Desde 2024, mi trabajo se centra en la automatización de farmacias, la verificación de medicamentos, la logística farmacéutica y los sistemas de almacén automatizados. Mi experiencia productiva con securPharm/NMVS en Alemania es transferible a integraciones con SEVeM en España dentro del marco europeo EMVS. También cuento con una amplia experiencia en VoIP, facturación de telecomunicaciones y servicios basados en Linux.",
       summary_languages_label: "Idiomas:",
       summary_languages: "inglés (B2), alemán (B1, sigo estudiándolo), ucraniano (nativo) y ruso (fluido).",
       section_skills: "Competencias",
@@ -207,7 +223,7 @@
       pdms_company: "PDMS GmbH, Alemania",
       pdms_summary: "Desarrollo y mantengo software crítico para la automatización de farmacias, la logística farmacéutica y el almacenamiento automatizado de medicamentos.",
       pdms_item_1: "Trabajo tanto con aplicaciones CakePHP modernas como con sistemas heredados, incluidos proyectos basados en los modelos Table y Entity de CakePHP.",
-      pdms_item_2: "Desarrollé una integración con securPharm/NMVS mediante JSON-RPC, HTTP/cURL y peticiones firmadas con HMAC. Valida códigos GS1/DataMatrix con identificadores GTIN y PPN, permite verificar, dispensar y deshacer operaciones con medicamentos e incluye gestión de errores, registro estructurado y flujos alternativos.",
+      pdms_item_2: "Desarrollé para el mercado alemán una integración con securPharm/NMVS mediante JSON-RPC, HTTP/cURL y peticiones firmadas con HMAC. Valida códigos GS1/DataMatrix con identificadores GTIN y PPN, permite verificar, dispensar y deshacer operaciones con medicamentos e incluye gestión de errores, registro estructurado y flujos alternativos. Al basarse en el marco europeo EMVS, este patrón de integración es transferible al entorno español SEVeM.",
       pdms_item_3: "Desarrollé un servicio WWKS2 que conecta el software de farmacia con los sistemas de almacén BD Rowa mediante comunicación TCP asíncrona y mensajes XML. Gestiona la correlación de mensajes, el almacenamiento en búfer, la contrapresión, los reintentos y la recuperación de la conexión.",
       pdms_item_4: "Integré servicios externos en los flujos diarios de recepción, almacenamiento, devolución y dispensación de medicamentos, control de existencias y seguimiento de tareas.",
       pdms_item_5: "Escribo pruebas unitarias y de integración con PHPUnit, fixtures e integraciones simuladas. También mantengo los servicios Linux asociados con systemd y diagnostico incidencias en producción.",
@@ -230,6 +246,10 @@
       wellconstruction_item_2: "Construí y amplié el sistema con Turbo Pascal → Object Pascal / Delphi, C++ y PostScript.",
       section_projects: "Proyectos seleccionados /",
       section_open_source: "Código abierto",
+      case_studies_heading: "Casos prácticos de software sanitario",
+      case_wwks2_title: "Integración WWKS2 con un almacén automatizado de farmacia",
+      case_nmvs_title: "Integración securPharm/NMVS: experiencia transferible a SEVeM",
+      case_legacy_title: "Modernización de software sanitario crítico basado en PHP legacy",
       webrtc_role: "Autor de la extensión WebRTC SIP Phone",
       webrtc_description: "Desarrollo y mantengo una extensión de navegador en JavaScript/WebRTC que permite a centros de llamadas y otras empresas iniciar llamadas SIP haciendo clic en números de teléfono de una página web.",
       chrome_store: "Chrome Web Store:",
@@ -311,6 +331,10 @@
       wellconstruction_item_2: "J’ai construit et fait évoluer le système avec Turbo Pascal → Object Pascal / Delphi, C++ et PostScript.",
       section_projects: "Projets sélectionnés /",
       section_open_source: "Open source",
+      case_studies_heading: "Études de cas sur les logiciels de santé (en anglais)",
+      case_wwks2_title: "Intégration WWKS2 avec un entrepôt automatisé de pharmacie",
+      case_nmvs_title: "Intégration securPharm/NMVS pour la vérification des médicaments",
+      case_legacy_title: "Modernisation d’un logiciel de santé PHP legacy critique",
       webrtc_role: "Auteur de l’extension WebRTC SIP Phone",
       webrtc_description: "Je développe et maintiens une extension de navigateur en JavaScript/WebRTC qui permet aux centres d’appels et à d’autres entreprises de lancer des appels SIP en cliquant sur les numéros de téléphone affichés sur les pages web.",
       chrome_store: "Chrome Web Store :",
@@ -392,6 +416,10 @@
       wellconstruction_item_2: "Створював і розвивав систему за допомогою Turbo Pascal → Object Pascal / Delphi, C++ та PostScript.",
       section_projects: "Вибрані проєкти /",
       section_open_source: "Відкритий код",
+      case_studies_heading: "Технічні кейси з медичного ПЗ (англійською)",
+      case_wwks2_title: "Інтеграція WWKS2 з автоматизованим аптечним складом",
+      case_nmvs_title: "Інтеграція securPharm/NMVS для перевірки лікарських засобів",
+      case_legacy_title: "Модернізація критично важливого медичного ПЗ на legacy PHP",
       webrtc_role: "Автор розширення WebRTC SIP Phone",
       webrtc_description: "Розробляю та підтримую браузерне розширення на JavaScript/WebRTC, за допомогою якого кол-центри та інші компанії можуть здійснювати SIP-дзвінки, просто натискаючи на номери телефонів на вебсторінках.",
       chrome_store: "Chrome Web Store:",
@@ -473,6 +501,10 @@
       wellconstruction_item_2: "Создавал и развивал систему с помощью Turbo Pascal → Object Pascal / Delphi, C++ и PostScript.",
       section_projects: "Избранные проекты /",
       section_open_source: "Открытый код",
+      case_studies_heading: "Технические кейсы по медицинскому ПО (на английском)",
+      case_wwks2_title: "Интеграция WWKS2 с автоматизированным аптечным складом",
+      case_nmvs_title: "Интеграция securPharm/NMVS для проверки лекарственных средств",
+      case_legacy_title: "Модернизация критически важного медицинского ПО на legacy PHP",
       webrtc_role: "Автор расширения WebRTC SIP Phone",
       webrtc_description: "Разрабатываю и поддерживаю браузерное расширение на JavaScript/WebRTC, с помощью которого колл-центры и другие компании могут совершать SIP-звонки, просто нажимая на номера телефонов на веб-страницах.",
       chrome_store: "Chrome Web Store:",
@@ -491,6 +523,24 @@
       degree_name: "Магистр автоматизации и компьютерно-интегрированных технологий",
       university_website: "Сайт университета:",
       last_updated: "Обновлено: 29 июля 2026"
+    }
+  };
+
+  var caseStudyLinks = {
+    en: {
+      wwks2: "/en/case-studies/wwks2-pharmacy-warehouse-integration/",
+      nmvs: "/en/case-studies/securpharm-nmvs-medication-verification/",
+      legacy: "/en/case-studies/legacy-php-healthcare-modernization/"
+    },
+    de: {
+      wwks2: "/de/fallstudien/wwks2-apothekenlager-integration/",
+      nmvs: "/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/",
+      legacy: "/de/fallstudien/legacy-php-gesundheits-it-modernisierung/"
+    },
+    es: {
+      wwks2: "/es/casos/integracion-wwks2-almacen-farmacia/",
+      nmvs: "/es/casos/securpharm-nmvs-verificacion-medicamentos/",
+      legacy: "/es/casos/modernizacion-php-legacy-software-sanitario/"
     }
   };
 
@@ -560,6 +610,22 @@
     return "en";
   }
 
+  function detectPathLanguage() {
+    var pathSegments = window.location.pathname.toLowerCase().split("/");
+
+    for (var index = pathSegments.length - 1; index >= 0; index -= 1) {
+      var segment = pathSegments[index].trim();
+
+      if (!segment || segment === "index.html") {
+        continue;
+      }
+
+      return languagePathAliases[segment] || "";
+    }
+
+    return "";
+  }
+
   function saveLanguageCookie(language) {
     var cookie = cookieName + "=" + encodeURIComponent(language)
       + "; Path=/; Max-Age=" + cookieLifetime + "; SameSite=Lax";
@@ -614,6 +680,18 @@
       universityLink.textContent = localizedUniversityLinks.universityLabel;
     }
 
+    var localizedCaseStudyLinks = caseStudyLinks[language] || caseStudyLinks.en;
+    var caseStudyAnchors = document.querySelectorAll("[data-case-study]");
+    for (var caseStudyIndex = 0; caseStudyIndex < caseStudyAnchors.length; caseStudyIndex += 1) {
+      var caseStudyAnchor = caseStudyAnchors[caseStudyIndex];
+      var caseStudyKey = caseStudyAnchor.getAttribute("data-case-study");
+      var caseStudyUrl = localizedCaseStudyLinks[caseStudyKey];
+
+      if (caseStudyUrl) {
+        caseStudyAnchor.setAttribute("href", caseStudyUrl);
+      }
+    }
+
     var languageButtons = document.querySelectorAll("[data-language]");
     for (var buttonIndex = 0; buttonIndex < languageButtons.length; buttonIndex += 1) {
       var button = languageButtons[buttonIndex];
@@ -626,7 +704,7 @@
   }
 
   function initialize() {
-    var selectedLanguage = readLanguageCookie() || detectBrowserLanguage();
+    var selectedLanguage = detectPathLanguage() || readLanguageCookie() || detectBrowserLanguage();
     var languageButtons = document.querySelectorAll("[data-language]");
 
     for (var index = 0; index < languageButtons.length; index += 1) {
