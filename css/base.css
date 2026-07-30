@@ -8,6 +8,114 @@
 * 6/20/2012
 */
 
+html.i18n-pending body {
+	visibility: hidden;
+}
+
+.language-switcher {
+	z-index: 1000;
+	display: flex;
+	gap: 3px;
+	padding: 4px 5px;
+	border: 1px solid #dadada;
+	border-radius: 4px;
+	background: rgba(255, 255, 255, 0.94);
+	box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.12);
+}
+
+.language-switcher-floating {
+	position: fixed;
+	right: 12px;
+	bottom: 12px;
+}
+
+.language-switcher-sidebar {
+	display: none;
+}
+
+@media only screen and (min-width: 1451px) {
+	.language-switcher-floating {
+		display: none;
+	}
+
+	.language-switcher-sidebar {
+		display: flex;
+		position: static;
+		width: max-content;
+		margin: 1.2em auto 0;
+	}
+}
+
+.language-switcher button {
+	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 26px;
+	min-width: 0;
+	margin: 0;
+	padding: 2px 4px;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	background: transparent;
+	box-shadow: none;
+	cursor: pointer;
+	opacity: 0.6;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.language-switcher button:hover,
+.language-switcher button:focus-visible {
+	border-color: #ccc;
+	background: #f4f4f4;
+	opacity: 1;
+	outline: none;
+}
+
+.language-switcher button.is-active {
+	border-color: #d98641;
+	background: #fff;
+	box-shadow: 0 0 3px rgba(217, 134, 65, 0.45);
+	opacity: 1;
+}
+
+.language-flag {
+	box-sizing: border-box;
+	display: block;
+	width: 20px;
+	height: 12px;
+	border: 1px solid rgba(0, 0, 0, 0.18);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+}
+
+.language-flag-en {
+	background-image: url('../images/uk-flag.png');
+}
+
+.language-flag-de {
+	background-image: linear-gradient(to bottom, #000 0%, #000 33.333%, #dd0000 33.333%, #dd0000 66.666%, #ffce00 66.666%, #ffce00 100%);
+}
+
+.language-flag-es {
+	background-image: linear-gradient(to bottom, #aa151b 0%, #aa151b 25%, #f1bf00 25%, #f1bf00 75%, #aa151b 75%, #aa151b 100%);
+}
+
+.language-flag-fr {
+	background-image: linear-gradient(to right, #0055a4 0%, #0055a4 33.333%, #fff 33.333%, #fff 66.666%, #ef4135 66.666%, #ef4135 100%);
+}
+
+.language-flag-uk {
+	background-image: linear-gradient(to bottom, #0057b7 0%, #0057b7 50%, #ffd700 50%, #ffd700 100%);
+}
+
+.language-flag-ru {
+	background-image: linear-gradient(to bottom, #fff 0%, #fff 33.333%, #0039a6 33.333%, #0039a6 66.666%, #d52b1e 66.666%, #d52b1e 100%);
+}
+
 
 /* Table of Content
 ==================================================
@@ -633,6 +741,22 @@
 		background-position: 2px center;
 		background-repeat: no-repeat;
 		padding-left: 20px;
+	}
+	@media only screen and (min-width: 960px) {
+		.container .one-third.column:not(.infos) {
+			width: 310px;
+		}
+		.container .two-thirds.column:not(.myname) {
+			width: 600px;
+		}
+	}
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+		.container .one-third.column:not(.infos) {
+			width: 260px;
+		}
+		.container .two-thirds.column:not(.myname) {
+			width: 468px;
+		}
 	}
 	@media only screen and (max-width: 1450px) {
 		.summary {

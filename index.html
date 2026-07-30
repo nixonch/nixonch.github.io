@@ -6,24 +6,34 @@
     <meta name="description" content="Senior Software Engineer focused on PHP backend development, system integration, pharmacy automation, pharmaceutical logistics, and Linux-based services." />
     <meta name="author" content="Nick Mitin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>document.documentElement.classList.add('i18n-pending');</script>
+    <noscript><style>.i18n-pending body { visibility: visible; }</style></noscript>
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/skeleton.css?v=20260730" />
     <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/base.css?v=20260730-4" />
+    <link rel="stylesheet" href="css/base.css?v=20260730-8" />
     <link rel="shortcut icon" href="images/mn.ico">
   </head>
 
   <body>
+    <nav class="language-switcher language-switcher-floating noprint" aria-label="Choose language">
+      <button type="button" data-language="en" lang="en" title="English" aria-label="English" aria-pressed="false"><span class="language-flag language-flag-en" aria-hidden="true"></span></button>
+      <button type="button" data-language="de" lang="de" title="Deutsch" aria-label="Deutsch" aria-pressed="false"><span class="language-flag language-flag-de" aria-hidden="true"></span></button>
+      <button type="button" data-language="es" lang="es" title="Español" aria-label="Español" aria-pressed="false"><span class="language-flag language-flag-es" aria-hidden="true"></span></button>
+      <button type="button" data-language="fr" lang="fr" title="Français" aria-label="Français" aria-pressed="false"><span class="language-flag language-flag-fr" aria-hidden="true"></span></button>
+      <button type="button" data-language="uk" lang="uk" title="Українська" aria-label="Українська" aria-pressed="false"><span class="language-flag language-flag-uk" aria-hidden="true"></span></button>
+      <button type="button" data-language="ru" lang="ru" title="Русский" aria-label="Русский" aria-pressed="false"><span class="language-flag language-flag-ru" aria-hidden="true"></span></button>
+    </nav>
     <div class="container">
       <div class="summary">
         <div class="toc">
-          <a href="#summary">Summary</a>
-          <a href="#skills">Technical skills</a>
-          <a href="#experience">Professional experience</a>
-          <a href="#projects">Selected projects</a>
-          <a href="#education">Education</a>
+          <a href="#summary" data-i18n="nav_summary">Summary</a>
+          <a href="#skills" data-i18n="nav_skills">Technical skills</a>
+          <a href="#experience" data-i18n="nav_experience">Professional experience</a>
+          <a href="#projects" data-i18n="nav_projects">Selected projects</a>
+          <a href="#education" data-i18n="nav_education">Education</a>
           <hr>
           <a class="whatsapp" href="https://wa.me/qr/G7366VXGDHSDG1" title="WhatsApp"><img src="images/whatsapp50x50.png" alt="" style="width:20px;height:20px;border:none;vertical-align:middle;"> @NikolyZnov</a>
           <a class="telegram" href="https://t.me/nixonch" title="Telegram"><img src="images/telega50x50.png" alt="" style="width:20px;height:20px;border:none;vertical-align:middle;"> @NixonCH</a>
@@ -31,13 +41,21 @@
           <hr>
         </div>
         <div class="badge-base LI-profile-badge" data-locale="en_GB" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="nick-mitin-0593b0164" data-version="v1"></div>
+        <nav class="language-switcher language-switcher-sidebar noprint" aria-label="Choose language">
+          <button type="button" data-language="en" lang="en" title="English" aria-label="English" aria-pressed="false"><span class="language-flag language-flag-en" aria-hidden="true"></span></button>
+          <button type="button" data-language="de" lang="de" title="Deutsch" aria-label="Deutsch" aria-pressed="false"><span class="language-flag language-flag-de" aria-hidden="true"></span></button>
+          <button type="button" data-language="es" lang="es" title="Español" aria-label="Español" aria-pressed="false"><span class="language-flag language-flag-es" aria-hidden="true"></span></button>
+          <button type="button" data-language="fr" lang="fr" title="Français" aria-label="Français" aria-pressed="false"><span class="language-flag language-flag-fr" aria-hidden="true"></span></button>
+          <button type="button" data-language="uk" lang="uk" title="Українська" aria-label="Українська" aria-pressed="false"><span class="language-flag language-flag-uk" aria-hidden="true"></span></button>
+          <button type="button" data-language="ru" lang="ru" title="Русский" aria-label="Русский" aria-pressed="false"><span class="language-flag language-flag-ru" aria-hidden="true"></span></button>
+        </nav>
       </div>
 
       <div class="row">
         <div class="two-thirds column myname">
           <h1 class="remove-bottom">Nick Mitin</h1>
           <div class="subheader">
-            <span class="nowrap">Senior Software Engineer</span>
+            <span class="nowrap" data-i18n="header_role">Senior Software Engineer</span>
           </div>
         </div>
         <div class="one-third column infos">
@@ -66,17 +84,18 @@
 
       <div class="row">
         <div class="one-third column">
-          <h2>Summary <a id="summary" href="#summary">¶</a></h2>
+          <h2><span data-i18n="section_summary">Summary</span> <a id="summary" href="#summary">¶</a></h2>
         </div>
         <div class="two-thirds column" section="summary">
-          <h3>PHP Backend &amp; System Integration</h3>
-          <h4>I build and modernize business-critical and legacy applications.</h4>
-          <p>
+          <h3 data-i18n="summary_heading">PHP Backend &amp; System Integration</h3>
+          <h4 data-i18n="summary_lead">I build and modernize business-critical and legacy applications.</h4>
+          <p data-i18n="summary_body">
             Since 2024, my work has focused on pharmacy automation, medication verification, pharmaceutical logistics, and automated warehouse systems.
             I also bring extensive experience in VoIP, telecom billing, and Linux-based services.
           </p>
           <p>
-            <strong>Languages:</strong> English (B2), German (B1, currently learning), Ukrainian (native), Russian (fluent).
+            <strong data-i18n="summary_languages_label">Languages:</strong>
+            <span data-i18n="summary_languages">English (B2), German (B1, currently learning), Ukrainian (native), Russian (fluent).</span>
           </p>
         </div>
       </div>
@@ -84,10 +103,10 @@
 
       <div class="row">
         <div class="one-third column">
-          <h2>Skills <a id="skills" href="#skills">¶</a></h2>
+          <h2><span data-i18n="section_skills">Skills</span> <a id="skills" href="#skills">¶</a></h2>
         </div>
         <div class="two-thirds column" section="skills">
-          <h3>Programming &amp; Data</h3>
+          <h3 data-i18n="skills_programming_data">Programming &amp; Data</h3>
           <p class="taglist2">
             <span class="tag">PHP</span>-
             <span class="tag">JavaScript</span>-
@@ -98,7 +117,14 @@
           </p>
           <div class="endtag"></div>
 
-          <h3>Backend &amp; Web</h3>
+          <h3 data-i18n="skills_ai_development">AI-Assisted Development</h3>
+          <p class="taglist2">
+            <span class="tag">OpenAI Codex</span>-
+            <span class="tag">Claude Code</span>
+          </p>
+          <div class="endtag"></div>
+
+          <h3 data-i18n="skills_backend_web">Backend &amp; Web</h3>
           <p class="taglist2">
             <span class="tag">CakePHP</span>-
             <span class="tag">ReactPHP</span>-
@@ -113,33 +139,33 @@
             <span class="tag">WebRTC</span>-
             <span class="tag">HTML</span>-
             <span class="tag">CSS</span>-
-            <span class="tag">asynchronous programming</span>-
-            <span class="tag">event-driven architecture</span>
+            <span class="tag" data-i18n="skills_async_programming">asynchronous programming</span>-
+            <span class="tag" data-i18n="skills_event_architecture">event-driven architecture</span>
           </p>
           <div class="endtag"></div>
 
-          <h3>Testing</h3>
+          <h3 data-i18n="skills_testing">Testing</h3>
           <p class="taglist2">
             <span class="tag">PHPUnit</span>-
-            <span class="tag">unit testing</span>-
-            <span class="tag">integration testing</span>-
-            <span class="tag">fixture-based testing</span>-
-            <span class="tag">regression testing</span>-
-            <span class="tag">mocking external integrations</span>
+            <span class="tag" data-i18n="skills_unit_testing">unit testing</span>-
+            <span class="tag" data-i18n="skills_integration_testing">integration testing</span>-
+            <span class="tag" data-i18n="skills_fixture_testing">fixture-based testing</span>-
+            <span class="tag" data-i18n="skills_regression_testing">regression testing</span>-
+            <span class="tag" data-i18n="skills_mocking">mocking external integrations</span>
           </p>
           <div class="endtag"></div>
 
-          <h3>Systems &amp; Integration</h3>
+          <h3 data-i18n="skills_systems_integration">Systems &amp; Integration</h3>
           <p class="taglist2">
             <span class="tag">TCP/IP</span>-
-            <span class="tag">asynchronous services</span>-
-            <span class="tag">external API integration</span>-
-            <span class="tag">XML-based protocols</span>-
+            <span class="tag" data-i18n="skills_async_services">asynchronous services</span>-
+            <span class="tag" data-i18n="skills_external_api">external API integration</span>-
+            <span class="tag" data-i18n="skills_xml_protocols">XML-based protocols</span>-
             <span class="tag">Linux</span>-
             <span class="tag">systemd</span>-
             <span class="tag">cron</span>-
             <span class="tag">Git</span>-
-            <span class="tag">production logging and troubleshooting</span>
+            <span class="tag" data-i18n="skills_production_logging">production logging and troubleshooting</span>
           </p>
           <div class="endtag"></div>
         </div>
@@ -148,69 +174,69 @@
 
       <div class="row">
         <div class="one-third column" id="experience">
-          <h2>Professional Experience <a href="#experience">¶</a></h2>
+          <h2><span data-i18n="section_experience">Professional Experience</span> <a href="#experience">¶</a></h2>
         </div>
         <div class="two-thirds column" section="experience">
-          <h3><span class="date"><span>2024 <span class="duration">Present</span></span></span> Software Engineer</h3>
-          <h4>PDMS GmbH, Germany</h4>
-          <p>Build and maintain business-critical software for pharmacy automation, pharmaceutical logistics, and automated medication storage.</p>
+          <h3><span class="date"><span>2024 <span class="duration" data-i18n="present">Present</span></span></span> <span data-i18n="pdms_role">Software Engineer</span></h3>
+          <h4 data-i18n="pdms_company">PDMS GmbH, Germany</h4>
+          <p data-i18n="pdms_summary">Build and maintain business-critical software for pharmacy automation, pharmaceutical logistics, and automated medication storage.</p>
           <ul>
             <li>
               <ul>
-                <li>Work on both modern and legacy CakePHP applications, including systems built with CakePHP's Table and Entity models.</li>
-                <li>Built a securPharm/NMVS integration with JSON-RPC, HTTP/cURL, and HMAC-signed requests. It validates GS1/DataMatrix codes with GTIN and PPN identifiers, supports medication verification, dispensing, and undo actions, and includes error handling, structured logging, and fallback workflows.</li>
-                <li>Built a WWKS2 service that connects pharmacy software to BD Rowa warehouse systems using asynchronous TCP communication and XML messages. It handles message correlation, buffering, backpressure, retries, and connection recovery.</li>
-                <li>Connected external services to day-to-day workflows for medication intake, storage, returns, dispensing, stock control, and task tracking.</li>
-                <li>Write unit and integration tests with PHPUnit, fixtures, and mocked integrations. Maintain the supporting Linux services with systemd and troubleshoot production issues.</li>
+                <li data-i18n="pdms_item_1">Work on both modern and legacy CakePHP applications, including systems built with CakePHP's Table and Entity models.</li>
+                <li data-i18n="pdms_item_2">Built a securPharm/NMVS integration with JSON-RPC, HTTP/cURL, and HMAC-signed requests. It validates GS1/DataMatrix codes with GTIN and PPN identifiers, supports medication verification, dispensing, and undo actions, and includes error handling, structured logging, and fallback workflows.</li>
+                <li data-i18n="pdms_item_3">Built a WWKS2 service that connects pharmacy software to BD Rowa warehouse systems using asynchronous TCP communication and XML messages. It handles message correlation, buffering, backpressure, retries, and connection recovery.</li>
+                <li data-i18n="pdms_item_4">Connected external services to day-to-day workflows for medication intake, storage, returns, dispensing, stock control, and task tracking.</li>
+                <li data-i18n="pdms_item_5">Write unit and integration tests with PHPUnit, fixtures, and mocked integrations. Maintain the supporting Linux services with systemd and troubleshoot production issues.</li>
               </ul>
             </li>
           </ul>
           <hr>
 
-          <h3><span class="date"><span>2017 <span class="duration">2020</span></span></span> Embedded Software Engineer</h3>
-          <h4>Technion – Israel Institute of Technology</h4>
+          <h3><span class="date"><span>2017 <span class="duration">2020</span></span></span> <span data-i18n="technion_role">Embedded Software Engineer</span></h3>
+          <h4 data-i18n="technion_company">Technion – Israel Institute of Technology</h4>
           <ul>
             <li>
               <ul>
-                <li>Designed and built inter-module communication interfaces for small satellites based on Atmel microcontrollers.</li>
-                <li>Wrote low-level firmware for data exchange between satellite modules.</li>
+                <li data-i18n="technion_item_1">Designed and built inter-module communication interfaces for small satellites based on Atmel microcontrollers.</li>
+                <li data-i18n="technion_item_2">Wrote low-level firmware for data exchange between satellite modules.</li>
               </ul>
             </li>
           </ul>
           <hr>
 
-          <h3><span class="date"><span>2012 <span class="duration">2017</span></span></span> Co-founder &amp; Head of Technical Department</h3>
-          <h4>LightTelecom Ltd, Ukraine</h4>
+          <h3><span class="date"><span>2012 <span class="duration">2017</span></span></span> <span data-i18n="lighttelecom_role">Co-founder &amp; Head of Technical Department</span></h3>
+          <h4 data-i18n="lighttelecom_company">LightTelecom Ltd, Ukraine</h4>
           <ul>
             <li>
               <ul>
-                <li>Led the implementation of IP PBX and telecommunications billing systems for medium and large companies.</li>
-                <li>Integrated telephony platforms with customers' CRM systems and other business applications.</li>
-                <li>Managed and supported 40+ customer installations in production.</li>
+                <li data-i18n="lighttelecom_item_1">Led the implementation of IP PBX and telecommunications billing systems for medium and large companies.</li>
+                <li data-i18n="lighttelecom_item_2">Integrated telephony platforms with customers' CRM systems and other business applications.</li>
+                <li data-i18n="lighttelecom_item_3">Managed and supported 40+ customer installations in production.</li>
               </ul>
             </li>
           </ul>
           <hr>
 
-          <h3><span class="date"><span>1998 <span class="duration"> 2009</span></span></span> Owner and Chief Executive Officer</h3>
-          <h4>Computer equipment store</h4>
+          <h3><span class="date"><span>1998 <span class="duration"> 2009</span></span></span> <span data-i18n="store_role">Owner and Chief Executive Officer</span></h3>
+          <h4 data-i18n="store_company">Computer equipment store</h4>
           <ul>
             <li>
               <ul>
-                <li>Managed the store, day-to-day operations, and business development.</li>
-                <li>Built and ran the company's online store.</li>
+                <li data-i18n="store_item_1">Managed the store, day-to-day operations, and business development.</li>
+                <li data-i18n="store_item_2">Built and ran the company's online store.</li>
               </ul>
             </li>
           </ul>
           <hr>
 
-          <h3><span class="date"><span>1994 <span class="duration">1998</span></span></span> Research Assistant &amp; Software Engineer</h3>
-          <h4>WellConstruction Ltd., Ukraine</h4>
+          <h3><span class="date"><span>1994 <span class="duration">1998</span></span></span> <span data-i18n="wellconstruction_role">Research Assistant &amp; Software Engineer</span></h3>
+          <h4 data-i18n="wellconstruction_company">WellConstruction Ltd., Ukraine</h4>
           <ul>
             <li>
               <ul>
-                <li>Developed software that automated construction cost estimates.</li>
-                <li>Built and evolved the system using Turbo Pascal → Object Pascal / Delphi, C++, and PostScript.</li>
+                <li data-i18n="wellconstruction_item_1">Developed software that automated construction cost estimates.</li>
+                <li data-i18n="wellconstruction_item_2">Built and evolved the system using Turbo Pascal → Object Pascal / Delphi, C++, and PostScript.</li>
               </ul>
             </li>
           </ul>
@@ -220,29 +246,29 @@
 
       <div class="row">
         <div class="one-third column" id="projects">
-          <h2>Selected Projects /<br class="projects-title-break"> Open Source <a href="#projects">¶</a></h2>
+          <h2><span data-i18n="section_projects">Selected Projects /</span><br class="projects-title-break"> <span data-i18n="section_open_source">Open Source</span> <a href="#projects">¶</a></h2>
         </div>
         <div class="two-thirds column" section="projects">
-          <h3><span class="date"><span>2020 <span class="duration">Present</span></span></span> Author of WebRTC SIP Phone extension</h3>
-          <h4>Develop and maintain a JavaScript/WebRTC browser extension that lets call centers and other businesses place SIP calls by clicking phone numbers on web pages.</h4>
-          Chrome Web Store: <a href="https://chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib" target="_blank">chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib</a>
+          <h3><span class="date"><span>2020 <span class="duration" data-i18n="present">Present</span></span></span> <span data-i18n="webrtc_role">Author of WebRTC SIP Phone extension</span></h3>
+          <h4 data-i18n="webrtc_description">Develop and maintain a JavaScript/WebRTC browser extension that lets call centers and other businesses place SIP calls by clicking phone numbers on web pages.</h4>
+          <span data-i18n="chrome_store">Chrome Web Store:</span> <a href="https://chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib" target="_blank">chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib</a>
           <hr>
 
-          <h3><span class="date"><span>2009 <span class="duration">Present</span></span></span> Owner and Developer</h3>
-          <h4>Cloud IP PBX service at <a href="https://sipde.net/" target="_blank">sipde.net</a></h4>
+          <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">Present</span></span></span> <span data-i18n="sip_role">Owner and Developer</span></h3>
+          <h4><span data-i18n="sip_description">Cloud IP PBX service at</span> <a href="https://sipde.net/" target="_blank">sipde.net</a></h4>
           <ul>
             <li>
               <ul>
-                <li>Develop and operate the Linux/Asterisk/A2Billing platform.</li>
-                <li>Handle production operations and customer support.</li>
+                <li data-i18n="sip_item_1">Develop and operate the Linux/Asterisk/A2Billing platform.</li>
+                <li data-i18n="sip_item_2">Handle production operations and customer support.</li>
               </ul>
             </li>
           </ul>
           <hr>
 
-          <h3><span class="date"><span>2009 <span class="duration">Present</span></span></span> Maintainer of A2Billing</h3>
-          <h4>Maintain an AGPLv3 telecom billing platform for Asterisk and use it to build and support PHP/MySQL billing and PBX systems.</h4>
-          Source code: <a href="https://github.com/nixonch/a2billing" target="_blank">github.com/nixonch/a2billing</a>
+          <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">Present</span></span></span> <span data-i18n="a2billing_role">Maintainer of A2Billing</span></h3>
+          <h4 data-i18n="a2billing_description">Maintain an AGPLv3 telecom billing platform for Asterisk and use it to build and support PHP/MySQL billing and PBX systems.</h4>
+          <span data-i18n="source_code">Source code:</span> <a href="https://github.com/nixonch/a2billing" target="_blank">github.com/nixonch/a2billing</a>
         </div>
       </div>
       <hr>
@@ -250,15 +276,15 @@
       <div class="education-tail" id="education">
         <div class="row">
           <div class="one-third column">
-            <h2>Education <a href="#education">¶</a></h2>
+            <h2><span data-i18n="section_education">Education</span> <a href="#education">¶</a></h2>
           </div>
           <div class="two-thirds column">
-            <h3><span class="date"><span>1989<span class="duration">1994</span></span></span> Kyiv National University of Construction and Architecture</h3>
+            <h3><span class="date"><span>1989<span class="duration">1994</span></span></span> <span data-i18n="education_university">Kyiv National University of Construction and Architecture</span></h3>
             <p>
-              Faculty: <a href="https://en.knuba.edu.ua/about/faculties-and-academic-units/faculty-of-automation-and-information-technology/" target="_blank">Automation and Information Technology</a><br>
-              Degree: M.Sc. in Automation and Computer-Integrated Technologies
+              <span data-i18n="faculty_label">Faculty:</span> <a href="https://en.knuba.edu.ua/about/faculties-and-academic-units/faculty-of-automation-and-information-technology/" target="_blank" data-i18n="faculty_name" data-faculty-link>Automation and Information Technology</a><br>
+              <span data-i18n="degree_label">Degree:</span> <span data-i18n="degree_name">M.Sc. in Automation and Computer-Integrated Technologies</span>
             </p>
-            <p>University website: <a href="https://en.knuba.edu.ua/" target="_blank">en.knuba.edu.ua</a></p>
+            <p><span data-i18n="university_website">University website:</span> <a href="https://en.knuba.edu.ua/" target="_blank" data-university-link>en.knuba.edu.ua</a></p>
           </div>
         </div>
         <hr>
@@ -269,13 +295,14 @@
               &nbsp;
             </div>
             <div class="two-thirds column">
-              Last updated: 29 July 2026
+              <span data-i18n="last_updated">Last updated: 29 July 2026</span>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <script src="js/i18n.js?v=20260730-5" onerror="document.documentElement.classList.remove('i18n-pending')"></script>
     <script src="//platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
