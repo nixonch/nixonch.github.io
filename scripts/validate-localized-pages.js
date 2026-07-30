@@ -80,6 +80,10 @@ function validateGeneratedPages() {
       `${page.directory}: visible profile content is not statically localized`
     );
     assert(
+      html.includes('<div class="case-study-links noprint">'),
+      `${page.directory}: case-study links must be excluded from print`
+    );
+    assert(
       html.includes(`<link rel="canonical" href="${pageUrl}" />`),
       `${page.directory}: incorrect canonical URL`
     );
