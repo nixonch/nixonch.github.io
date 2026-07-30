@@ -162,6 +162,10 @@ function renderAlternateLinks(caseStudy) {
 function renderCaseStudyPage(caseStudy, language) {
   const locale = localeMeta[language];
   const content = caseStudy.locales[language];
+  const technologies = [
+    ...caseStudy.technologies,
+    ...(content.additionalTechnologies || [])
+  ];
   const pageUrl = getCaseStudyUrl(caseStudy, language);
   const title = `${content.title} — Nick Mitin`;
   const structuredData = {
@@ -181,7 +185,7 @@ function renderCaseStudyPage(caseStudy, language) {
       name: "Nick Mitin",
       url: `${siteOrigin}/`
     },
-    about: caseStudy.technologies
+    about: technologies
   };
   const sections = content.sections.map((section) => {
     const paragraphs = section.paragraphs
@@ -193,7 +197,7 @@ function renderCaseStudyPage(caseStudy, language) {
 ${paragraphs}
         </section>`;
   }).join("\n");
-  const tags = caseStudy.technologies
+  const tags = technologies
     .map((technology) => `            <li>${escapeHtml(technology)}</li>`)
     .join("\n");
   const related = caseStudies

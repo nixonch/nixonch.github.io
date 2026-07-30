@@ -32,6 +32,7 @@ const caseStudies = [
     id: "wwks2",
     technologies: [
       "PHP",
+      "ReactPHP",
       "WWKS2",
       "BD Rowa",
       "TCP/IP",
@@ -237,6 +238,9 @@ const caseStudies = [
         slug: "securpharm-nmvs-verificacion-medicamentos",
         title: "Integración securPharm/NMVS: experiencia transferible a SEVeM",
         description: "Integración productiva de flujos de farmacia con el NMVS alemán para verificación, dispensación, reversión y gestión robusta de errores, con patrones técnicos transferibles al entorno español SEVeM.",
+        additionalTechnologies: [
+          "SEVeM"
+        ],
         sections: [
           {
             heading: "Contexto",

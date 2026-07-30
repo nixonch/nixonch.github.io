@@ -191,6 +191,19 @@ function validateCaseStudyPages() {
             html.includes("puede adaptarse al entorno español"),
           `${pageUrl}: German NMVS experience and SEVeM transferability are not explicit`
         );
+        assert(
+          html.includes("<li>SEVeM</li>") &&
+            structuredData.about.includes("SEVeM"),
+          `${pageUrl}: SEVeM is missing from technologies and structured data`
+        );
+      }
+
+      if (caseStudy.id === "wwks2") {
+        assert(
+          html.includes("<li>ReactPHP</li>") &&
+            structuredData.about.includes("ReactPHP"),
+          `${pageUrl}: ReactPHP is missing from technologies and structured data`
+        );
       }
     }
   }
