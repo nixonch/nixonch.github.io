@@ -16,6 +16,13 @@ const pageDefinitions = [
   { language: "uk", directory: "uk" },
   { language: "ru", directory: "ru" }
 ];
+const ongoingGermanStudyMarkers = {
+  en: "currently learning",
+  es: "sigo estudiándolo",
+  fr: "en cours d’apprentissage",
+  uk: "зараз продовжую вивчати",
+  ru: "продолжаю изучать"
+};
 
 function extractObject(source, variableName, endMarker) {
   const assignment = `var ${variableName} = `;
@@ -97,7 +104,7 @@ function validateGeneratedPages() {
       `${page.directory}: nested page contains a broken relative asset URL`
     );
     assert(
-      html.includes('src="../js/i18n.js?v=20260730-8"'),
+      html.includes('src="../js/i18n.js?v=20260730-9"'),
       `${page.directory}: localized page does not load the shared language script`
     );
     assert.strictEqual(structuredData.url, pageUrl, `${page.directory}: incorrect JSON-LD URL`);
@@ -128,6 +135,19 @@ function validateGeneratedPages() {
           html.includes("SEVeM") &&
           html.includes("transferible"),
         "es: German production experience and its transferability to SEVeM must be explicit"
+      );
+    }
+
+    if (page.language === "de") {
+      assert(
+        html.includes("lerne ich aktuell weiter"),
+        "de: ongoing German study note must remain in the German profile"
+      );
+    } else {
+      const marker = ongoingGermanStudyMarkers[page.language];
+      assert(
+        !marker || !html.includes(marker),
+        `${page.directory}: ongoing German study note must not be present`
       );
     }
   }
