@@ -233,7 +233,7 @@ ${serializedStructuredData}
   </head>
   <body>
     <main class="case-study-shell">
-      <a class="case-study-back" href="/">&larr; ${escapeHtml(locale.backLabel)}</a>
+      <a class="case-study-back" href="/">↩ ${escapeHtml(locale.backLabel)}</a>
       <header class="case-study-header">
         <p class="case-study-label">${escapeHtml(locale.label)}</p>
         <h1>${escapeHtml(content.title)}</h1>

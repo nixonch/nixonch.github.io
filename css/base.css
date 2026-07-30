@@ -767,6 +767,9 @@ html.i18n-pending body {
 		}
 	}
 	@media only screen and (max-width: 767.99px) {
+		.taglist2 .tag {
+			white-space: normal;
+		}
 		.infos {
 			padding-left: 0;
 		}

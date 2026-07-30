@@ -196,7 +196,7 @@ function validateCaseStudyPages() {
         `${pageUrl}: incomplete hreflang set`
       );
       assert(
-        html.includes(`href="/">&larr; ${escapeHtml(locale.backLabel)}</a>`),
+        html.includes(`href="/">↩ ${escapeHtml(locale.backLabel)}</a>`),
         `${pageUrl}: root CV backlink is missing`
       );
       assert.strictEqual(structuredData["@type"], "Article", `${pageUrl}: incorrect JSON-LD type`);
