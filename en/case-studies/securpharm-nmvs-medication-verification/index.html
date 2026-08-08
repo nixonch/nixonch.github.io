@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>securPharm/NMVS medication verification integration — Nick Mitin</title>
-    <meta name="description" content="Integration of pharmacy workflows with the German NMVS for medication verification, dispensing, undo operations, and resilient error handling." />
+    <meta name="description" content="Integration of medication-handling workflows with the German NMVS for verification, decommissioning, undo operations, and resilient error handling." />
     <meta name="author" content="Nick Mitin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -18,12 +18,12 @@
         "@type": "Article",
         "@id": "https://nixonch.github.io/en/case-studies/securpharm-nmvs-medication-verification/#article",
         "headline": "securPharm/NMVS medication verification integration",
-        "description": "Integration of pharmacy workflows with the German NMVS for medication verification, dispensing, undo operations, and resilient error handling.",
+        "description": "Integration of medication-handling workflows with the German NMVS for verification, decommissioning, undo operations, and resilient error handling.",
         "url": "https://nixonch.github.io/en/case-studies/securpharm-nmvs-medication-verification/",
         "mainEntityOfPage": "https://nixonch.github.io/en/case-studies/securpharm-nmvs-medication-verification/",
         "inLanguage": "en",
         "datePublished": "2026-07-30",
-        "dateModified": "2026-07-30",
+        "dateModified": "2026-08-08",
         "author": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
@@ -48,28 +48,50 @@
     </script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/css/base.css?v=20260730-8" />
-    <link rel="stylesheet" href="/css/case-study.css?v=20260730" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
     <link rel="shortcut icon" href="/images/mn.ico">
   </head>
   <body>
+    <script>
+      const hasSameOriginReferrer =
+        document.referrer !== "" &&
+        new URL(document.referrer).origin === window.location.origin;
+      const isExternalReferrer =
+        document.referrer !== "" && !hasSameOriginReferrer;
+      const canGoBackWithinSite =
+        window.history.length > 1 &&
+        !isExternalReferrer &&
+        ((window.navigation && window.navigation.canGoBack) || hasSameOriginReferrer);
+      const previousPageUrl =
+        window.navigation && window.navigation.canGoBack
+          ? window.navigation.entries()[window.navigation.currentEntry.index - 1].url || document.referrer
+          : canGoBackWithinSite
+            ? document.referrer
+            : "";
+      const isPreviousPageCaseStudy =
+        canGoBackWithinSite &&
+        typeof previousPageUrl === "string" &&
+        previousPageUrl !== "" &&
+        new URL(previousPageUrl).pathname.startsWith("/en/case-studies/");
+    </script>
     <main class="case-study-shell">
-      <a class="case-study-back" href="/">↩ Back to CV</a>
+      <a class="case-study-back" href="/" onclick="if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && canGoBackWithinSite) { event.preventDefault(); window.history.back(); }">↩ Back to CV</a>
       <header class="case-study-header">
         <p class="case-study-label">Technical case study</p>
         <h1>securPharm/NMVS medication verification integration</h1>
-        <p class="case-study-lead">Integration of pharmacy workflows with the German NMVS for medication verification, dispensing, undo operations, and resilient error handling.</p>
+        <p class="case-study-lead">Integration of medication-handling workflows with the German NMVS for verification, decommissioning, undo operations, and resilient error handling.</p>
       </header>
       <article class="case-study-article">
         <section class="case-study-section">
           <h2>Context</h2>
-          <p>Prescription medicine packs in the legal supply chain are verified against a national repository. In a pharmacy application this check must fit into existing intake and dispensing workflows without hiding repository errors or leaving pack state ambiguous.</p>
+          <p>Prescription medicine packs in the legal supply chain are verified against a national repository. In software used by pharmacies and blister centers, this check must fit into goods-receipt, dispensing, and blister-production workflows without hiding repository errors or leaving pack state ambiguous.</p>
           <p>The implemented integration targeted the German securPharm/NMVS environment. It needed to read GS1 DataMatrix information, support different product identifiers, authenticate requests, and represent repository responses clearly to the surrounding application.</p>
         </section>
         <section class="case-study-section">
           <h2>Integration design</h2>
           <p>I built a JSON-RPC integration over HTTP/cURL with HMAC-signed requests. It processes GS1/DataMatrix data with GTIN and PPN identifiers and supports medication verification, dispensing or decommissioning, and undo actions.</p>
-          <p>The integration keeps transport failures, repository responses, and business-level outcomes distinct. This allows the pharmacy workflow to decide whether to continue, retry, use an approved fallback, or require operator attention.</p>
+          <p>The integration keeps transport failures, repository responses, and business-level outcomes distinct. This allows the surrounding pharmacy or blister-production workflow to decide whether to continue, retry, use an approved fallback, or require operator attention.</p>
         </section>
         <section class="case-study-section">
           <h2>Error handling and traceability</h2>
@@ -100,12 +122,21 @@
         <section class="case-study-section case-study-related-section">
           <h2>Related case studies</h2>
           <ul class="case-study-related">
-            <li><a href="https://nixonch.github.io/en/case-studies/wwks2-pharmacy-warehouse-integration/">WWKS2 integration with an automated pharmacy warehouse</a></li>
-            <li><a href="https://nixonch.github.io/en/case-studies/legacy-php-healthcare-modernization/">Modernizing business-critical legacy PHP healthcare software</a></li>
+            <li><a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/">WWKS2 integration with automated medication storage</a></li>
+            <li><a href="/en/case-studies/legacy-php-healthcare-modernization/">Modernizing legacy PHP software for medication management and blister production</a></li>
           </ul>
         </section>
       </article>
     </main>
+    <script>
+      const caseStudyBackLink = document.querySelector(".case-study-back");
+
+      if (isPreviousPageCaseStudy) {
+        caseStudyBackLink.textContent = "↩ Back";
+      } else if (!canGoBackWithinSite) {
+        caseStudyBackLink.textContent = "↩ Go to CV";
+      }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
     <script>
       window.dataLayer = window.dataLayer || [];

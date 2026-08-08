@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Nick Mitin — Senior Software Engineer</title>
-    <meta name="description" content="Senior Software Engineer focused on PHP backend development, system integration, pharmacy automation, pharmaceutical logistics, and Linux-based services." />
+    <meta name="description" content="Senior Software Engineer focused on PHP backend development, system integration, software for medication management and patient-specific blister production, pharmaceutical logistics, and Linux-based services." />
     <meta name="author" content="Nick Mitin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -22,14 +22,14 @@
         "@id": "https://nixonch.github.io/#profile",
         "url": "https://nixonch.github.io/",
         "inLanguage": ["en", "de", "es", "fr", "uk", "ru"],
-        "dateModified": "2026-07-29",
+        "dateModified": "2026-08-08",
         "mainEntity": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
           "name": "Nick Mitin",
           "url": "https://nixonch.github.io/",
           "jobTitle": "Senior Software Engineer",
-          "description": "Senior Software Engineer focused on PHP backend development, system integration, pharmacy automation, pharmaceutical logistics, and Linux-based services.",
+          "description": "Senior Software Engineer focused on PHP backend development, system integration, software for medication management and patient-specific blister production, pharmaceutical logistics, and Linux-based services.",
           "sameAs": [
             "https://www.linkedin.com/in/nick-mitin-0593b0164/",
             "https://github.com/nixonch"
@@ -38,6 +38,9 @@
             "PHP backend development",
             "System integration",
             "Pharmacy automation",
+            "Medication management software",
+            "Patient-specific blister packaging",
+            "Blister production automation",
             "Pharmaceutical logistics",
             "Medication verification",
             "securPharm",
@@ -48,7 +51,7 @@
           ],
           "worksFor": {
             "@type": "Organization",
-            "name": "PDMS GmbH"
+            "name": "PDM+S"
           },
           "alumniOf": {
             "@type": "CollegeOrUniversity",
@@ -62,9 +65,9 @@
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/skeleton.css?v=20260730" />
+    <link rel="stylesheet" href="css/skeleton.css" />
     <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/base.css?v=20260730-9" />
+    <link rel="stylesheet" href="css/base.css" />
     <link rel="shortcut icon" href="images/mn.ico">
   </head>
 
@@ -141,7 +144,7 @@
           <h3 data-i18n="summary_heading">PHP Backend &amp; System Integration</h3>
           <h4 data-i18n="summary_lead">I build and modernize business-critical and legacy applications.</h4>
           <p data-i18n="summary_body">
-            Since 2024, my work has focused on pharmacy automation, medication verification, pharmaceutical logistics, and automated warehouse systems.
+            Since 2024, my work has focused on software for medication management and patient-specific blister production, medication verification, pharmaceutical logistics, and automated medication storage.
             I also bring extensive experience in VoIP, telecom billing, and Linux-based services.
           </p>
           <p>
@@ -178,7 +181,7 @@
           <h3 data-i18n="skills_backend_web">Backend &amp; Web</h3>
           <p class="taglist2">
             <span class="tag">CakePHP</span>-
-            <span class="tag">ReactPHP</span>-
+            <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" class="tag" data-case-study="wwks2">ReactPHP</a>-
             <span class="tag">Composer</span>-
             <span class="tag">REST APIs</span>-
             <span class="tag">JSON-RPC</span>-
@@ -229,15 +232,15 @@
         </div>
         <div class="two-thirds column" section="experience">
           <h3><span class="date"><span>2024 <span class="duration" data-i18n="present">Present</span></span></span> <span data-i18n="pdms_role">Software Engineer</span></h3>
-          <h4 data-i18n="pdms_company">PDMS GmbH, Germany</h4>
-          <p data-i18n="pdms_summary">Build and maintain business-critical software for pharmacy automation, pharmaceutical logistics, and automated medication storage.</p>
+          <h4 data-i18n="pdms_company">Pharmazeutische Datenmanagement + Service GmbH, Germany</h4>
+          <p data-i18n="pdms_summary">Build and maintain business-critical software for pharmacies and blister centers, covering medication management, blister production, pharmaceutical logistics, and automated medication storage.</p>
           <ul>
             <li>
               <ul>
-                <li data-i18n="pdms_item_1">Work on both modern and legacy CakePHP applications, including systems built with CakePHP's Table and Entity models.</li>
-                <li data-i18n="pdms_item_2">Built a securPharm/NMVS integration with JSON-RPC, HTTP/cURL, and HMAC-signed requests. It validates GS1/DataMatrix codes with GTIN and PPN identifiers, supports medication verification, dispensing, and undo actions, and includes error handling, structured logging, and fallback workflows.</li>
-                <li data-i18n="pdms_item_3">Built a WWKS2 service that connects pharmacy software to BD Rowa warehouse systems using asynchronous TCP communication and XML messages. It handles message correlation, buffering, backpressure, retries, and connection recovery.</li>
-                <li data-i18n="pdms_item_4">Connected external services to day-to-day workflows for medication intake, storage, returns, dispensing, stock control, and task tracking.</li>
+                <li data-i18n="pdms_item_1" data-case-study-technology="legacy">Work on both modern and legacy <a href="/en/case-studies/legacy-php-healthcare-modernization/" data-case-study="legacy">CakePHP</a> applications, including systems built with CakePHP's Table and Entity models.</li>
+                <li data-i18n="pdms_item_2" data-case-study-technology="nmvs">Built a <a href="/en/case-studies/securpharm-nmvs-medication-verification/" data-case-study="nmvs">securPharm/NMVS</a> integration with JSON-RPC, HTTP/cURL, and HMAC-signed requests. It validates GS1/DataMatrix codes with GTIN and PPN identifiers, supports medication verification, decommissioning, and undo actions, and includes error handling, structured logging, and fallback workflows.</li>
+                <li data-i18n="pdms_item_3" data-case-study-technology="wwks2">Built a <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" data-case-study="wwks2">WWKS2</a> service that connects medication-management and blister-production software to BD Rowa automated storage systems using asynchronous TCP communication and XML messages. It handles message correlation, buffering, backpressure, retries, and connection recovery.</li>
+                <li data-i18n="pdms_item_4">Connected external services to day-to-day workflows for goods receipt, medication storage and retrieval, dispensing and blister production, returns, stock control, and task tracking.</li>
                 <li data-i18n="pdms_item_5">Write unit and integration tests with PHPUnit, fixtures, and mocked integrations. Maintain the supporting Linux services with systemd and troubleshoot production issues.</li>
               </ul>
             </li>
@@ -257,7 +260,7 @@
           <hr>
 
           <h3><span class="date"><span>2012 <span class="duration">2017</span></span></span> <span data-i18n="lighttelecom_role">Co-founder &amp; Head of Technical Department</span></h3>
-          <h4 data-i18n="lighttelecom_company">LightTelecom Ltd, Ukraine</h4>
+          <h4 data-i18n="lighttelecom_company">LightTelecom LLC, Ukraine</h4>
           <ul>
             <li>
               <ul>
@@ -282,7 +285,7 @@
           <hr>
 
           <h3><span class="date"><span>1994 <span class="duration">1998</span></span></span> <span data-i18n="wellconstruction_role">Research Assistant &amp; Software Engineer</span></h3>
-          <h4 data-i18n="wellconstruction_company">WellConstruction Ltd., Ukraine</h4>
+          <h4 data-i18n="wellconstruction_company">WellConstruction LLC, Ukraine</h4>
           <ul>
             <li>
               <ul>
@@ -326,13 +329,13 @@
             <h3 data-i18n="case_studies_heading">Healthcare Software Case Studies</h3>
             <ul class="case-study-list">
               <li>
-                <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" data-case-study="wwks2" data-i18n="case_wwks2_title">WWKS2 integration with an automated pharmacy warehouse</a>
+                <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" data-case-study="wwks2" data-i18n="case_wwks2_title">WWKS2 integration with automated medication storage</a>
               </li>
               <li>
                 <a href="/en/case-studies/securpharm-nmvs-medication-verification/" data-case-study="nmvs" data-i18n="case_nmvs_title">securPharm/NMVS medication verification integration</a>
               </li>
               <li>
-                <a href="/en/case-studies/legacy-php-healthcare-modernization/" data-case-study="legacy" data-i18n="case_legacy_title">Modernizing business-critical legacy PHP healthcare software</a>
+                <a href="/en/case-studies/legacy-php-healthcare-modernization/" data-case-study="legacy" data-i18n="case_legacy_title">Modernizing legacy PHP software for medication management and blister production</a>
               </li>
             </ul>
           </div>
@@ -369,7 +372,7 @@
       </div>
     </div>
 
-    <script src="js/i18n.js?v=20260730-9" onerror="document.documentElement.classList.remove('i18n-pending')"></script>
+    <script src="js/i18n.js" onerror="document.documentElement.classList.remove('i18n-pending')"></script>
     <script src="//platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>

@@ -2,8 +2,8 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Modernización de software sanitario crítico basado en PHP legacy — Nick Mitin</title>
-    <meta name="description" content="Modernización incremental de aplicaciones de farmacia y sanidad mediante límites de integración controlados, pruebas automatizadas, logs y operación orientada a producción." />
+    <title>Modernización de software PHP legacy para gestión de la medicación y producción de blísteres — Nick Mitin</title>
+    <meta name="description" content="Modernización incremental de aplicaciones para gestión de la medicación y producción de blísteres mediante límites de integración controlados, pruebas automatizadas, logs y operación orientada a producción." />
     <meta name="author" content="Nick Mitin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -17,13 +17,13 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "@id": "https://nixonch.github.io/es/casos/modernizacion-php-legacy-software-sanitario/#article",
-        "headline": "Modernización de software sanitario crítico basado en PHP legacy",
-        "description": "Modernización incremental de aplicaciones de farmacia y sanidad mediante límites de integración controlados, pruebas automatizadas, logs y operación orientada a producción.",
+        "headline": "Modernización de software PHP legacy para gestión de la medicación y producción de blísteres",
+        "description": "Modernización incremental de aplicaciones para gestión de la medicación y producción de blísteres mediante límites de integración controlados, pruebas automatizadas, logs y operación orientada a producción.",
         "url": "https://nixonch.github.io/es/casos/modernizacion-php-legacy-software-sanitario/",
         "mainEntityOfPage": "https://nixonch.github.io/es/casos/modernizacion-php-legacy-software-sanitario/",
         "inLanguage": "es",
         "datePublished": "2026-07-30",
-        "dateModified": "2026-07-30",
+        "dateModified": "2026-08-08",
         "author": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
@@ -47,23 +47,45 @@
     </script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/css/base.css?v=20260730-8" />
-    <link rel="stylesheet" href="/css/case-study.css?v=20260730" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
     <link rel="shortcut icon" href="/images/mn.ico">
   </head>
   <body>
+    <script>
+      const hasSameOriginReferrer =
+        document.referrer !== "" &&
+        new URL(document.referrer).origin === window.location.origin;
+      const isExternalReferrer =
+        document.referrer !== "" && !hasSameOriginReferrer;
+      const canGoBackWithinSite =
+        window.history.length > 1 &&
+        !isExternalReferrer &&
+        ((window.navigation && window.navigation.canGoBack) || hasSameOriginReferrer);
+      const previousPageUrl =
+        window.navigation && window.navigation.canGoBack
+          ? window.navigation.entries()[window.navigation.currentEntry.index - 1].url || document.referrer
+          : canGoBackWithinSite
+            ? document.referrer
+            : "";
+      const isPreviousPageCaseStudy =
+        canGoBackWithinSite &&
+        typeof previousPageUrl === "string" &&
+        previousPageUrl !== "" &&
+        new URL(previousPageUrl).pathname.startsWith("/es/casos/");
+    </script>
     <main class="case-study-shell">
-      <a class="case-study-back" href="/">↩ Volver al CV</a>
+      <a class="case-study-back" href="/" onclick="if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && canGoBackWithinSite) { event.preventDefault(); window.history.back(); }">↩ Volver al CV</a>
       <header class="case-study-header">
         <p class="case-study-label">Caso técnico</p>
-        <h1>Modernización de software sanitario crítico basado en PHP legacy</h1>
-        <p class="case-study-lead">Modernización incremental de aplicaciones de farmacia y sanidad mediante límites de integración controlados, pruebas automatizadas, logs y operación orientada a producción.</p>
+        <h1>Modernización de software PHP legacy para gestión de la medicación y producción de blísteres</h1>
+        <p class="case-study-lead">Modernización incremental de aplicaciones para gestión de la medicación y producción de blísteres mediante límites de integración controlados, pruebas automatizadas, logs y operación orientada a producción.</p>
       </header>
       <article class="case-study-article">
         <section class="case-study-section">
           <h2>Contexto</h2>
-          <p>El software crítico de farmacia suele combinar código de larga vida, componentes actuales de CakePHP, procesos respaldados por base de datos y sistemas externos que no pueden sustituirse todos a la vez. El principal riesgo no es la antigüedad por sí sola, sino cambiar comportamientos interconectados sin suficiente observabilidad ni protección contra regresiones.</p>
-          <p>Las aplicaciones incluían patrones modernos y legacy de CakePHP, entre ellos modelos Table y Entity, y daban soporte a procesos diarios de medicamentos y existencias.</p>
+          <p>El software crítico para procesos farmacéuticos suele combinar código de larga vida, componentes más recientes del framework, procesos respaldados por base de datos e integraciones externas que no pueden sustituirse todas a la vez. El principal riesgo no es la antigüedad por sí sola, sino cambiar comportamientos interconectados sin suficiente observabilidad ni protección contra regresiones.</p>
+          <p>En este caso coexistían patrones modernos y legacy de CakePHP, entre ellos los modelos Table y Entity, dentro de las mismas aplicaciones, que daban soporte a procesos diarios de medicamentos y existencias.</p>
         </section>
         <section class="case-study-section">
           <h2>Enfoque de modernización</h2>
@@ -73,7 +95,7 @@
         <section class="case-study-section">
           <h2>Protección contra regresiones</h2>
           <p>Las pruebas PHPUnit, los fixtures de base de datos y las integraciones externas simuladas protegen los procesos de negocio y las rutas de error. Las pruebas de integración verifican el comportamiento entre la aplicación y los servicios, mientras que los logs estructurados aportan evidencia cuando producción difiere del entorno de pruebas.</p>
-          <p>Esta combinación es especialmente importante en software sanitario y farmacéutico, donde una solicitud técnicamente correcta puede representar un rechazo de negocio que debe gestionarse de forma explícita.</p>
+          <p>Esta combinación es especialmente importante en software sanitario y de operaciones farmacéuticas, donde una solicitud técnicamente correcta puede representar un rechazo de negocio que debe gestionarse de forma explícita.</p>
         </section>
         <section class="case-study-section">
           <h2>Responsabilidad en producción</h2>
@@ -99,12 +121,21 @@
         <section class="case-study-section case-study-related-section">
           <h2>Otros casos prácticos</h2>
           <ul class="case-study-related">
-            <li><a href="https://nixonch.github.io/es/casos/integracion-wwks2-almacen-farmacia/">Integración WWKS2 con un almacén automatizado de farmacia</a></li>
-            <li><a href="https://nixonch.github.io/es/casos/securpharm-nmvs-verificacion-medicamentos/">Integración securPharm/NMVS: experiencia transferible a SEVeM</a></li>
+            <li><a href="/es/casos/integracion-wwks2-almacen-farmacia/">Integración WWKS2 con almacenamiento automatizado de medicamentos</a></li>
+            <li><a href="/es/casos/securpharm-nmvs-verificacion-medicamentos/">Integración securPharm/NMVS: experiencia transferible a SEVeM</a></li>
           </ul>
         </section>
       </article>
     </main>
+    <script>
+      const caseStudyBackLink = document.querySelector(".case-study-back");
+
+      if (isPreviousPageCaseStudy) {
+        caseStudyBackLink.textContent = "↩ Volver";
+      } else if (!canGoBackWithinSite) {
+        caseStudyBackLink.textContent = "↩ Ir al CV";
+      }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
     <script>
       window.dataLayer = window.dataLayer || [];

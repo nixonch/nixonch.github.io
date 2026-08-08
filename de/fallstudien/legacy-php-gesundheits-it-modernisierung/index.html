@@ -2,8 +2,8 @@
 <html lang="de">
   <head>
     <meta charset="utf-8">
-    <title>Modernisierung geschäftskritischer Legacy-PHP-Software im Gesundheitswesen — Nick Mitin</title>
-    <meta name="description" content="Schrittweise Modernisierung von Apotheken- und Gesundheitsanwendungen durch kontrollierte Integrationsgrenzen, automatisierte Tests, Logging und produktionsnahen Betrieb." />
+    <title>Modernisierung von Legacy-PHP-Software für Medikationsmanagement und Blisterproduktion — Nick Mitin</title>
+    <meta name="description" content="Schrittweise Modernisierung von Anwendungen für Medikationsmanagement und Blisterproduktion durch kontrollierte Integrationsgrenzen, automatisierte Tests, Logging und produktionsnahen Betrieb." />
     <meta name="author" content="Nick Mitin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -17,13 +17,13 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "@id": "https://nixonch.github.io/de/fallstudien/legacy-php-gesundheits-it-modernisierung/#article",
-        "headline": "Modernisierung geschäftskritischer Legacy-PHP-Software im Gesundheitswesen",
-        "description": "Schrittweise Modernisierung von Apotheken- und Gesundheitsanwendungen durch kontrollierte Integrationsgrenzen, automatisierte Tests, Logging und produktionsnahen Betrieb.",
+        "headline": "Modernisierung von Legacy-PHP-Software für Medikationsmanagement und Blisterproduktion",
+        "description": "Schrittweise Modernisierung von Anwendungen für Medikationsmanagement und Blisterproduktion durch kontrollierte Integrationsgrenzen, automatisierte Tests, Logging und produktionsnahen Betrieb.",
         "url": "https://nixonch.github.io/de/fallstudien/legacy-php-gesundheits-it-modernisierung/",
         "mainEntityOfPage": "https://nixonch.github.io/de/fallstudien/legacy-php-gesundheits-it-modernisierung/",
         "inLanguage": "de",
         "datePublished": "2026-07-30",
-        "dateModified": "2026-07-30",
+        "dateModified": "2026-08-08",
         "author": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
@@ -47,23 +47,45 @@
     </script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/css/base.css?v=20260730-8" />
-    <link rel="stylesheet" href="/css/case-study.css?v=20260730" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
     <link rel="shortcut icon" href="/images/mn.ico">
   </head>
   <body>
+    <script>
+      const hasSameOriginReferrer =
+        document.referrer !== "" &&
+        new URL(document.referrer).origin === window.location.origin;
+      const isExternalReferrer =
+        document.referrer !== "" && !hasSameOriginReferrer;
+      const canGoBackWithinSite =
+        window.history.length > 1 &&
+        !isExternalReferrer &&
+        ((window.navigation && window.navigation.canGoBack) || hasSameOriginReferrer);
+      const previousPageUrl =
+        window.navigation && window.navigation.canGoBack
+          ? window.navigation.entries()[window.navigation.currentEntry.index - 1].url || document.referrer
+          : canGoBackWithinSite
+            ? document.referrer
+            : "";
+      const isPreviousPageCaseStudy =
+        canGoBackWithinSite &&
+        typeof previousPageUrl === "string" &&
+        previousPageUrl !== "" &&
+        new URL(previousPageUrl).pathname.startsWith("/de/fallstudien/");
+    </script>
     <main class="case-study-shell">
-      <a class="case-study-back" href="/">↩ Zurück zum Lebenslauf</a>
+      <a class="case-study-back" href="/" onclick="if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && canGoBackWithinSite) { event.preventDefault(); window.history.back(); }">↩ Zurück zum Lebenslauf</a>
       <header class="case-study-header">
         <p class="case-study-label">Technische Fallstudie</p>
-        <h1>Modernisierung geschäftskritischer Legacy-PHP-Software im Gesundheitswesen</h1>
-        <p class="case-study-lead">Schrittweise Modernisierung von Apotheken- und Gesundheitsanwendungen durch kontrollierte Integrationsgrenzen, automatisierte Tests, Logging und produktionsnahen Betrieb.</p>
+        <h1>Modernisierung von Legacy-PHP-Software für Medikationsmanagement und Blisterproduktion</h1>
+        <p class="case-study-lead">Schrittweise Modernisierung von Anwendungen für Medikationsmanagement und Blisterproduktion durch kontrollierte Integrationsgrenzen, automatisierte Tests, Logging und produktionsnahen Betrieb.</p>
       </header>
       <article class="case-study-article">
         <section class="case-study-section">
           <h2>Ausgangssituation</h2>
-          <p>Geschäftskritische Apothekensoftware verbindet häufig langlebigen Anwendungscode, aktuelle CakePHP-Komponenten, datenbankgestützte Abläufe und externe Systeme, die nicht gleichzeitig ersetzt werden können. Das Hauptrisiko ist nicht das Alter allein, sondern die Änderung vernetzter Abläufe ohne ausreichende Beobachtbarkeit und Regressionstests.</p>
-          <p>Die Anwendungen enthielten moderne und ältere CakePHP-Strukturen, darunter Table- und Entity-Modelle, und unterstützten tägliche Arzneimittel- und Bestandsprozesse.</p>
+          <p>Geschäftskritische Software für pharmazeutische Abläufe verbindet häufig langlebigen Anwendungscode, neuere Framework-Komponenten, datenbankgestützte Abläufe und externe Integrationen, die nicht gleichzeitig ersetzt werden können. Das Hauptrisiko ist nicht das Alter allein, sondern die Änderung vernetzter Abläufe ohne ausreichende Beobachtbarkeit und Regressionstests.</p>
+          <p>In diesem Fall bestanden moderne und ältere CakePHP-Strukturen, darunter Table- und Entity-Modelle, innerhalb derselben Anwendungen nebeneinander und unterstützten tägliche Arzneimittel- und Bestandsprozesse.</p>
         </section>
         <section class="case-study-section">
           <h2>Modernisierungsansatz</h2>
@@ -73,7 +95,7 @@
         <section class="case-study-section">
           <h2>Schutz vor Regressionen</h2>
           <p>PHPUnit-Tests, Datenbank-Fixtures und simulierte externe Integrationen schützen Geschäftsabläufe und Fehlerpfade. Integrationstests prüfen das Verhalten über Anwendungs- und Servicegrenzen hinweg; strukturierte Logs liefern Hinweise, wenn sich das Produktivverhalten von der Testumgebung unterscheidet.</p>
-          <p>Diese Kombination ist bei Gesundheits- und Apothekensoftware besonders wichtig, weil eine technisch erfolgreiche Anfrage dennoch eine fachliche Ablehnung darstellen kann, die explizit behandelt werden muss.</p>
+          <p>Diese Kombination ist bei Software für das Gesundheitswesen und pharmazeutische Abläufe besonders wichtig, weil eine technisch erfolgreiche Anfrage dennoch eine fachliche Ablehnung darstellen kann, die explizit behandelt werden muss.</p>
         </section>
         <section class="case-study-section">
           <h2>Verantwortung im Produktivbetrieb</h2>
@@ -99,12 +121,21 @@
         <section class="case-study-section case-study-related-section">
           <h2>Weitere Fallstudien</h2>
           <ul class="case-study-related">
-            <li><a href="https://nixonch.github.io/de/fallstudien/wwks2-apothekenlager-integration/">WWKS2-Integration mit einem automatisierten Apothekenlager</a></li>
-            <li><a href="https://nixonch.github.io/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/">securPharm/NMVS-Integration zur Arzneimittelverifikation</a></li>
+            <li><a href="/de/fallstudien/wwks2-apothekenlager-integration/">WWKS2-Integration mit automatisierter Arzneimittellagerung</a></li>
+            <li><a href="/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/">securPharm/NMVS-Integration zur Arzneimittelverifikation</a></li>
           </ul>
         </section>
       </article>
     </main>
+    <script>
+      const caseStudyBackLink = document.querySelector(".case-study-back");
+
+      if (isPreviousPageCaseStudy) {
+        caseStudyBackLink.textContent = "↩ Zurück";
+      } else if (!canGoBackWithinSite) {
+        caseStudyBackLink.textContent = "↩ Zum Lebenslauf";
+      }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
     <script>
       window.dataLayer = window.dataLayer || [];

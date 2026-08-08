@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Integración securPharm/NMVS: experiencia transferible a SEVeM — Nick Mitin</title>
-    <meta name="description" content="Integración productiva de flujos de farmacia con el NMVS alemán para verificación, dispensación, reversión y gestión robusta de errores, con patrones técnicos transferibles al entorno español SEVeM." />
+    <meta name="description" content="Integración productiva de flujos de gestión y manipulación de medicamentos con el NMVS alemán para verificación, desactivación, reversión y gestión robusta de errores, con patrones técnicos transferibles al entorno español SEVeM." />
     <meta name="author" content="Nick Mitin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -18,12 +18,12 @@
         "@type": "Article",
         "@id": "https://nixonch.github.io/es/casos/securpharm-nmvs-verificacion-medicamentos/#article",
         "headline": "Integración securPharm/NMVS: experiencia transferible a SEVeM",
-        "description": "Integración productiva de flujos de farmacia con el NMVS alemán para verificación, dispensación, reversión y gestión robusta de errores, con patrones técnicos transferibles al entorno español SEVeM.",
+        "description": "Integración productiva de flujos de gestión y manipulación de medicamentos con el NMVS alemán para verificación, desactivación, reversión y gestión robusta de errores, con patrones técnicos transferibles al entorno español SEVeM.",
         "url": "https://nixonch.github.io/es/casos/securpharm-nmvs-verificacion-medicamentos/",
         "mainEntityOfPage": "https://nixonch.github.io/es/casos/securpharm-nmvs-verificacion-medicamentos/",
         "inLanguage": "es",
         "datePublished": "2026-07-30",
-        "dateModified": "2026-07-30",
+        "dateModified": "2026-08-08",
         "author": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
@@ -49,28 +49,50 @@
     </script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/css/base.css?v=20260730-8" />
-    <link rel="stylesheet" href="/css/case-study.css?v=20260730" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
     <link rel="shortcut icon" href="/images/mn.ico">
   </head>
   <body>
+    <script>
+      const hasSameOriginReferrer =
+        document.referrer !== "" &&
+        new URL(document.referrer).origin === window.location.origin;
+      const isExternalReferrer =
+        document.referrer !== "" && !hasSameOriginReferrer;
+      const canGoBackWithinSite =
+        window.history.length > 1 &&
+        !isExternalReferrer &&
+        ((window.navigation && window.navigation.canGoBack) || hasSameOriginReferrer);
+      const previousPageUrl =
+        window.navigation && window.navigation.canGoBack
+          ? window.navigation.entries()[window.navigation.currentEntry.index - 1].url || document.referrer
+          : canGoBackWithinSite
+            ? document.referrer
+            : "";
+      const isPreviousPageCaseStudy =
+        canGoBackWithinSite &&
+        typeof previousPageUrl === "string" &&
+        previousPageUrl !== "" &&
+        new URL(previousPageUrl).pathname.startsWith("/es/casos/");
+    </script>
     <main class="case-study-shell">
-      <a class="case-study-back" href="/">↩ Volver al CV</a>
+      <a class="case-study-back" href="/" onclick="if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && canGoBackWithinSite) { event.preventDefault(); window.history.back(); }">↩ Volver al CV</a>
       <header class="case-study-header">
         <p class="case-study-label">Caso técnico</p>
         <h1>Integración securPharm/NMVS: experiencia transferible a SEVeM</h1>
-        <p class="case-study-lead">Integración productiva de flujos de farmacia con el NMVS alemán para verificación, dispensación, reversión y gestión robusta de errores, con patrones técnicos transferibles al entorno español SEVeM.</p>
+        <p class="case-study-lead">Integración productiva de flujos de gestión y manipulación de medicamentos con el NMVS alemán para verificación, desactivación, reversión y gestión robusta de errores, con patrones técnicos transferibles al entorno español SEVeM.</p>
       </header>
       <article class="case-study-article">
         <section class="case-study-section">
           <h2>Contexto</h2>
-          <p>Los envases de medicamentos con receta de la cadena legal se verifican contra un repositorio nacional. En una aplicación de farmacia, esta comprobación debe integrarse en los procesos existentes de recepción y dispensación sin ocultar errores del repositorio ni dejar ambiguo el estado del envase.</p>
+          <p>Los envases de medicamentos con receta de la cadena legal se verifican contra un repositorio nacional. En el software utilizado por farmacias y centros de producción de blísteres, esta comprobación debe integrarse en los procesos de recepción, dispensación y producción de blísteres sin ocultar errores del repositorio ni dejar ambiguo el estado del envase.</p>
           <p>La integración se implementó en producción para el entorno alemán securPharm/NMVS. El diseño se apoya en el marco europeo EMVS, por lo que sus patrones de lectura de GS1 DataMatrix, identificación de producto, autenticación y tratamiento de respuestas son reutilizables al adaptar una solución para SEVeM.</p>
         </section>
         <section class="case-study-section">
           <h2>Diseño de la integración</h2>
           <p>Desarrollé una integración JSON-RPC sobre HTTP/cURL con solicitudes firmadas mediante HMAC. Procesa datos GS1/DataMatrix con identificadores GTIN y PPN y admite verificación, dispensación o desactivación y operaciones de reversión.</p>
-          <p>La integración diferencia los fallos de transporte, las respuestas del repositorio y los resultados de negocio. Así, el flujo de farmacia puede decidir si continúa, reintenta, utiliza un procedimiento alternativo aprobado o requiere intervención del operador.</p>
+          <p>La integración diferencia los fallos de transporte, las respuestas del repositorio y los resultados de negocio. Así, el flujo de farmacia o producción de blísteres puede decidir si continúa, reintenta, utiliza un procedimiento alternativo aprobado o requiere intervención del operador.</p>
         </section>
         <section class="case-study-section">
           <h2>Errores y trazabilidad</h2>
@@ -102,12 +124,21 @@
         <section class="case-study-section case-study-related-section">
           <h2>Otros casos prácticos</h2>
           <ul class="case-study-related">
-            <li><a href="https://nixonch.github.io/es/casos/integracion-wwks2-almacen-farmacia/">Integración WWKS2 con un almacén automatizado de farmacia</a></li>
-            <li><a href="https://nixonch.github.io/es/casos/modernizacion-php-legacy-software-sanitario/">Modernización de software sanitario crítico basado en PHP legacy</a></li>
+            <li><a href="/es/casos/integracion-wwks2-almacen-farmacia/">Integración WWKS2 con almacenamiento automatizado de medicamentos</a></li>
+            <li><a href="/es/casos/modernizacion-php-legacy-software-sanitario/">Modernización de software PHP legacy para gestión de la medicación y producción de blísteres</a></li>
           </ul>
         </section>
       </article>
     </main>
+    <script>
+      const caseStudyBackLink = document.querySelector(".case-study-back");
+
+      if (isPreviousPageCaseStudy) {
+        caseStudyBackLink.textContent = "↩ Volver";
+      } else if (!canGoBackWithinSite) {
+        caseStudyBackLink.textContent = "↩ Ir al CV";
+      }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
     <script>
       window.dataLayer = window.dataLayer || [];

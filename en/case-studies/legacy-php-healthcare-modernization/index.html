@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Modernizing business-critical legacy PHP healthcare software — Nick Mitin</title>
-    <meta name="description" content="Incremental modernization of pharmacy and healthcare applications through controlled integration boundaries, automated tests, logging, and production-focused operations." />
+    <title>Modernizing legacy PHP software for medication management and blister production — Nick Mitin</title>
+    <meta name="description" content="Incremental modernization of medication-management and blister-production applications through controlled integration boundaries, automated tests, logging, and production-focused operations." />
     <meta name="author" content="Nick Mitin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -17,13 +17,13 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "@id": "https://nixonch.github.io/en/case-studies/legacy-php-healthcare-modernization/#article",
-        "headline": "Modernizing business-critical legacy PHP healthcare software",
-        "description": "Incremental modernization of pharmacy and healthcare applications through controlled integration boundaries, automated tests, logging, and production-focused operations.",
+        "headline": "Modernizing legacy PHP software for medication management and blister production",
+        "description": "Incremental modernization of medication-management and blister-production applications through controlled integration boundaries, automated tests, logging, and production-focused operations.",
         "url": "https://nixonch.github.io/en/case-studies/legacy-php-healthcare-modernization/",
         "mainEntityOfPage": "https://nixonch.github.io/en/case-studies/legacy-php-healthcare-modernization/",
         "inLanguage": "en",
         "datePublished": "2026-07-30",
-        "dateModified": "2026-07-30",
+        "dateModified": "2026-08-08",
         "author": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
@@ -47,23 +47,45 @@
     </script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/css/base.css?v=20260730-8" />
-    <link rel="stylesheet" href="/css/case-study.css?v=20260730" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
     <link rel="shortcut icon" href="/images/mn.ico">
   </head>
   <body>
+    <script>
+      const hasSameOriginReferrer =
+        document.referrer !== "" &&
+        new URL(document.referrer).origin === window.location.origin;
+      const isExternalReferrer =
+        document.referrer !== "" && !hasSameOriginReferrer;
+      const canGoBackWithinSite =
+        window.history.length > 1 &&
+        !isExternalReferrer &&
+        ((window.navigation && window.navigation.canGoBack) || hasSameOriginReferrer);
+      const previousPageUrl =
+        window.navigation && window.navigation.canGoBack
+          ? window.navigation.entries()[window.navigation.currentEntry.index - 1].url || document.referrer
+          : canGoBackWithinSite
+            ? document.referrer
+            : "";
+      const isPreviousPageCaseStudy =
+        canGoBackWithinSite &&
+        typeof previousPageUrl === "string" &&
+        previousPageUrl !== "" &&
+        new URL(previousPageUrl).pathname.startsWith("/en/case-studies/");
+    </script>
     <main class="case-study-shell">
-      <a class="case-study-back" href="/">↩ Back to CV</a>
+      <a class="case-study-back" href="/" onclick="if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && canGoBackWithinSite) { event.preventDefault(); window.history.back(); }">↩ Back to CV</a>
       <header class="case-study-header">
         <p class="case-study-label">Technical case study</p>
-        <h1>Modernizing business-critical legacy PHP healthcare software</h1>
-        <p class="case-study-lead">Incremental modernization of pharmacy and healthcare applications through controlled integration boundaries, automated tests, logging, and production-focused operations.</p>
+        <h1>Modernizing legacy PHP software for medication management and blister production</h1>
+        <p class="case-study-lead">Incremental modernization of medication-management and blister-production applications through controlled integration boundaries, automated tests, logging, and production-focused operations.</p>
       </header>
       <article class="case-study-article">
         <section class="case-study-section">
           <h2>Context</h2>
-          <p>Business-critical pharmacy software often combines long-lived application code, current CakePHP components, database-backed workflows, and external systems that cannot all be replaced at once. The primary risk is not age by itself, but changing interconnected behavior without enough observability or regression protection.</p>
-          <p>The applications included both modern and legacy CakePHP patterns, including Table and Entity models, and supported daily medication and stock workflows.</p>
+          <p>Business-critical pharmaceutical workflow software often combines long-lived application code, newer framework components, database-backed workflows, and external integrations that cannot all be replaced at once. The primary risk is not age by itself, but changing interconnected behavior without enough observability or regression protection.</p>
+          <p>In this case, modern and legacy CakePHP patterns—including Table and Entity models—coexisted within the same applications and supported daily medication and stock workflows.</p>
         </section>
         <section class="case-study-section">
           <h2>Modernization approach</h2>
@@ -73,7 +95,7 @@
         <section class="case-study-section">
           <h2>Regression protection</h2>
           <p>PHPUnit tests, database fixtures, and mocked external integrations protect business workflows and failure paths. Integration tests verify behavior across application and service boundaries, while structured logs provide evidence when production behavior differs from a test environment.</p>
-          <p>This combination is particularly important in healthcare and pharmacy software, where a technically successful request may still represent a business-level rejection that must be handled explicitly.</p>
+          <p>This combination is particularly important in healthcare and pharmaceutical operations software, where a technically successful request may still represent a business-level rejection that must be handled explicitly.</p>
         </section>
         <section class="case-study-section">
           <h2>Production ownership</h2>
@@ -99,12 +121,21 @@
         <section class="case-study-section case-study-related-section">
           <h2>Related case studies</h2>
           <ul class="case-study-related">
-            <li><a href="https://nixonch.github.io/en/case-studies/wwks2-pharmacy-warehouse-integration/">WWKS2 integration with an automated pharmacy warehouse</a></li>
-            <li><a href="https://nixonch.github.io/en/case-studies/securpharm-nmvs-medication-verification/">securPharm/NMVS medication verification integration</a></li>
+            <li><a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/">WWKS2 integration with automated medication storage</a></li>
+            <li><a href="/en/case-studies/securpharm-nmvs-medication-verification/">securPharm/NMVS medication verification integration</a></li>
           </ul>
         </section>
       </article>
     </main>
+    <script>
+      const caseStudyBackLink = document.querySelector(".case-study-back");
+
+      if (isPreviousPageCaseStudy) {
+        caseStudyBackLink.textContent = "↩ Back";
+      } else if (!canGoBackWithinSite) {
+        caseStudyBackLink.textContent = "↩ Go to CV";
+      }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
     <script>
       window.dataLayer = window.dataLayer || [];

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Nick Mitin — Ingénieur logiciel senior</title>
-    <meta name="description" content="Ingénieur logiciel senior spécialisé dans le développement backend PHP, l’intégration de systèmes, l’automatisation des pharmacies, la logistique pharmaceutique et les services sous Linux." />
+    <meta name="description" content="Ingénieur logiciel senior spécialisé dans le développement backend PHP, l’intégration de systèmes, les logiciels de gestion des traitements et de préparation personnalisée des doses, la logistique pharmaceutique et les services sous Linux." />
     <meta name="author" content="Nick Mitin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -22,14 +22,14 @@
         "@id": "https://nixonch.github.io/fr/#profile",
         "url": "https://nixonch.github.io/fr/",
         "inLanguage": "fr",
-        "dateModified": "2026-07-29",
+        "dateModified": "2026-08-08",
         "mainEntity": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
           "name": "Nick Mitin",
           "url": "https://nixonch.github.io/",
           "jobTitle": "Ingénieur logiciel senior",
-          "description": "Ingénieur logiciel senior spécialisé dans le développement backend PHP, l’intégration de systèmes, l’automatisation des pharmacies, la logistique pharmaceutique et les services sous Linux.",
+          "description": "Ingénieur logiciel senior spécialisé dans le développement backend PHP, l’intégration de systèmes, les logiciels de gestion des traitements et de préparation personnalisée des doses, la logistique pharmaceutique et les services sous Linux.",
           "sameAs": [
             "https://www.linkedin.com/in/nick-mitin-0593b0164/",
             "https://github.com/nixonch"
@@ -38,6 +38,9 @@
             "PHP backend development",
             "System integration",
             "Pharmacy automation",
+            "Medication management software",
+            "Patient-specific blister packaging",
+            "Blister production automation",
             "Pharmaceutical logistics",
             "Medication verification",
             "securPharm",
@@ -48,7 +51,7 @@
           ],
           "worksFor": {
             "@type": "Organization",
-            "name": "PDMS GmbH"
+            "name": "PDM+S"
           },
           "alumniOf": {
             "@type": "CollegeOrUniversity",
@@ -62,9 +65,9 @@
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/skeleton.css?v=20260730" />
+    <link rel="stylesheet" href="../css/skeleton.css" />
     <link rel="stylesheet" href="../css/layout.css" />
-    <link rel="stylesheet" href="../css/base.css?v=20260730-9" />
+    <link rel="stylesheet" href="../css/base.css" />
     <link rel="shortcut icon" href="../images/mn.ico">
   </head>
 
@@ -140,7 +143,7 @@
         <div class="two-thirds column" section="summary">
           <h3 data-i18n="summary_heading">Backend PHP et intégration de systèmes</h3>
           <h4 data-i18n="summary_lead">Je développe et modernise des applications critiques pour l’entreprise, y compris des systèmes historiques.</h4>
-          <p data-i18n="summary_body">Depuis 2024, mon travail porte principalement sur l’automatisation des pharmacies, la vérification des médicaments, la logistique pharmaceutique et les systèmes d’entrepôt automatisés. J’ai également une solide expérience de la VoIP, de la facturation télécom et des services sous Linux.</p>
+          <p data-i18n="summary_body">Depuis 2024, mon travail porte principalement sur les logiciels de gestion des traitements et de préparation personnalisée des doses, la vérification des médicaments, la logistique pharmaceutique et le stockage automatisé de médicaments. J’ai également une solide expérience de la VoIP, de la facturation télécom et des services sous Linux.</p>
           <p>
             <strong data-i18n="summary_languages_label">Langues :</strong>
             <span data-i18n="summary_languages">anglais (B2), allemand (B1), ukrainien (langue maternelle), russe (courant).</span>
@@ -175,7 +178,7 @@
           <h3 data-i18n="skills_backend_web">Backend et web</h3>
           <p class="taglist2">
             <span class="tag">CakePHP</span>-
-            <span class="tag">ReactPHP</span>-
+            <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" class="tag" data-case-study="wwks2">ReactPHP</a>-
             <span class="tag">Composer</span>-
             <span class="tag">REST APIs</span>-
             <span class="tag">JSON-RPC</span>-
@@ -226,15 +229,15 @@
         </div>
         <div class="two-thirds column" section="experience">
           <h3><span class="date"><span>2024 <span class="duration" data-i18n="present">aujourd’hui</span></span></span> <span data-i18n="pdms_role">Ingénieur logiciel</span></h3>
-          <h4 data-i18n="pdms_company">PDMS GmbH, Allemagne</h4>
-          <p data-i18n="pdms_summary">Je développe et maintiens des logiciels critiques pour l’automatisation des pharmacies, la logistique pharmaceutique et le stockage automatisé de médicaments.</p>
+          <h4 data-i18n="pdms_company">Pharmazeutische Datenmanagement + Service GmbH, Allemagne</h4>
+          <p data-i18n="pdms_summary">Je développe et maintiens des logiciels critiques pour les pharmacies et les centres de préparation de doses, couvrant la gestion des traitements, la production de doses personnalisées, la logistique pharmaceutique et le stockage automatisé de médicaments.</p>
           <ul>
             <li>
               <ul>
-                <li data-i18n="pdms_item_1">Je travaille sur des applications CakePHP modernes comme historiques, notamment des systèmes construits avec les modèles Table et Entity de CakePHP.</li>
-                <li data-i18n="pdms_item_2">J’ai développé une intégration securPharm/NMVS utilisant JSON-RPC, HTTP/cURL et des requêtes signées par HMAC. Elle valide les codes GS1/DataMatrix comportant des identifiants GTIN et PPN, prend en charge la vérification et la délivrance des médicaments ainsi que l’annulation des opérations, avec gestion des erreurs, journalisation structurée et scénarios de secours.</li>
-                <li data-i18n="pdms_item_3">J’ai développé un service WWKS2 qui relie le logiciel de pharmacie aux systèmes de stockage BD Rowa via des communications TCP asynchrones et des messages XML. Il gère la corrélation des messages, la mise en mémoire tampon, la contre-pression, les nouvelles tentatives et le rétablissement de la connexion.</li>
-                <li data-i18n="pdms_item_4">J’ai intégré des services externes aux processus quotidiens de réception, de stockage, de retour et de délivrance des médicaments, de contrôle des stocks et de suivi des tâches.</li>
+                <li data-i18n="pdms_item_1" data-case-study-technology="legacy">Je travaille sur des applications <a href="/en/case-studies/legacy-php-healthcare-modernization/" data-case-study="legacy">CakePHP</a> modernes comme historiques, notamment des systèmes construits avec les modèles Table et Entity de CakePHP.</li>
+                <li data-i18n="pdms_item_2" data-case-study-technology="nmvs">J’ai développé une intégration <a href="/en/case-studies/securpharm-nmvs-medication-verification/" data-case-study="nmvs">securPharm/NMVS</a> utilisant JSON-RPC, HTTP/cURL et des requêtes signées par HMAC. Elle valide les codes GS1/DataMatrix comportant des identifiants GTIN et PPN, prend en charge la vérification et la désactivation des boîtes ainsi que l’annulation de ces opérations, avec gestion des erreurs, journalisation structurée et scénarios de secours.</li>
+                <li data-i18n="pdms_item_3" data-case-study-technology="wwks2">J’ai développé un service <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" data-case-study="wwks2">WWKS2</a> qui relie les logiciels de gestion des traitements et de production de doses personnalisées aux systèmes de stockage automatisé BD Rowa via des communications TCP asynchrones et des messages XML. Il gère la corrélation des messages, la mise en mémoire tampon, la contre-pression, les nouvelles tentatives et le rétablissement de la connexion.</li>
+                <li data-i18n="pdms_item_4">J’ai intégré des services externes aux processus quotidiens de réception, de stockage et de déstockage des médicaments, de délivrance et de préparation de doses personnalisées, de retour, de contrôle des stocks et de suivi des tâches.</li>
                 <li data-i18n="pdms_item_5">J’écris des tests unitaires et d’intégration avec PHPUnit, des fixtures et des intégrations simulées. Je maintiens également les services Linux associés avec systemd et diagnostique les incidents en production.</li>
               </ul>
             </li>
@@ -254,7 +257,7 @@
           <hr>
 
           <h3><span class="date"><span>2012 <span class="duration">2017</span></span></span> <span data-i18n="lighttelecom_role">Cofondateur et responsable du département technique</span></h3>
-          <h4 data-i18n="lighttelecom_company">LightTelecom Ltd, Ukraine</h4>
+          <h4 data-i18n="lighttelecom_company">LightTelecom LLC, Ukraine</h4>
           <ul>
             <li>
               <ul>
@@ -279,7 +282,7 @@
           <hr>
 
           <h3><span class="date"><span>1994 <span class="duration">1998</span></span></span> <span data-i18n="wellconstruction_role">Assistant de recherche et ingénieur logiciel</span></h3>
-          <h4 data-i18n="wellconstruction_company">WellConstruction Ltd., Ukraine</h4>
+          <h4 data-i18n="wellconstruction_company">WellConstruction LLC, Ukraine</h4>
           <ul>
             <li>
               <ul>
@@ -323,13 +326,13 @@
             <h3 data-i18n="case_studies_heading">Études de cas sur les logiciels de santé (en anglais)</h3>
             <ul class="case-study-list">
               <li>
-                <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" data-case-study="wwks2" data-i18n="case_wwks2_title">Intégration WWKS2 avec un entrepôt automatisé de pharmacie</a>
+                <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" data-case-study="wwks2" data-i18n="case_wwks2_title">Intégration WWKS2 avec un stockage automatisé de médicaments</a>
               </li>
               <li>
                 <a href="/en/case-studies/securpharm-nmvs-medication-verification/" data-case-study="nmvs" data-i18n="case_nmvs_title">Intégration securPharm/NMVS pour la vérification des médicaments</a>
               </li>
               <li>
-                <a href="/en/case-studies/legacy-php-healthcare-modernization/" data-case-study="legacy" data-i18n="case_legacy_title">Modernisation d’un logiciel de santé PHP legacy critique</a>
+                <a href="/en/case-studies/legacy-php-healthcare-modernization/" data-case-study="legacy" data-i18n="case_legacy_title">Modernisation de logiciels PHP legacy pour la gestion des traitements et la préparation de doses personnalisées</a>
               </li>
             </ul>
           </div>
@@ -366,7 +369,7 @@
       </div>
     </div>
 
-    <script src="../js/i18n.js?v=20260730-9" onerror="document.documentElement.classList.remove('i18n-pending')"></script>
+    <script src="../js/i18n.js" onerror="document.documentElement.classList.remove('i18n-pending')"></script>
     <script src="//platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>

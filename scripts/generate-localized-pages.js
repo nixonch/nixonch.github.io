@@ -102,6 +102,31 @@ function replaceCaseStudyLinks(html, localizedCaseStudyLinks) {
   }, html);
 }
 
+const caseStudyTechnologyPatterns = {
+  legacy: /CakePHP/,
+  nmvs: /securPharm-?\/NMVS/,
+  wwks2: /WWKS2/
+};
+
+function insertCaseStudyTechnologyLinks(html, localizedCaseStudyLinks) {
+  return Object.keys(caseStudyTechnologyPatterns).reduce((localizedHtml, key) => {
+    const escapedKey = escapeRegExp(key);
+    const itemPattern = new RegExp(
+      `(<li\\b[^>]*\\bdata-case-study-technology="${escapedKey}"[^>]*>)([\\s\\S]*?)(<\\/li>)`,
+      "g"
+    );
+
+    return localizedHtml.replace(itemPattern, (match, openingTag, content, closingTag) => {
+      const linkedContent = content.replace(
+        caseStudyTechnologyPatterns[key],
+        (technology) => `<a href="${escapeAttribute(localizedCaseStudyLinks[key])}" data-case-study="${key}">${technology}</a>`
+      );
+
+      return `${openingTag}${linkedContent}${closingTag}`;
+    });
+  }, html);
+}
+
 function localizePage(template, translations, universityLinks, caseStudyLinks, page) {
   const dictionary = translations[page.language];
   const pageUrl = `${siteOrigin}/${page.directory}/`;
@@ -128,6 +153,7 @@ function localizePage(template, translations, universityLinks, caseStudyLinks, p
     /(<a href=")[^"]+(" target="_blank" data-university-link>)[\s\S]*?(<\/a>)/,
     `$1${localizedUniversityLinks.universityUrl}$2${escapeHtml(localizedUniversityLinks.universityLabel)}$3`
   );
+  html = insertCaseStudyTechnologyLinks(html, localizedCaseStudyLinks);
   html = replaceCaseStudyLinks(html, localizedCaseStudyLinks);
   html = replaceStructuredData(html, pageUrl, page.language, dictionary);
 
@@ -140,11 +166,15 @@ function localizePage(template, translations, universityLinks, caseStudyLinks, p
   return html;
 }
 
-function getCaseStudyUrl(caseStudy, language) {
+function getCaseStudyPath(caseStudy, language) {
   const locale = localeMeta[language];
   const content = caseStudy.locales[language];
 
-  return `${siteOrigin}/${locale.directory}/${locale.section}/${content.slug}/`;
+  return `/${locale.directory}/${locale.section}/${content.slug}/`;
+}
+
+function getCaseStudyUrl(caseStudy, language) {
+  return `${siteOrigin}${getCaseStudyPath(caseStudy, language)}`;
 }
 
 function renderAlternateLinks(caseStudy) {
@@ -178,7 +208,7 @@ function renderCaseStudyPage(caseStudy, language) {
     mainEntityOfPage: pageUrl,
     inLanguage: language,
     datePublished: "2026-07-30",
-    dateModified: "2026-07-30",
+    dateModified: "2026-08-08",
     author: {
       "@type": "Person",
       "@id": `${siteOrigin}/#person`,
@@ -203,7 +233,7 @@ ${paragraphs}
   const related = caseStudies
     .filter((relatedCaseStudy) => relatedCaseStudy.id !== caseStudy.id)
     .map((relatedCaseStudy) => (
-      `            <li><a href="${getCaseStudyUrl(relatedCaseStudy, language)}">${escapeHtml(relatedCaseStudy.locales[language].title)}</a></li>`
+      `            <li><a href="${getCaseStudyPath(relatedCaseStudy, language)}">${escapeHtml(relatedCaseStudy.locales[language].title)}</a></li>`
     ))
     .join("\n");
   const serializedStructuredData = JSON.stringify(structuredData, null, 2)
@@ -227,13 +257,35 @@ ${serializedStructuredData}
     </script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/css/base.css?v=20260730-8" />
-    <link rel="stylesheet" href="/css/case-study.css?v=20260730" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
     <link rel="shortcut icon" href="/images/mn.ico">
   </head>
   <body>
+    <script>
+      const hasSameOriginReferrer =
+        document.referrer !== "" &&
+        new URL(document.referrer).origin === window.location.origin;
+      const isExternalReferrer =
+        document.referrer !== "" && !hasSameOriginReferrer;
+      const canGoBackWithinSite =
+        window.history.length > 1 &&
+        !isExternalReferrer &&
+        ((window.navigation && window.navigation.canGoBack) || hasSameOriginReferrer);
+      const previousPageUrl =
+        window.navigation && window.navigation.canGoBack
+          ? window.navigation.entries()[window.navigation.currentEntry.index - 1].url || document.referrer
+          : canGoBackWithinSite
+            ? document.referrer
+            : "";
+      const isPreviousPageCaseStudy =
+        canGoBackWithinSite &&
+        typeof previousPageUrl === "string" &&
+        previousPageUrl !== "" &&
+        new URL(previousPageUrl).pathname.startsWith("/${locale.directory}/${locale.section}/");
+    </script>
     <main class="case-study-shell">
-      <a class="case-study-back" href="/">↩ ${escapeHtml(locale.backLabel)}</a>
+      <a class="case-study-back" href="/" onclick="if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && canGoBackWithinSite) { event.preventDefault(); window.history.back(); }">↩ ${escapeHtml(locale.backLabel)}</a>
       <header class="case-study-header">
         <p class="case-study-label">${escapeHtml(locale.label)}</p>
         <h1>${escapeHtml(content.title)}</h1>
@@ -255,6 +307,15 @@ ${related}
         </section>
       </article>
     </main>
+    <script>
+      const caseStudyBackLink = document.querySelector(".case-study-back");
+
+      if (isPreviousPageCaseStudy) {
+        caseStudyBackLink.textContent = ${JSON.stringify(`↩ ${locale.previousPageLabel}`)};
+      } else if (!canGoBackWithinSite) {
+        caseStudyBackLink.textContent = ${JSON.stringify(`↩ ${locale.cvLinkLabel}`)};
+      }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -276,7 +337,7 @@ function renderSitemapAlternates(alternates) {
 function renderSitemapEntry(url, alternates) {
   return `  <url>
     <loc>${url}</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-08</lastmod>
 ${renderSitemapAlternates(alternates)}
   </url>`;
 }
@@ -319,9 +380,9 @@ ${entries.join("\n")}
 }
 
 const template = fs.readFileSync(sourceHtmlPath, "utf8");
-const i18nSource = fs.readFileSync(sourceI18nPath, "utf8");
+const i18nSource = fs.readFileSync(sourceI18nPath, "utf8").replace(/\r\n?/g, "\n");
 const translations = extractObject(i18nSource, "translations", "\n\n  var caseStudyLinks");
-const caseStudyLinks = extractObject(i18nSource, "caseStudyLinks", "\n\n  var universityLinks");
+const caseStudyLinks = extractObject(i18nSource, "caseStudyLinks", "\n\n  var caseStudyTechnologyPatterns");
 const universityLinks = extractObject(i18nSource, "universityLinks", "\n\n  function normalizeLanguage");
 
 for (const page of languagePages) {

@@ -6,6 +6,8 @@ const localeMeta = {
     section: "case-studies",
     label: "Technical case study",
     backLabel: "Back to CV",
+    cvLinkLabel: "Go to CV",
+    previousPageLabel: "Back",
     technologiesLabel: "Technologies and concepts",
     relatedLabel: "Related case studies"
   },
@@ -14,6 +16,8 @@ const localeMeta = {
     section: "fallstudien",
     label: "Technische Fallstudie",
     backLabel: "Zurück zum Lebenslauf",
+    cvLinkLabel: "Zum Lebenslauf",
+    previousPageLabel: "Zurück",
     technologiesLabel: "Technologien und Konzepte",
     relatedLabel: "Weitere Fallstudien"
   },
@@ -22,6 +26,8 @@ const localeMeta = {
     section: "casos",
     label: "Caso técnico",
     backLabel: "Volver al CV",
+    cvLinkLabel: "Ir al CV",
+    previousPageLabel: "Volver",
     technologiesLabel: "Tecnologías y conceptos",
     relatedLabel: "Otros casos prácticos"
   }
@@ -47,20 +53,20 @@ const caseStudies = [
     locales: {
       en: {
         slug: "wwks2-pharmacy-warehouse-integration",
-        title: "WWKS2 integration with an automated pharmacy warehouse",
-        description: "An asynchronous service connecting pharmacy software with BD Rowa storage systems through WWKS2, TCP, XML, and recoverable message processing.",
+        title: "WWKS2 integration with automated medication storage",
+        description: "An asynchronous service connecting medication-management and blister-production software with BD Rowa storage systems through WWKS2, TCP, XML, and recoverable message processing.",
         sections: [
           {
             heading: "Context",
             paragraphs: [
-              "Pharmacy software must coordinate medication intake, storage, dispensing, returns, stock control, and operational tasks with an automated warehouse. The integration is part of daily pharmacy work, so connection failures and delayed responses cannot be treated as exceptional edge cases.",
+              "Software used by pharmacies and blister centers must coordinate goods receipt, storage and retrieval, dispensing or production supply, returns, stock control, and operational tasks with automated storage systems. The integration is part of daily operations, so connection failures and delayed responses cannot be treated as exceptional edge cases.",
               "The warehouse interface used WWKS2 messages over a persistent TCP connection. Several requests could be in flight while responses arrived asynchronously, which made reliable message correlation and controlled buffering essential."
             ]
           },
           {
             heading: "Engineering approach",
             paragraphs: [
-              "I built an asynchronous PHP service that separates pharmacy workflows from the device connection. It sends and receives XML messages, correlates responses with their originating requests, and maintains explicit queues instead of relying on synchronous request-response assumptions.",
+              "I built an asynchronous PHP service that separates medication and production workflows from the device connection. It sends and receives XML messages, correlates responses with their originating requests, and maintains explicit queues instead of relying on synchronous request-response assumptions.",
               "Buffering and backpressure prevent producers from overwhelming the connection. Retry rules and connection recovery handle transient failures while keeping the state of individual operations observable."
             ]
           },
@@ -74,27 +80,27 @@ const caseStudies = [
           {
             heading: "Result",
             paragraphs: [
-              "The service provides a durable boundary between business workflows and warehouse automation. Pharmacy applications can initiate operational actions without embedding device-connection complexity throughout the application code."
+              "The service provides a durable boundary between business workflows and warehouse automation. Applications used by pharmacies and blister centers can initiate operational actions without embedding device-connection complexity throughout the application code."
             ]
           }
         ]
       },
       de: {
         slug: "wwks2-apothekenlager-integration",
-        title: "WWKS2-Integration mit einem automatisierten Apothekenlager",
-        description: "Ein asynchroner Dienst verbindet Apothekensoftware über WWKS2, TCP, XML und wiederanlauffähige Nachrichtenverarbeitung mit BD-Rowa-Lagersystemen.",
+        title: "WWKS2-Integration mit automatisierter Arzneimittellagerung",
+        description: "Ein asynchroner Dienst verbindet Software für Medikationsmanagement und Blisterproduktion über WWKS2, TCP, XML und wiederanlauffähige Nachrichtenverarbeitung mit BD-Rowa-Lagersystemen.",
         sections: [
           {
             heading: "Ausgangssituation",
             paragraphs: [
-              "Apothekensoftware muss Wareneingang, Einlagerung, Abgabe, Rückgaben, Bestandskontrolle und operative Aufgaben mit einem automatisierten Lager koordinieren. Die Integration ist Teil des täglichen Apothekenbetriebs; Verbindungsabbrüche und verzögerte Antworten dürfen deshalb nicht wie seltene Ausnahmefälle behandelt werden.",
+              "Software in Apotheken und Blisterzentren muss Wareneingang, Ein- und Auslagerung, Abgabe beziehungsweise Produktionsbereitstellung, Rückgaben, Bestandskontrolle und operative Aufgaben mit automatisierten Lagersystemen koordinieren. Die Integration ist Teil des täglichen Betriebs; Verbindungsabbrüche und verzögerte Antworten dürfen deshalb nicht wie seltene Ausnahmefälle behandelt werden.",
               "Die Lagerschnittstelle verwendet WWKS2-Nachrichten über eine dauerhafte TCP-Verbindung. Mehrere Anfragen können gleichzeitig aktiv sein, während Antworten asynchron eintreffen. Eine zuverlässige Nachrichtenkorrelation und kontrollierte Pufferung sind daher entscheidend."
             ]
           },
           {
             heading: "Technischer Ansatz",
             paragraphs: [
-              "Ich entwickelte einen asynchronen PHP-Dienst, der die Geschäftsabläufe der Apotheke von der Geräteverbindung trennt. Er sendet und empfängt XML-Nachrichten, ordnet Antworten den ursprünglichen Anfragen zu und verwaltet explizite Warteschlangen anstelle synchroner Request-Response-Annahmen.",
+              "Ich entwickelte einen asynchronen PHP-Dienst, der Medikations- und Produktionsabläufe von der Geräteverbindung trennt. Er sendet und empfängt XML-Nachrichten, ordnet Antworten den ursprünglichen Anfragen zu und verwaltet explizite Warteschlangen anstelle synchroner Request-Response-Annahmen.",
               "Pufferung und Backpressure verhindern, dass Produzenten die Verbindung überlasten. Wiederholungsregeln und Verbindungswiederherstellung behandeln vorübergehende Fehler und halten gleichzeitig den Zustand einzelner Vorgänge nachvollziehbar."
             ]
           },
@@ -108,27 +114,27 @@ const caseStudies = [
           {
             heading: "Ergebnis",
             paragraphs: [
-              "Der Dienst bildet eine belastbare Grenze zwischen Geschäftsprozessen und Lagerautomatisierung. Apothekenanwendungen können operative Aktionen auslösen, ohne die Komplexität der Geräteverbindung im gesamten Anwendungscode zu verteilen."
+              "Der Dienst bildet eine belastbare Grenze zwischen Geschäftsprozessen und Lagerautomatisierung. Anwendungen in Apotheken und Blisterzentren können operative Aktionen auslösen, ohne die Komplexität der Geräteverbindung im gesamten Anwendungscode zu verteilen."
             ]
           }
         ]
       },
       es: {
         slug: "integracion-wwks2-almacen-farmacia",
-        title: "Integración WWKS2 con un almacén automatizado de farmacia",
-        description: "Un servicio asíncrono conecta el software de farmacia con sistemas de almacenamiento BD Rowa mediante WWKS2, TCP, XML y procesamiento recuperable de mensajes.",
+        title: "Integración WWKS2 con almacenamiento automatizado de medicamentos",
+        description: "Un servicio asíncrono conecta software de gestión de la medicación y producción de blísteres personalizados con sistemas de almacenamiento BD Rowa mediante WWKS2, TCP, XML y procesamiento recuperable de mensajes.",
         sections: [
           {
             heading: "Contexto",
             paragraphs: [
-              "El software de farmacia debe coordinar la recepción, el almacenamiento, la dispensación, las devoluciones, el control de existencias y las tareas operativas con un almacén automatizado. La integración forma parte del trabajo diario, por lo que los fallos de conexión y las respuestas tardías no pueden tratarse como casos excepcionales.",
+              "El software utilizado en farmacias y centros de producción de blísteres debe coordinar la recepción, el almacenamiento y la salida de medicamentos, la dispensación o el suministro a producción, las devoluciones, el control de existencias y las tareas operativas con sistemas de almacenamiento automatizado. La integración forma parte del trabajo diario, por lo que los fallos de conexión y las respuestas tardías no pueden tratarse como casos excepcionales.",
               "La interfaz del almacén utilizaba mensajes WWKS2 sobre una conexión TCP persistente. Podía haber varias solicitudes en curso mientras las respuestas llegaban de forma asíncrona, lo que hacía imprescindibles la correlación fiable de mensajes y un buffering controlado."
             ]
           },
           {
             heading: "Enfoque técnico",
             paragraphs: [
-              "Desarrollé un servicio PHP asíncrono que separa los flujos de trabajo de farmacia de la conexión con el dispositivo. Envía y recibe mensajes XML, relaciona cada respuesta con su solicitud original y mantiene colas explícitas en lugar de asumir un intercambio síncrono.",
+              "Desarrollé un servicio PHP asíncrono que separa los flujos de medicación y producción de la conexión con el dispositivo. Envía y recibe mensajes XML, relaciona cada respuesta con su solicitud original y mantiene colas explícitas en lugar de asumir un intercambio síncrono.",
               "El buffering y la contrapresión evitan que los productores saturen la conexión. Las reglas de reintento y la recuperación de conexión resuelven fallos transitorios y mantienen observable el estado de cada operación."
             ]
           },
@@ -142,7 +148,7 @@ const caseStudies = [
           {
             heading: "Resultado",
             paragraphs: [
-              "El servicio crea una frontera robusta entre los procesos de negocio y la automatización del almacén. Las aplicaciones de farmacia pueden iniciar operaciones sin distribuir la complejidad de conexión con el dispositivo por todo el código."
+              "El servicio crea una frontera robusta entre los procesos de negocio y la automatización del almacén. Las aplicaciones utilizadas en farmacias y centros de producción de blísteres pueden iniciar operaciones sin distribuir la complejidad de conexión con el dispositivo por todo el código."
             ]
           }
         ]
@@ -169,12 +175,12 @@ const caseStudies = [
       en: {
         slug: "securpharm-nmvs-medication-verification",
         title: "securPharm/NMVS medication verification integration",
-        description: "Integration of pharmacy workflows with the German NMVS for medication verification, dispensing, undo operations, and resilient error handling.",
+        description: "Integration of medication-handling workflows with the German NMVS for verification, decommissioning, undo operations, and resilient error handling.",
         sections: [
           {
             heading: "Context",
             paragraphs: [
-              "Prescription medicine packs in the legal supply chain are verified against a national repository. In a pharmacy application this check must fit into existing intake and dispensing workflows without hiding repository errors or leaving pack state ambiguous.",
+              "Prescription medicine packs in the legal supply chain are verified against a national repository. In software used by pharmacies and blister centers, this check must fit into goods-receipt, dispensing, and blister-production workflows without hiding repository errors or leaving pack state ambiguous.",
               "The implemented integration targeted the German securPharm/NMVS environment. It needed to read GS1 DataMatrix information, support different product identifiers, authenticate requests, and represent repository responses clearly to the surrounding application."
             ]
           },
@@ -182,7 +188,7 @@ const caseStudies = [
             heading: "Integration design",
             paragraphs: [
               "I built a JSON-RPC integration over HTTP/cURL with HMAC-signed requests. It processes GS1/DataMatrix data with GTIN and PPN identifiers and supports medication verification, dispensing or decommissioning, and undo actions.",
-              "The integration keeps transport failures, repository responses, and business-level outcomes distinct. This allows the pharmacy workflow to decide whether to continue, retry, use an approved fallback, or require operator attention."
+              "The integration keeps transport failures, repository responses, and business-level outcomes distinct. This allows the surrounding pharmacy or blister-production workflow to decide whether to continue, retry, use an approved fallback, or require operator attention."
             ]
           },
           {
@@ -203,12 +209,12 @@ const caseStudies = [
       de: {
         slug: "securpharm-nmvs-arzneimittelverifikation",
         title: "securPharm/NMVS-Integration zur Arzneimittelverifikation",
-        description: "Integration von Apothekenabläufen mit dem deutschen NMVS für Arzneimittelverifikation, Ausbuchung, Rücknahme und robuste Fehlerbehandlung.",
+        description: "Integration von Abläufen der Arzneimittelhandhabung mit dem deutschen NMVS für Verifikation, Ausbuchung, Rückbuchung und robuste Fehlerbehandlung.",
         sections: [
           {
             heading: "Ausgangssituation",
             paragraphs: [
-              "Verschreibungspflichtige Arzneimittelpackungen in der legalen Lieferkette werden gegen ein nationales Repository geprüft. In einer Apothekenanwendung muss diese Prüfung in bestehende Wareneingangs- und Abgabeprozesse passen, ohne Fehler des Repositories zu verbergen oder den Packungsstatus unklar zu lassen.",
+              "Verschreibungspflichtige Arzneimittelpackungen in der legalen Lieferkette werden gegen ein nationales Repository geprüft. In Software für Apotheken und Blisterzentren muss diese Prüfung in bestehende Wareneingangs-, Abgabe- und Blisterproduktionsprozesse passen, ohne Fehler des Repositories zu verbergen oder den Packungsstatus unklar zu lassen.",
               "Die implementierte Integration war für die deutsche securPharm/NMVS-Umgebung bestimmt. Sie musste GS1-DataMatrix-Daten lesen, unterschiedliche Produktkennungen unterstützen, Anfragen authentifizieren und Antworten des Repositories für die umgebende Anwendung eindeutig darstellen."
             ]
           },
@@ -216,7 +222,7 @@ const caseStudies = [
             heading: "Integrationsdesign",
             paragraphs: [
               "Ich entwickelte eine JSON-RPC-Integration über HTTP/cURL mit HMAC-signierten Anfragen. Sie verarbeitet GS1/DataMatrix-Daten mit GTIN- und PPN-Kennungen und unterstützt Verifikation, Ausbuchung bei der Abgabe sowie Rücknahmeaktionen.",
-              "Transportfehler, Repository-Antworten und fachliche Ergebnisse werden getrennt behandelt. Dadurch kann der Apothekenprozess entscheiden, ob er fortfährt, einen erneuten Versuch startet, einen freigegebenen Fallback verwendet oder eine manuelle Prüfung verlangt."
+              "Transportfehler, Repository-Antworten und fachliche Ergebnisse werden getrennt behandelt. Dadurch kann der jeweilige Apotheken- oder Blisterproduktionsprozess entscheiden, ob er fortfährt, einen erneuten Versuch startet, einen freigegebenen Fallback verwendet oder eine manuelle Prüfung verlangt."
             ]
           },
           {
@@ -237,7 +243,7 @@ const caseStudies = [
       es: {
         slug: "securpharm-nmvs-verificacion-medicamentos",
         title: "Integración securPharm/NMVS: experiencia transferible a SEVeM",
-        description: "Integración productiva de flujos de farmacia con el NMVS alemán para verificación, dispensación, reversión y gestión robusta de errores, con patrones técnicos transferibles al entorno español SEVeM.",
+        description: "Integración productiva de flujos de gestión y manipulación de medicamentos con el NMVS alemán para verificación, desactivación, reversión y gestión robusta de errores, con patrones técnicos transferibles al entorno español SEVeM.",
         additionalTechnologies: [
           "SEVeM"
         ],
@@ -245,7 +251,7 @@ const caseStudies = [
           {
             heading: "Contexto",
             paragraphs: [
-              "Los envases de medicamentos con receta de la cadena legal se verifican contra un repositorio nacional. En una aplicación de farmacia, esta comprobación debe integrarse en los procesos existentes de recepción y dispensación sin ocultar errores del repositorio ni dejar ambiguo el estado del envase.",
+              "Los envases de medicamentos con receta de la cadena legal se verifican contra un repositorio nacional. En el software utilizado por farmacias y centros de producción de blísteres, esta comprobación debe integrarse en los procesos de recepción, dispensación y producción de blísteres sin ocultar errores del repositorio ni dejar ambiguo el estado del envase.",
               "La integración se implementó en producción para el entorno alemán securPharm/NMVS. El diseño se apoya en el marco europeo EMVS, por lo que sus patrones de lectura de GS1 DataMatrix, identificación de producto, autenticación y tratamiento de respuestas son reutilizables al adaptar una solución para SEVeM."
             ]
           },
@@ -253,7 +259,7 @@ const caseStudies = [
             heading: "Diseño de la integración",
             paragraphs: [
               "Desarrollé una integración JSON-RPC sobre HTTP/cURL con solicitudes firmadas mediante HMAC. Procesa datos GS1/DataMatrix con identificadores GTIN y PPN y admite verificación, dispensación o desactivación y operaciones de reversión.",
-              "La integración diferencia los fallos de transporte, las respuestas del repositorio y los resultados de negocio. Así, el flujo de farmacia puede decidir si continúa, reintenta, utiliza un procedimiento alternativo aprobado o requiere intervención del operador."
+              "La integración diferencia los fallos de transporte, las respuestas del repositorio y los resultados de negocio. Así, el flujo de farmacia o producción de blísteres puede decidir si continúa, reintenta, utiliza un procedimiento alternativo aprobado o requiere intervención del operador."
             ]
           },
           {
@@ -291,14 +297,14 @@ const caseStudies = [
     locales: {
       en: {
         slug: "legacy-php-healthcare-modernization",
-        title: "Modernizing business-critical legacy PHP healthcare software",
-        description: "Incremental modernization of pharmacy and healthcare applications through controlled integration boundaries, automated tests, logging, and production-focused operations.",
+        title: "Modernizing legacy PHP software for medication management and blister production",
+        description: "Incremental modernization of medication-management and blister-production applications through controlled integration boundaries, automated tests, logging, and production-focused operations.",
         sections: [
           {
             heading: "Context",
             paragraphs: [
-              "Business-critical pharmacy software often combines long-lived application code, current CakePHP components, database-backed workflows, and external systems that cannot all be replaced at once. The primary risk is not age by itself, but changing interconnected behavior without enough observability or regression protection.",
-              "The applications included both modern and legacy CakePHP patterns, including Table and Entity models, and supported daily medication and stock workflows."
+              "Business-critical pharmaceutical workflow software often combines long-lived application code, newer framework components, database-backed workflows, and external integrations that cannot all be replaced at once. The primary risk is not age by itself, but changing interconnected behavior without enough observability or regression protection.",
+              "In this case, modern and legacy CakePHP patterns—including Table and Entity models—coexisted within the same applications and supported daily medication and stock workflows."
             ]
           },
           {
@@ -312,7 +318,7 @@ const caseStudies = [
             heading: "Regression protection",
             paragraphs: [
               "PHPUnit tests, database fixtures, and mocked external integrations protect business workflows and failure paths. Integration tests verify behavior across application and service boundaries, while structured logs provide evidence when production behavior differs from a test environment.",
-              "This combination is particularly important in healthcare and pharmacy software, where a technically successful request may still represent a business-level rejection that must be handled explicitly."
+              "This combination is particularly important in healthcare and pharmaceutical operations software, where a technically successful request may still represent a business-level rejection that must be handled explicitly."
             ]
           },
           {
@@ -326,14 +332,14 @@ const caseStudies = [
       },
       de: {
         slug: "legacy-php-gesundheits-it-modernisierung",
-        title: "Modernisierung geschäftskritischer Legacy-PHP-Software im Gesundheitswesen",
-        description: "Schrittweise Modernisierung von Apotheken- und Gesundheitsanwendungen durch kontrollierte Integrationsgrenzen, automatisierte Tests, Logging und produktionsnahen Betrieb.",
+        title: "Modernisierung von Legacy-PHP-Software für Medikationsmanagement und Blisterproduktion",
+        description: "Schrittweise Modernisierung von Anwendungen für Medikationsmanagement und Blisterproduktion durch kontrollierte Integrationsgrenzen, automatisierte Tests, Logging und produktionsnahen Betrieb.",
         sections: [
           {
             heading: "Ausgangssituation",
             paragraphs: [
-              "Geschäftskritische Apothekensoftware verbindet häufig langlebigen Anwendungscode, aktuelle CakePHP-Komponenten, datenbankgestützte Abläufe und externe Systeme, die nicht gleichzeitig ersetzt werden können. Das Hauptrisiko ist nicht das Alter allein, sondern die Änderung vernetzter Abläufe ohne ausreichende Beobachtbarkeit und Regressionstests.",
-              "Die Anwendungen enthielten moderne und ältere CakePHP-Strukturen, darunter Table- und Entity-Modelle, und unterstützten tägliche Arzneimittel- und Bestandsprozesse."
+              "Geschäftskritische Software für pharmazeutische Abläufe verbindet häufig langlebigen Anwendungscode, neuere Framework-Komponenten, datenbankgestützte Abläufe und externe Integrationen, die nicht gleichzeitig ersetzt werden können. Das Hauptrisiko ist nicht das Alter allein, sondern die Änderung vernetzter Abläufe ohne ausreichende Beobachtbarkeit und Regressionstests.",
+              "In diesem Fall bestanden moderne und ältere CakePHP-Strukturen, darunter Table- und Entity-Modelle, innerhalb derselben Anwendungen nebeneinander und unterstützten tägliche Arzneimittel- und Bestandsprozesse."
             ]
           },
           {
@@ -347,7 +353,7 @@ const caseStudies = [
             heading: "Schutz vor Regressionen",
             paragraphs: [
               "PHPUnit-Tests, Datenbank-Fixtures und simulierte externe Integrationen schützen Geschäftsabläufe und Fehlerpfade. Integrationstests prüfen das Verhalten über Anwendungs- und Servicegrenzen hinweg; strukturierte Logs liefern Hinweise, wenn sich das Produktivverhalten von der Testumgebung unterscheidet.",
-              "Diese Kombination ist bei Gesundheits- und Apothekensoftware besonders wichtig, weil eine technisch erfolgreiche Anfrage dennoch eine fachliche Ablehnung darstellen kann, die explizit behandelt werden muss."
+              "Diese Kombination ist bei Software für das Gesundheitswesen und pharmazeutische Abläufe besonders wichtig, weil eine technisch erfolgreiche Anfrage dennoch eine fachliche Ablehnung darstellen kann, die explizit behandelt werden muss."
             ]
           },
           {
@@ -361,14 +367,14 @@ const caseStudies = [
       },
       es: {
         slug: "modernizacion-php-legacy-software-sanitario",
-        title: "Modernización de software sanitario crítico basado en PHP legacy",
-        description: "Modernización incremental de aplicaciones de farmacia y sanidad mediante límites de integración controlados, pruebas automatizadas, logs y operación orientada a producción.",
+        title: "Modernización de software PHP legacy para gestión de la medicación y producción de blísteres",
+        description: "Modernización incremental de aplicaciones para gestión de la medicación y producción de blísteres mediante límites de integración controlados, pruebas automatizadas, logs y operación orientada a producción.",
         sections: [
           {
             heading: "Contexto",
             paragraphs: [
-              "El software crítico de farmacia suele combinar código de larga vida, componentes actuales de CakePHP, procesos respaldados por base de datos y sistemas externos que no pueden sustituirse todos a la vez. El principal riesgo no es la antigüedad por sí sola, sino cambiar comportamientos interconectados sin suficiente observabilidad ni protección contra regresiones.",
-              "Las aplicaciones incluían patrones modernos y legacy de CakePHP, entre ellos modelos Table y Entity, y daban soporte a procesos diarios de medicamentos y existencias."
+              "El software crítico para procesos farmacéuticos suele combinar código de larga vida, componentes más recientes del framework, procesos respaldados por base de datos e integraciones externas que no pueden sustituirse todas a la vez. El principal riesgo no es la antigüedad por sí sola, sino cambiar comportamientos interconectados sin suficiente observabilidad ni protección contra regresiones.",
+              "En este caso coexistían patrones modernos y legacy de CakePHP, entre ellos los modelos Table y Entity, dentro de las mismas aplicaciones, que daban soporte a procesos diarios de medicamentos y existencias."
             ]
           },
           {
@@ -382,7 +388,7 @@ const caseStudies = [
             heading: "Protección contra regresiones",
             paragraphs: [
               "Las pruebas PHPUnit, los fixtures de base de datos y las integraciones externas simuladas protegen los procesos de negocio y las rutas de error. Las pruebas de integración verifican el comportamiento entre la aplicación y los servicios, mientras que los logs estructurados aportan evidencia cuando producción difiere del entorno de pruebas.",
-              "Esta combinación es especialmente importante en software sanitario y farmacéutico, donde una solicitud técnicamente correcta puede representar un rechazo de negocio que debe gestionarse de forma explícita."
+              "Esta combinación es especialmente importante en software sanitario y de operaciones farmacéuticas, donde una solicitud técnicamente correcta puede representar un rechazo de negocio que debe gestionarse de forma explícita."
             ]
           },
           {

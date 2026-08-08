@@ -2,8 +2,8 @@
 <html lang="de">
   <head>
     <meta charset="utf-8">
-    <title>WWKS2-Integration mit einem automatisierten Apothekenlager — Nick Mitin</title>
-    <meta name="description" content="Ein asynchroner Dienst verbindet Apothekensoftware über WWKS2, TCP, XML und wiederanlauffähige Nachrichtenverarbeitung mit BD-Rowa-Lagersystemen." />
+    <title>WWKS2-Integration mit automatisierter Arzneimittellagerung — Nick Mitin</title>
+    <meta name="description" content="Ein asynchroner Dienst verbindet Software für Medikationsmanagement und Blisterproduktion über WWKS2, TCP, XML und wiederanlauffähige Nachrichtenverarbeitung mit BD-Rowa-Lagersystemen." />
     <meta name="author" content="Nick Mitin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -17,13 +17,13 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "@id": "https://nixonch.github.io/de/fallstudien/wwks2-apothekenlager-integration/#article",
-        "headline": "WWKS2-Integration mit einem automatisierten Apothekenlager",
-        "description": "Ein asynchroner Dienst verbindet Apothekensoftware über WWKS2, TCP, XML und wiederanlauffähige Nachrichtenverarbeitung mit BD-Rowa-Lagersystemen.",
+        "headline": "WWKS2-Integration mit automatisierter Arzneimittellagerung",
+        "description": "Ein asynchroner Dienst verbindet Software für Medikationsmanagement und Blisterproduktion über WWKS2, TCP, XML und wiederanlauffähige Nachrichtenverarbeitung mit BD-Rowa-Lagersystemen.",
         "url": "https://nixonch.github.io/de/fallstudien/wwks2-apothekenlager-integration/",
         "mainEntityOfPage": "https://nixonch.github.io/de/fallstudien/wwks2-apothekenlager-integration/",
         "inLanguage": "de",
         "datePublished": "2026-07-30",
-        "dateModified": "2026-07-30",
+        "dateModified": "2026-08-08",
         "author": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
@@ -48,27 +48,49 @@
     </script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/css/base.css?v=20260730-8" />
-    <link rel="stylesheet" href="/css/case-study.css?v=20260730" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
     <link rel="shortcut icon" href="/images/mn.ico">
   </head>
   <body>
+    <script>
+      const hasSameOriginReferrer =
+        document.referrer !== "" &&
+        new URL(document.referrer).origin === window.location.origin;
+      const isExternalReferrer =
+        document.referrer !== "" && !hasSameOriginReferrer;
+      const canGoBackWithinSite =
+        window.history.length > 1 &&
+        !isExternalReferrer &&
+        ((window.navigation && window.navigation.canGoBack) || hasSameOriginReferrer);
+      const previousPageUrl =
+        window.navigation && window.navigation.canGoBack
+          ? window.navigation.entries()[window.navigation.currentEntry.index - 1].url || document.referrer
+          : canGoBackWithinSite
+            ? document.referrer
+            : "";
+      const isPreviousPageCaseStudy =
+        canGoBackWithinSite &&
+        typeof previousPageUrl === "string" &&
+        previousPageUrl !== "" &&
+        new URL(previousPageUrl).pathname.startsWith("/de/fallstudien/");
+    </script>
     <main class="case-study-shell">
-      <a class="case-study-back" href="/">↩ Zurück zum Lebenslauf</a>
+      <a class="case-study-back" href="/" onclick="if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && canGoBackWithinSite) { event.preventDefault(); window.history.back(); }">↩ Zurück zum Lebenslauf</a>
       <header class="case-study-header">
         <p class="case-study-label">Technische Fallstudie</p>
-        <h1>WWKS2-Integration mit einem automatisierten Apothekenlager</h1>
-        <p class="case-study-lead">Ein asynchroner Dienst verbindet Apothekensoftware über WWKS2, TCP, XML und wiederanlauffähige Nachrichtenverarbeitung mit BD-Rowa-Lagersystemen.</p>
+        <h1>WWKS2-Integration mit automatisierter Arzneimittellagerung</h1>
+        <p class="case-study-lead">Ein asynchroner Dienst verbindet Software für Medikationsmanagement und Blisterproduktion über WWKS2, TCP, XML und wiederanlauffähige Nachrichtenverarbeitung mit BD-Rowa-Lagersystemen.</p>
       </header>
       <article class="case-study-article">
         <section class="case-study-section">
           <h2>Ausgangssituation</h2>
-          <p>Apothekensoftware muss Wareneingang, Einlagerung, Abgabe, Rückgaben, Bestandskontrolle und operative Aufgaben mit einem automatisierten Lager koordinieren. Die Integration ist Teil des täglichen Apothekenbetriebs; Verbindungsabbrüche und verzögerte Antworten dürfen deshalb nicht wie seltene Ausnahmefälle behandelt werden.</p>
+          <p>Software in Apotheken und Blisterzentren muss Wareneingang, Ein- und Auslagerung, Abgabe beziehungsweise Produktionsbereitstellung, Rückgaben, Bestandskontrolle und operative Aufgaben mit automatisierten Lagersystemen koordinieren. Die Integration ist Teil des täglichen Betriebs; Verbindungsabbrüche und verzögerte Antworten dürfen deshalb nicht wie seltene Ausnahmefälle behandelt werden.</p>
           <p>Die Lagerschnittstelle verwendet WWKS2-Nachrichten über eine dauerhafte TCP-Verbindung. Mehrere Anfragen können gleichzeitig aktiv sein, während Antworten asynchron eintreffen. Eine zuverlässige Nachrichtenkorrelation und kontrollierte Pufferung sind daher entscheidend.</p>
         </section>
         <section class="case-study-section">
           <h2>Technischer Ansatz</h2>
-          <p>Ich entwickelte einen asynchronen PHP-Dienst, der die Geschäftsabläufe der Apotheke von der Geräteverbindung trennt. Er sendet und empfängt XML-Nachrichten, ordnet Antworten den ursprünglichen Anfragen zu und verwaltet explizite Warteschlangen anstelle synchroner Request-Response-Annahmen.</p>
+          <p>Ich entwickelte einen asynchronen PHP-Dienst, der Medikations- und Produktionsabläufe von der Geräteverbindung trennt. Er sendet und empfängt XML-Nachrichten, ordnet Antworten den ursprünglichen Anfragen zu und verwaltet explizite Warteschlangen anstelle synchroner Request-Response-Annahmen.</p>
           <p>Pufferung und Backpressure verhindern, dass Produzenten die Verbindung überlasten. Wiederholungsregeln und Verbindungswiederherstellung behandeln vorübergehende Fehler und halten gleichzeitig den Zustand einzelner Vorgänge nachvollziehbar.</p>
         </section>
         <section class="case-study-section">
@@ -78,7 +100,7 @@
         </section>
         <section class="case-study-section">
           <h2>Ergebnis</h2>
-          <p>Der Dienst bildet eine belastbare Grenze zwischen Geschäftsprozessen und Lagerautomatisierung. Apothekenanwendungen können operative Aktionen auslösen, ohne die Komplexität der Geräteverbindung im gesamten Anwendungscode zu verteilen.</p>
+          <p>Der Dienst bildet eine belastbare Grenze zwischen Geschäftsprozessen und Lagerautomatisierung. Anwendungen in Apotheken und Blisterzentren können operative Aktionen auslösen, ohne die Komplexität der Geräteverbindung im gesamten Anwendungscode zu verteilen.</p>
         </section>
         <section class="case-study-section">
           <h2>Technologien und Konzepte</h2>
@@ -100,12 +122,21 @@
         <section class="case-study-section case-study-related-section">
           <h2>Weitere Fallstudien</h2>
           <ul class="case-study-related">
-            <li><a href="https://nixonch.github.io/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/">securPharm/NMVS-Integration zur Arzneimittelverifikation</a></li>
-            <li><a href="https://nixonch.github.io/de/fallstudien/legacy-php-gesundheits-it-modernisierung/">Modernisierung geschäftskritischer Legacy-PHP-Software im Gesundheitswesen</a></li>
+            <li><a href="/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/">securPharm/NMVS-Integration zur Arzneimittelverifikation</a></li>
+            <li><a href="/de/fallstudien/legacy-php-gesundheits-it-modernisierung/">Modernisierung von Legacy-PHP-Software für Medikationsmanagement und Blisterproduktion</a></li>
           </ul>
         </section>
       </article>
     </main>
+    <script>
+      const caseStudyBackLink = document.querySelector(".case-study-back");
+
+      if (isPreviousPageCaseStudy) {
+        caseStudyBackLink.textContent = "↩ Zurück";
+      } else if (!canGoBackWithinSite) {
+        caseStudyBackLink.textContent = "↩ Zum Lebenslauf";
+      }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
