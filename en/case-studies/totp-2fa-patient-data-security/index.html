@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TOTP-based 2FA for patient-data protection in TABChat — Nick Mitin</title>
+    <meta name="description" content="Standards-based two-factor authentication for a medical web application, with authenticator-app provisioning, CakePHP integration, RBAC-controlled flows, trusted devices, migrations, and security testing." />
+    <meta name="author" content="Nick Mitin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DTEFEE6838');
+    </script>
+    <link rel="canonical" href="https://nixonch.github.io/en/case-studies/totp-2fa-patient-data-security/" />
+    <link rel="alternate" hreflang="en" href="https://nixonch.github.io/en/case-studies/totp-2fa-patient-data-security/" />
+    <link rel="alternate" hreflang="de" href="https://nixonch.github.io/de/fallstudien/totp-2fa-patientendaten-sicherheit/" />
+    <link rel="alternate" hreflang="es" href="https://nixonch.github.io/es/casos/totp-2fa-seguridad-datos-pacientes/" />
+    <link rel="alternate" hreflang="x-default" href="https://nixonch.github.io/en/case-studies/totp-2fa-patient-data-security/" />
+    <script id="article-structured-data" type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "@id": "https://nixonch.github.io/en/case-studies/totp-2fa-patient-data-security/#article",
+        "headline": "TOTP-based 2FA for patient-data protection in TABChat",
+        "description": "Standards-based two-factor authentication for a medical web application, with authenticator-app provisioning, CakePHP integration, RBAC-controlled flows, trusted devices, migrations, and security testing.",
+        "url": "https://nixonch.github.io/en/case-studies/totp-2fa-patient-data-security/",
+        "mainEntityOfPage": "https://nixonch.github.io/en/case-studies/totp-2fa-patient-data-security/",
+        "inLanguage": "en",
+        "datePublished": "2026-08-09",
+        "dateModified": "2026-08-09T00:00:00+02:00",
+        "author": {
+          "@type": "Person",
+          "@id": "https://nixonch.github.io/#person",
+          "name": "Nick Mitin",
+          "alternateName": "Mykola Mitin",
+          "url": "https://nixonch.github.io/"
+        },
+        "about": [
+          "PHP",
+          "CakePHP",
+          "2FA",
+          "TOTP",
+          "HOTP",
+          "RFC 6238",
+          "RFC 4226",
+          "Google Authenticator",
+          "Authentication middleware",
+          "Session security",
+          "Trusted devices",
+          "RBAC",
+          "Database migrations",
+          "PHPUnit",
+          "Security testing",
+          "Responsive UI",
+          "Accessibility"
+        ]
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/case-study.css" />
+    <link rel="shortcut icon" href="/images/mn.ico">
+  </head>
+  <body>
+    <script>
+      const hasSameOriginReferrer =
+        document.referrer !== "" &&
+        new URL(document.referrer).origin === window.location.origin;
+      const isExternalReferrer =
+        document.referrer !== "" && !hasSameOriginReferrer;
+      const canGoBackWithinSite =
+        window.history.length > 1 &&
+        !isExternalReferrer &&
+        ((window.navigation && window.navigation.canGoBack) || hasSameOriginReferrer);
+      const previousPageUrl =
+        window.navigation && window.navigation.canGoBack
+          ? window.navigation.entries()[window.navigation.currentEntry.index - 1].url || document.referrer
+          : canGoBackWithinSite
+            ? document.referrer
+            : "";
+      const isPreviousPageCaseStudy =
+        canGoBackWithinSite &&
+        typeof previousPageUrl === "string" &&
+        previousPageUrl !== "" &&
+        new URL(previousPageUrl).pathname.startsWith("/en/case-studies/");
+    </script>
+    <main class="case-study-shell">
+      <a class="case-study-back" href="/" onclick="if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && canGoBackWithinSite) { event.preventDefault(); window.history.back(); }">↩ Back to CV</a>
+      <header class="case-study-header">
+        <p class="case-study-label">Technical case study</p>
+        <h1>TOTP-based 2FA for patient-data protection in TABChat</h1>
+        <p class="case-study-lead">Standards-based two-factor authentication for a medical web application, with authenticator-app provisioning, CakePHP integration, RBAC-controlled flows, trusted devices, migrations, and security testing.</p>
+      </header>
+      <article class="case-study-article">
+        <section class="case-study-section">
+          <h2>Context</h2>
+          <p>TABChat is a cloud medical web application used with patient data. In the context of Germany's Digital-Gesetz (DigiG), the project ticket called for two-factor authentication to strengthen access protection for cloud systems that handle this data.</p>
+          <p>The implementation had to fit the application's existing authentication flow, roles, and access rights. It also needed practical user and administrator workflows across different browsers and terminals rather than a standalone code-checking screen.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Standards and provisioning</h2>
+          <p>I implemented TOTP as specified in RFC 6238, which builds on HOTP as defined by RFC 4226. The solution works with Google Authenticator and compatible authenticator applications.</p>
+          <p>The setup flow generates and manages a TOTP secret for each user, provides QR-based provisioning, and validates one-time codes before 2FA is activated for the account.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Authentication and session security</h2>
+          <p>I integrated 2FA into the existing CakePHP application through Middleware, Controllers, Helpers, and ORM-backed state. The implementation handles cookies, session state, login and logout behavior, and security-sensitive transitions explicitly.</p>
+          <p>Trusted sessions are kept separately for each browser or terminal. A successful second factor can establish trust for 24 hours, while an administrator can revoke that state and force the user through 2FA again.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Authorization, migrations, and testing</h2>
+          <p>Role and access-right checks govern user and administrative actions for enabling, disabling, and enforcing 2FA. Database migrations introduced the required security fields and permissions while accounting for compatibility issues in the existing system.</p>
+          <p>PHPUnit tests cover authentication middleware, controllers, and negative scenarios. Functional testing checks different roles, browsers, and terminals; the responsive setup interface also accounts for accessibility requirements around images and QR codes.</p>
+        </section>
+        <section class="case-study-section">
+          <h2>Technologies and concepts</h2>
+          <ul class="case-study-tags">
+            <li>PHP</li>
+            <li>CakePHP</li>
+            <li>2FA</li>
+            <li>TOTP</li>
+            <li>HOTP</li>
+            <li>RFC 6238</li>
+            <li>RFC 4226</li>
+            <li>Google Authenticator</li>
+            <li>Authentication middleware</li>
+            <li>Session security</li>
+            <li>Trusted devices</li>
+            <li>RBAC</li>
+            <li>Database migrations</li>
+            <li>PHPUnit</li>
+            <li>Security testing</li>
+            <li>Responsive UI</li>
+            <li>Accessibility</li>
+          </ul>
+        </section>
+        <section class="case-study-section case-study-related-section">
+          <h2>Related case studies</h2>
+          <ul class="case-study-related">
+            <li><a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/">WWKS2 integration with automated medication storage</a></li>
+            <li><a href="/en/case-studies/securpharm-nmvs-medication-verification/">securPharm/NMVS medication verification integration</a></li>
+            <li><a href="/en/case-studies/legacy-php-healthcare-modernization/">Modernizing legacy PHP software for medication management and blister production</a></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <script>
+      const caseStudyBackLink = document.querySelector(".case-study-back");
+
+      if (isPreviousPageCaseStudy) {
+        caseStudyBackLink.textContent = "↩ Back";
+      } else if (!canGoBackWithinSite) {
+        caseStudyBackLink.textContent = "↩ Go to CV";
+      }
+    </script>
+  </body>
+</html>

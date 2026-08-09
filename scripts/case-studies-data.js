@@ -401,6 +401,136 @@ const caseStudies = [
         ]
       }
     }
+  },
+  {
+    id: "totp",
+    datePublished: "2026-08-09",
+    technologies: [
+      "PHP",
+      "CakePHP",
+      "2FA",
+      "TOTP",
+      "HOTP",
+      "RFC 6238",
+      "RFC 4226",
+      "Google Authenticator",
+      "Authentication middleware",
+      "Session security",
+      "Trusted devices",
+      "RBAC",
+      "Database migrations",
+      "PHPUnit",
+      "Security testing",
+      "Responsive UI",
+      "Accessibility"
+    ],
+    locales: {
+      en: {
+        slug: "totp-2fa-patient-data-security",
+        title: "TOTP-based 2FA for patient-data protection in TABChat",
+        description: "Standards-based two-factor authentication for a medical web application, with authenticator-app provisioning, CakePHP integration, RBAC-controlled flows, trusted devices, migrations, and security testing.",
+        sections: [
+          {
+            heading: "Context",
+            paragraphs: [
+              "TABChat is a cloud medical web application used with patient data. In the context of Germany's Digital-Gesetz (DigiG), the project ticket called for two-factor authentication to strengthen access protection for cloud systems that handle this data.",
+              "The implementation had to fit the application's existing authentication flow, roles, and access rights. It also needed practical user and administrator workflows across different browsers and terminals rather than a standalone code-checking screen."
+            ]
+          },
+          {
+            heading: "Standards and provisioning",
+            paragraphs: [
+              "I implemented TOTP as specified in RFC 6238, which builds on HOTP as defined by RFC 4226. The solution works with Google Authenticator and compatible authenticator applications.",
+              "The setup flow generates and manages a TOTP secret for each user, provides QR-based provisioning, and validates one-time codes before 2FA is activated for the account."
+            ]
+          },
+          {
+            heading: "Authentication and session security",
+            paragraphs: [
+              "I integrated 2FA into the existing CakePHP application through Middleware, Controllers, Helpers, and ORM-backed state. The implementation handles cookies, session state, login and logout behavior, and security-sensitive transitions explicitly.",
+              "Trusted sessions are kept separately for each browser or terminal. A successful second factor can establish trust for 24 hours, while an administrator can revoke that state and force the user through 2FA again."
+            ]
+          },
+          {
+            heading: "Authorization, migrations, and testing",
+            paragraphs: [
+              "Role and access-right checks govern user and administrative actions for enabling, disabling, and enforcing 2FA. Database migrations introduced the required security fields and permissions while accounting for compatibility issues in the existing system.",
+              "PHPUnit tests cover authentication middleware, controllers, and negative scenarios. Functional testing checks different roles, browsers, and terminals; the responsive setup interface also accounts for accessibility requirements around images and QR codes."
+            ]
+          }
+        ]
+      },
+      de: {
+        slug: "totp-2fa-patientendaten-sicherheit",
+        title: "TOTP-basierte 2FA zum Schutz von Patientendaten in TABChat",
+        description: "Standardbasierte Zwei-Faktor-Authentifizierung für eine medizinische Webanwendung mit Einrichtung per Authenticator-App, CakePHP-Integration, rollen- und rechtegesteuerten Abläufen, vertrauenswürdigen Geräten, Migrationen und Sicherheitstests.",
+        sections: [
+          {
+            heading: "Ausgangssituation",
+            paragraphs: [
+              "TABChat ist eine medizinische Cloud-Webanwendung, die mit Patientendaten arbeitet. Im Kontext des deutschen Digital-Gesetzes (DigiG) verlangte das Projektticket eine Zwei-Faktor-Authentifizierung, um den Zugang zu Cloud-Systemen mit solchen Daten besser zu schützen.",
+              "Die Implementierung musste sich in den bestehenden Authentifizierungsablauf sowie in Rollen und Zugriffsrechte einfügen. Außerdem waren praxistaugliche Benutzer- und Administrationsabläufe für unterschiedliche Browser und Terminals erforderlich, nicht nur eine isolierte Codeprüfung."
+            ]
+          },
+          {
+            heading: "Standards und Einrichtung",
+            paragraphs: [
+              "Ich implementierte TOTP gemäß RFC 6238, das auf dem in RFC 4226 definierten HOTP basiert. Die Lösung funktioniert mit Google Authenticator und kompatiblen Authenticator-Apps.",
+              "Der Einrichtungsablauf erzeugt und verwaltet für jeden Benutzer ein TOTP-Secret, stellt die Konfiguration per QR-Code bereit und prüft Einmalcodes, bevor 2FA für das Konto aktiviert wird."
+            ]
+          },
+          {
+            heading: "Authentifizierungs- und Sitzungssicherheit",
+            paragraphs: [
+              "Ich integrierte 2FA über Middleware, Controller, Helper und ORM-gestützte Zustände in die bestehende CakePHP-Anwendung. Cookies, Session-Zustand, Login und Logout sowie sicherheitskritische Zustandswechsel werden dabei explizit behandelt.",
+              "Vertrauenswürdige Sitzungen werden für jeden Browser beziehungsweise jedes Terminal getrennt geführt. Nach erfolgreichem zweiten Faktor kann ein Gerät für 24 Stunden als vertrauenswürdig gelten; ein Administrator kann diesen Zustand widerrufen und eine erneute 2FA erzwingen."
+            ]
+          },
+          {
+            heading: "Berechtigungen, Migrationen und Tests",
+            paragraphs: [
+              "Rollen- und Zugriffsprüfungen steuern die Benutzer- und Administrationsaktionen zum Aktivieren, Deaktivieren und Erzwingen von 2FA. Datenbankmigrationen führten die notwendigen Sicherheitsfelder und Rechte ein und berücksichtigten dabei Kompatibilitätsprobleme des bestehenden Systems.",
+              "PHPUnit-Tests decken Authentifizierungs-Middleware, Controller und Negativszenarien ab. Funktionale Tests prüfen unterschiedliche Rollen, Browser und Terminals; die responsive Einrichtungsoberfläche berücksichtigt außerdem Anforderungen an die Barrierefreiheit von Bildern und QR-Codes."
+            ]
+          }
+        ]
+      },
+      es: {
+        slug: "totp-2fa-seguridad-datos-pacientes",
+        title: "2FA basada en TOTP para proteger datos de pacientes en TABChat",
+        description: "Autenticación de dos factores basada en estándares para una aplicación web sanitaria, con configuración mediante aplicaciones de autenticación, integración con CakePHP, flujos sujetos a roles y permisos, dispositivos de confianza, migraciones y pruebas de seguridad.",
+        sections: [
+          {
+            heading: "Contexto",
+            paragraphs: [
+              "TABChat es una aplicación web sanitaria en la nube que trabaja con datos de pacientes. En el contexto de la ley alemana Digital-Gesetz (DigiG), el ticket del proyecto exigía autenticación de dos factores para reforzar el acceso a sistemas en la nube que tratan estos datos.",
+              "La implementación debía integrarse en el flujo de autenticación, los roles y los permisos existentes. También tenía que ofrecer procesos prácticos para usuarios y administradores en distintos navegadores y terminales, no limitarse a una pantalla aislada para comprobar códigos."
+            ]
+          },
+          {
+            heading: "Estándares y configuración",
+            paragraphs: [
+              "Implementé TOTP conforme a RFC 6238, basado en HOTP según RFC 4226. La solución funciona con Google Authenticator y otras aplicaciones de autenticación compatibles.",
+              "El proceso genera y gestiona un secreto TOTP para cada usuario, facilita la configuración mediante código QR y valida los códigos de un solo uso antes de activar la 2FA en la cuenta."
+            ]
+          },
+          {
+            heading: "Seguridad de autenticación y sesiones",
+            paragraphs: [
+              "Integré la 2FA en la aplicación CakePHP existente mediante Middleware, Controllers, Helpers y estado persistido con ORM. La implementación gestiona de forma explícita las cookies, el estado de sesión, el inicio y cierre de sesión y las transiciones de estado sensibles para la seguridad.",
+              "Las sesiones de confianza se mantienen por separado para cada navegador o terminal. Tras superar el segundo factor, un dispositivo puede conservar la confianza durante 24 horas; un administrador puede revocarla y obligar al usuario a repetir la 2FA."
+            ]
+          },
+          {
+            heading: "Permisos, migraciones y pruebas",
+            paragraphs: [
+              "Las comprobaciones de roles y permisos controlan las acciones de usuarios y administradores para activar, desactivar y exigir la 2FA. Las migraciones de base de datos añadieron los campos de seguridad y permisos necesarios, teniendo en cuenta problemas de compatibilidad con el sistema existente.",
+              "Las pruebas con PHPUnit cubren el middleware de autenticación, los controladores y los escenarios negativos. Las pruebas funcionales verifican distintos roles, navegadores y terminales; la interfaz responsive de configuración también contempla requisitos de accesibilidad para imágenes y códigos QR."
+            ]
+          }
+        ]
+      }
+    }
   }
 ];
 

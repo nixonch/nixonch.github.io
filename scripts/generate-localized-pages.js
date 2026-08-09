@@ -105,7 +105,8 @@ function replaceCaseStudyLinks(html, localizedCaseStudyLinks) {
 const caseStudyTechnologyPatterns = {
   legacy: /CakePHP/,
   nmvs: /securPharm-?\/NMVS/,
-  wwks2: /WWKS2/
+  wwks2: /WWKS2/,
+  totp: /2FA \/ TOTP \(RFC 6238\)/
 };
 
 function insertCaseStudyTechnologyLinks(html, localizedCaseStudyLinks) {
@@ -207,8 +208,8 @@ function renderCaseStudyPage(caseStudy, language) {
     url: pageUrl,
     mainEntityOfPage: pageUrl,
     inLanguage: language,
-    datePublished: "2026-07-30",
-    dateModified: "2026-08-09",
+    datePublished: caseStudy.datePublished || "2026-07-30",
+    dateModified: "2026-08-09T00:00:00+02:00",
     author: {
       "@type": "Person",
       "@id": `${siteOrigin}/#person`,
