@@ -754,7 +754,37 @@
     translatePage(selectedLanguage);
   }
 
+  function initializeSidebarClosing() {
+    var sidebarToggle = document.getElementById("navi-toggle");
+    var sidebar = document.querySelector(".summary");
+    var sidebarSectionLinks = document.querySelectorAll('.summary .toc > a[href^="#"]');
+
+    if (!sidebarToggle || !sidebar || typeof window.matchMedia !== "function") {
+      return;
+    }
+
+    for (var linkIndex = 0; linkIndex < sidebarSectionLinks.length; linkIndex += 1) {
+      sidebarSectionLinks[linkIndex].addEventListener("click", function () {
+        if (window.matchMedia("(max-width: 1450px)").matches) {
+          sidebarToggle.checked = false;
+        }
+      });
+    }
+
+    document.addEventListener("click", function (event) {
+      if (
+        sidebarToggle.checked &&
+        window.matchMedia("(max-width: 1450px)").matches &&
+        event.target !== sidebarToggle &&
+        !sidebar.contains(event.target)
+      ) {
+        sidebarToggle.checked = false;
+      }
+    });
+  }
+
   try {
+    initializeSidebarClosing();
     initialize();
   } finally {
     document.documentElement.classList.remove("i18n-pending");

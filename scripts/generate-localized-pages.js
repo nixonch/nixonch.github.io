@@ -208,11 +208,12 @@ function renderCaseStudyPage(caseStudy, language) {
     mainEntityOfPage: pageUrl,
     inLanguage: language,
     datePublished: "2026-07-30",
-    dateModified: "2026-08-08",
+    dateModified: "2026-08-09",
     author: {
       "@type": "Person",
       "@id": `${siteOrigin}/#person`,
       name: "Nick Mitin",
+      alternateName: "Mykola Mitin",
       url: `${siteOrigin}/`
     },
     about: technologies
@@ -337,7 +338,7 @@ function renderSitemapAlternates(alternates) {
 function renderSitemapEntry(url, alternates) {
   return `  <url>
     <loc>${url}</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-09</lastmod>
 ${renderSitemapAlternates(alternates)}
   </url>`;
 }
