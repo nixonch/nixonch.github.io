@@ -251,6 +251,13 @@ ${paragraphs}
     <meta name="author" content="Nick Mitin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-DTEFEE6838');
+    </script>
     <link rel="canonical" href="${pageUrl}" />
 ${renderAlternateLinks(caseStudy)}
     <script id="article-structured-data" type="application/ld+json">
@@ -316,13 +323,6 @@ ${related}
       } else if (!canGoBackWithinSite) {
         caseStudyBackLink.textContent = ${JSON.stringify(`↩ ${locale.cvLinkLabel}`)};
       }
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTEFEE6838"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-DTEFEE6838');
     </script>
   </body>
 </html>
