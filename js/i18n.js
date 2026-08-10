@@ -16,7 +16,7 @@
   var translations = {
     en: {
       meta_title: "Nick Mitin — Senior Software Engineer",
-      meta_description: "Senior Software Engineer focused on PHP backend development, system integration, software for medication management and patient-specific blister production, pharmaceutical logistics, and Linux-based services.",
+      meta_description: "Senior Software Engineer for PHP backends, system integration, medication management, patient-specific blister production, and pharmaceutical logistics.",
       language_selector: "Choose language",
       print_cv: "Print CV",
       nav_summary: "Summary",
@@ -109,7 +109,7 @@
     },
     de: {
       meta_title: "Nick Mitin — Senior Softwareentwickler",
-      meta_description: "Senior Softwareentwickler mit Schwerpunkt auf PHP-Backend-Entwicklung, Systemintegration, Software für Medikationsmanagement und patientenindividuelle Verblisterung, Pharmalogistik und Linux-basierten Diensten.",
+      meta_description: "Senior Softwareentwickler für PHP-Backends, Systemintegration, Medikationsmanagement, patientenindividuelle Verblisterung und Pharmalogistik.",
       language_selector: "Sprache auswählen",
       print_cv: "Lebenslauf drucken",
       nav_summary: "Profil",
@@ -202,7 +202,7 @@
     },
     es: {
       meta_title: "Nick Mitin — Ingeniero de software sénior",
-      meta_description: "Ingeniero de software sénior especializado en backend PHP, integración de sistemas y software para la gestión de la medicación, la producción de blísteres personalizados y la logística farmacéutica, con experiencia en securPharm/NMVS aplicable a SEVeM.",
+      meta_description: "Ingeniero de software especializado en backend PHP, integración de sistemas y software farmacéutico, con experiencia en securPharm/NMVS aplicable a SEVeM.",
       language_selector: "Elegir idioma",
       print_cv: "Imprimir CV",
       nav_summary: "Perfil",
@@ -295,7 +295,7 @@
     },
     fr: {
       meta_title: "Nick Mitin — Ingénieur logiciel senior",
-      meta_description: "Ingénieur logiciel senior spécialisé dans le développement backend PHP, l’intégration de systèmes, les logiciels de gestion des traitements et de préparation personnalisée des doses, la logistique pharmaceutique et les services sous Linux.",
+      meta_description: "Ingénieur logiciel senior spécialisé en backend PHP, intégration de systèmes, gestion des traitements, préparation de doses et logistique pharmaceutique.",
       language_selector: "Choisir la langue",
       print_cv: "Imprimer le CV",
       nav_summary: "Profil",
@@ -388,7 +388,7 @@
     },
     uk: {
       meta_title: "Nick Mitin — Старший інженер-програміст",
-      meta_description: "Старший інженер-програміст зі спеціалізацією на PHP-бекенді, системній інтеграції, ПЗ для керування лікарським забезпеченням та індивідуального фасування ліків за дозами, фармацевтичній логістиці й сервісах на базі Linux.",
+      meta_description: "Старший інженер-програміст: PHP-бекенд, системна інтеграція, ПЗ для аптек, персоналізовані блістери та фармацевтична логістика.",
       language_selector: "Вибрати мову",
       print_cv: "Роздрукувати CV",
       nav_summary: "Про мене",
@@ -481,7 +481,7 @@
     },
     ru: {
       meta_title: "Nick Mitin — Старший инженер-программист",
-      meta_description: "Старший инженер-программист со специализацией на PHP-бэкенде, системной интеграции, ПО для управления лекарственным обеспечением и индивидуальной дозированной упаковки лекарств, фармацевтической логистике и сервисах на базе Linux.",
+      meta_description: "Старший инженер-программист: PHP-бэкенд, системная интеграция, ПО для аптек, персонализированные блистеры и фармацевтическая логистика.",
       language_selector: "Выбрать язык",
       print_cv: "Распечатать резюме",
       nav_summary: "Обо мне",

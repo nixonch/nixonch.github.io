@@ -9,8 +9,6 @@ const projectRoot = path.resolve(__dirname, "..");
 const sourceHtmlPath = path.join(projectRoot, "index.html");
 const sourceI18nPath = path.join(projectRoot, "js", "i18n.js");
 const siteOrigin = "https://nixonch.github.io";
-const caseStudyDateModified = "2026-08-09T00:00:00+02:00";
-const caseStudyLastModified = caseStudyDateModified.slice(0, 10);
 const profileStructuredDataPattern = /(<script id="profile-structured-data" type="application\/ld\+json">)([\s\S]*?)(<\/script>)/;
 
 const languagePages = [
@@ -381,8 +379,8 @@ function renderCaseStudyPage(caseStudy, language) {
     url: pageUrl,
     mainEntityOfPage: pageUrl,
     inLanguage: language,
-    datePublished: caseStudy.datePublished || "2026-07-30",
-    dateModified: caseStudyDateModified,
+    datePublished: content.datePublished,
+    dateModified: content.dateModified,
     author: {
       "@type": "Person",
       "@id": `${siteOrigin}/#person`,
@@ -549,7 +547,7 @@ function generateSitemap(profileLastModified) {
       entries.push(renderSitemapEntry(
         getCaseStudyUrl(caseStudy, language),
         caseAlternates,
-        caseStudyLastModified
+        caseStudy.locales[language].dateModified.slice(0, 10)
       ));
     }
   }

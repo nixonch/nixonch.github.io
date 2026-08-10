@@ -52,9 +52,11 @@ const caseStudies = [
     ],
     locales: {
       en: {
+        datePublished: "2026-07-30",
+        dateModified: "2026-08-10T19:53:57+02:00",
         slug: "wwks2-pharmacy-warehouse-integration",
         title: "WWKS2 integration with automated medication storage",
-        description: "An asynchronous service connecting medication-management and blister-production software with BD Rowa storage systems through WWKS2, TCP, XML, and recoverable message processing.",
+        description: "Asynchronous WWKS2 service connecting medication-management and blister-production software with BD Rowa storage through TCP, XML, and resilient processing.",
         sections: [
           {
             heading: "Context",
@@ -86,9 +88,11 @@ const caseStudies = [
         ]
       },
       de: {
+        datePublished: "2026-07-30",
+        dateModified: "2026-08-10T19:53:57+02:00",
         slug: "wwks2-apothekenlager-integration",
         title: "WWKS2-Integration mit automatisierter Arzneimittellagerung",
-        description: "Ein asynchroner Dienst verbindet Software für Medikationsmanagement und Blisterproduktion über WWKS2, TCP, XML und wiederanlauffähige Nachrichtenverarbeitung mit BD-Rowa-Lagersystemen.",
+        description: "Asynchroner WWKS2-Dienst zur Anbindung von Medikationsmanagement und Blisterproduktion an BD-Rowa-Lagersysteme über TCP und XML.",
         sections: [
           {
             heading: "Ausgangssituation",
@@ -120,9 +124,11 @@ const caseStudies = [
         ]
       },
       es: {
+        datePublished: "2026-07-30",
+        dateModified: "2026-08-10T19:53:57+02:00",
         slug: "integracion-wwks2-almacen-farmacia",
         title: "Integración WWKS2 con almacenamiento automatizado de medicamentos",
-        description: "Un servicio asíncrono conecta software de gestión de la medicación y producción de blísteres personalizados con sistemas de almacenamiento BD Rowa mediante WWKS2, TCP, XML y procesamiento recuperable de mensajes.",
+        description: "Servicio WWKS2 asíncrono que conecta software de medicación y producción de blísteres con almacenes BD Rowa mediante TCP, XML y procesamiento resiliente.",
         sections: [
           {
             heading: "Contexto",
@@ -173,6 +179,8 @@ const caseStudies = [
     ],
     locales: {
       en: {
+        datePublished: "2026-07-30",
+        dateModified: "2026-08-09T00:00:00+02:00",
         slug: "securpharm-nmvs-medication-verification",
         title: "securPharm/NMVS medication verification integration",
         description: "Integration of medication-handling workflows with the German NMVS for verification, decommissioning, undo operations, and resilient error handling.",
@@ -207,6 +215,8 @@ const caseStudies = [
         ]
       },
       de: {
+        datePublished: "2026-07-30",
+        dateModified: "2026-08-09T00:00:00+02:00",
         slug: "securpharm-nmvs-arzneimittelverifikation",
         title: "securPharm/NMVS-Integration zur Arzneimittelverifikation",
         description: "Integration von Abläufen der Arzneimittelhandhabung mit dem deutschen NMVS für Verifikation, Ausbuchung, Rückbuchung und robuste Fehlerbehandlung.",
@@ -241,9 +251,11 @@ const caseStudies = [
         ]
       },
       es: {
+        datePublished: "2026-07-30",
+        dateModified: "2026-08-10T19:53:57+02:00",
         slug: "securpharm-nmvs-verificacion-medicamentos",
         title: "Integración securPharm/NMVS: experiencia transferible a SEVeM",
-        description: "Integración productiva de flujos de gestión y manipulación de medicamentos con el NMVS alemán para verificación, desactivación, reversión y gestión robusta de errores, con patrones técnicos transferibles al entorno español SEVeM.",
+        description: "Integración productiva con el NMVS alemán para verificar, desactivar y revertir medicamentos, con patrones técnicos transferibles a SEVeM.",
         additionalTechnologies: [
           "SEVeM"
         ],
@@ -296,9 +308,11 @@ const caseStudies = [
     ],
     locales: {
       en: {
+        datePublished: "2026-07-30",
+        dateModified: "2026-08-10T19:53:57+02:00",
         slug: "legacy-php-healthcare-modernization",
         title: "Modernizing legacy PHP software for medication management and blister production",
-        description: "Incremental modernization of medication-management and blister-production applications through controlled integration boundaries, automated tests, logging, and production-focused operations.",
+        description: "Incremental modernization of medication-management and blister-production software using controlled integrations, automated tests, and structured logging.",
         sections: [
           {
             heading: "Context",
@@ -331,9 +345,11 @@ const caseStudies = [
         ]
       },
       de: {
+        datePublished: "2026-07-30",
+        dateModified: "2026-08-10T19:53:57+02:00",
         slug: "legacy-php-gesundheits-it-modernisierung",
         title: "Modernisierung von Legacy-PHP-Software für Medikationsmanagement und Blisterproduktion",
-        description: "Schrittweise Modernisierung von Anwendungen für Medikationsmanagement und Blisterproduktion durch kontrollierte Integrationsgrenzen, automatisierte Tests, Logging und produktionsnahen Betrieb.",
+        description: "Schrittweise Modernisierung von Software für Medikationsmanagement und Blisterproduktion mit kontrollierten Integrationen, Tests und Logging.",
         sections: [
           {
             heading: "Ausgangssituation",
@@ -366,9 +382,11 @@ const caseStudies = [
         ]
       },
       es: {
+        datePublished: "2026-07-30",
+        dateModified: "2026-08-10T19:53:57+02:00",
         slug: "modernizacion-php-legacy-software-sanitario",
         title: "Modernización de software PHP legacy para gestión de la medicación y producción de blísteres",
-        description: "Modernización incremental de aplicaciones para gestión de la medicación y producción de blísteres mediante límites de integración controlados, pruebas automatizadas, logs y operación orientada a producción.",
+        description: "Modernización incremental de software de medicación y producción de blísteres mediante integraciones controladas, pruebas automatizadas y logging.",
         sections: [
           {
             heading: "Contexto",
@@ -404,7 +422,6 @@ const caseStudies = [
   },
   {
     id: "totp",
-    datePublished: "2026-08-09",
     technologies: [
       "PHP",
       "CakePHP",
@@ -426,9 +443,11 @@ const caseStudies = [
     ],
     locales: {
       en: {
+        datePublished: "2026-08-09",
+        dateModified: "2026-08-10T18:33:38+02:00",
         slug: "totp-2fa-patient-data-security",
         title: "TOTP-based 2FA for patient-data protection in TABChat",
-        description: "Standards-based two-factor authentication for a medical web application, with authenticator-app provisioning, CakePHP integration, RBAC-controlled flows, trusted devices, migrations, and security testing.",
+        description: "Implementation of TOTP-based 2FA in TABChat with CakePHP, role-based access control, trusted devices, database migrations, and security testing.",
         sections: [
           {
             heading: "Context",
@@ -461,9 +480,11 @@ const caseStudies = [
         ]
       },
       de: {
+        datePublished: "2026-08-09",
+        dateModified: "2026-08-10T18:33:38+02:00",
         slug: "totp-2fa-patientendaten-sicherheit",
         title: "TOTP-basierte 2FA zum Schutz von Patientendaten in TABChat",
-        description: "Standardbasierte Zwei-Faktor-Authentifizierung für eine medizinische Webanwendung mit Einrichtung per Authenticator-App, CakePHP-Integration, rollen- und rechtegesteuerten Abläufen, vertrauenswürdigen Geräten, Migrationen und Sicherheitstests.",
+        description: "Implementierung einer TOTP-basierten 2FA in TABChat mit CakePHP, rollenbasierter Zugriffskontrolle, vertrauenswürdigen Geräten und Sicherheitstests.",
         sections: [
           {
             heading: "Ausgangssituation",
@@ -496,9 +517,11 @@ const caseStudies = [
         ]
       },
       es: {
+        datePublished: "2026-08-09",
+        dateModified: "2026-08-10T18:33:38+02:00",
         slug: "totp-2fa-seguridad-datos-pacientes",
         title: "2FA basada en TOTP para proteger datos de pacientes en TABChat",
-        description: "Autenticación de dos factores basada en estándares para una aplicación web sanitaria, con configuración mediante aplicaciones de autenticación, integración con CakePHP, flujos sujetos a roles y permisos, dispositivos de confianza, migraciones y pruebas de seguridad.",
+        description: "Implementación de 2FA basada en TOTP en TABChat con CakePHP, control de acceso por roles, dispositivos de confianza y pruebas de seguridad.",
         sections: [
           {
             heading: "Contexto",
