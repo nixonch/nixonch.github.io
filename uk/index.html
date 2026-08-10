@@ -35,7 +35,7 @@
         "@id": "https://nixonch.github.io/uk/#profile",
         "url": "https://nixonch.github.io/uk/",
         "inLanguage": "uk",
-        "dateModified": "2026-08-09T00:00:00+02:00",
+        "dateModified": "2026-08-10T17:13:27+02:00",
         "mainEntity": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
@@ -91,7 +91,6 @@
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/skeleton.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="shortcut icon" href="../images/mn.ico">
@@ -108,6 +107,9 @@
     </nav>
     <input type="checkbox" id="navi-toggle" hidden>
     <div class="container">
+      <div class="print-cv-control noprint">
+        <button type="button" class="print-cv-button" data-print-cv title="Print CV" aria-label="Print CV"><span aria-hidden="true">🖨</span></button>
+      </div>
       <div class="summary">
         <label for="navi-toggle" class="navi-toggle navi-toggle-wide noprint" title="Toggle sidebar" aria-label="Toggle sidebar"></label>
         <label for="navi-toggle" class="navi-toggle navi-toggle-narrow noprint" title="Toggle sidebar" aria-label="Toggle sidebar"></label>
@@ -163,11 +165,11 @@
           </p>
         </div>
       </div>
-      <hr>
+      <hr id="summary">
 
       <div class="row">
         <div class="one-third column">
-          <h2><span data-i18n="section_summary">Про мене</span> <a id="summary" href="#summary">¶</a></h2>
+          <h2><span data-i18n="section_summary">Про мене</span> <a href="#summary">¶</a></h2>
         </div>
         <div class="two-thirds column" section="summary">
           <h3 data-i18n="summary_heading">PHP-бекенд та системна інтеграція</h3>
@@ -179,11 +181,11 @@
           </p>
         </div>
       </div>
-      <hr>
+      <hr id="skills">
 
       <div class="row">
         <div class="one-third column">
-          <h2><span data-i18n="section_skills">Навички</span> <a id="skills" href="#skills">¶</a></h2>
+          <h2><span data-i18n="section_skills">Навички</span> <a href="#skills">¶</a></h2>
         </div>
         <div class="two-thirds column" section="skills">
           <h3 data-i18n="skills_programming_data">Програмування та дані</h3>
@@ -194,13 +196,6 @@
             <span class="tag">Python</span>-
             <span class="tag">C/C++</span>-
             <span class="tag">Bash</span>
-          </p>
-          <div class="endtag"></div>
-
-          <h3 data-i18n="skills_ai_development">Розробка за допомогою ШІ</h3>
-          <p class="taglist2">
-            <span class="tag">OpenAI Codex</span>-
-            <span class="tag">Claude Code</span>
           </p>
           <div class="endtag"></div>
 
@@ -248,12 +243,19 @@
             <span class="tag" data-i18n="skills_production_logging">логування та діагностика проблем у продакшені</span>
           </p>
           <div class="endtag"></div>
+
+          <h3 data-i18n="skills_ai_development">Розробка за допомогою ШІ</h3>
+          <p class="taglist2">
+            <span class="tag">OpenAI Codex</span>-
+            <span class="tag">Claude Code</span>
+          </p>
+          <div class="endtag"></div>
         </div>
       </div>
-      <hr>
+      <hr id="experience">
 
       <div class="row">
-        <div class="one-third column" id="experience">
+        <div class="one-third column">
           <h2><span data-i18n="section_experience">Досвід роботи</span> <a href="#experience">¶</a></h2>
         </div>
         <div class="two-thirds column" section="experience">
@@ -323,16 +325,24 @@
           </ul>
         </div>
       </div>
-      <hr>
+      <hr id="projects">
 
       <div class="row">
-        <div class="one-third column" id="projects">
+        <div class="one-third column">
           <h2><span data-i18n="section_projects">Вибрані проєкти /</span><br class="projects-title-break"> <span data-i18n="section_open_source">Відкритий код</span> <a href="#projects">¶</a></h2>
         </div>
         <div class="two-thirds column" section="projects">
-          <h3><span class="date"><span>2020 <span class="duration" data-i18n="present">дотепер</span></span></span> <span data-i18n="webrtc_role">Автор розширення WebRTC SIP Phone</span></h3>
-          <h4 data-i18n="webrtc_description">Розробляю та підтримую браузерне розширення на JavaScript/WebRTC, за допомогою якого кол-центри та інші компанії можуть здійснювати SIP-дзвінки, просто натискаючи на номери телефонів на вебсторінках.</h4>
-          <span data-i18n="chrome_store">Chrome Web Store:</span> <a href="https://chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib" target="_blank">chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib</a>
+          <h3><span class="date"><span>2020 <span class="duration" data-i18n="present">дотепер</span></span></span> <span data-i18n="webrtc_role">Автор і мейнтейнер</span></h3>
+          <h4 data-i18n="webrtc_project">WebRTC SIP Phone — браузерне розширення click-to-call</h4>
+          <ul>
+            <li>
+              <ul>
+                <li data-i18n="webrtc_item_1">Розробляю та підтримую розширення на JavaScript/WebRTC.</li>
+                <li data-i18n="webrtc_item_2">Розширення дає змогу здійснювати SIP-дзвінки натисканням на номери телефонів на вебсторінках, насамперед для кол-центрів та інших компаній.</li>
+                <li><span data-i18n="webrtc_item_3">Публікую та підтримую розширення через Chrome Web Store:</span> <a href="https://chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib" target="_blank">chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib</a></li>
+              </ul>
+            </li>
+          </ul>
           <hr>
 
           <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">дотепер</span></span></span> <span data-i18n="sip_role">Власник і розробник</span></h3>
@@ -347,33 +357,45 @@
           </ul>
           <hr>
 
-          <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">дотепер</span></span></span> <span data-i18n="a2billing_role">Мейнтейнер A2Billing</span></h3>
-          <h4 data-i18n="a2billing_description">Підтримую телекомунікаційну білінгову платформу для Asterisk під ліцензією AGPLv3 і використовую її для створення та супроводу білінгових систем і АТС на PHP/MySQL.</h4>
-          <span data-i18n="source_code">Вихідний код:</span> <a href="https://github.com/nixonch/a2billing" target="_blank">github.com/nixonch/a2billing</a>
+          <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">дотепер</span></span></span> <span data-i18n="a2billing_role">Мейнтейнер open-source-проєкту</span></h3>
+          <h4 data-i18n="a2billing_project">A2Billing — телекомунікаційна білінгова платформа для Asterisk під ліцензією AGPLv3</h4>
+          <ul>
+            <li>
+              <ul>
+                <li data-i18n="a2billing_item_1">Підтримую та розширюю кодову базу на PHP/MySQL.</li>
+                <li data-i18n="a2billing_item_2">Створюю та супроводжую білінгові системи й IP-АТС на базі платформи.</li>
+                <li><span data-i18n="source_code">Вихідний код:</span> <a href="https://github.com/nixonch/a2billing" target="_blank">github.com/nixonch/a2billing</a></li>
+              </ul>
+            </li>
+          </ul>
           <div class="case-study-links noprint">
             <hr>
 
             <h3 data-i18n="case_studies_heading">Технічні кейси з медичного ПЗ (англійською)</h3>
-            <ul class="case-study-list">
+            <ul>
               <li>
-                <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" data-case-study="wwks2" data-i18n="case_wwks2_title">Інтеграція WWKS2 з автоматизованим зберіганням ліків</a>
-              </li>
-              <li>
-                <a href="/en/case-studies/securpharm-nmvs-medication-verification/" data-case-study="nmvs" data-i18n="case_nmvs_title">Інтеграція securPharm/NMVS для перевірки лікарських засобів</a>
-              </li>
-              <li>
-                <a href="/en/case-studies/legacy-php-healthcare-modernization/" data-case-study="legacy" data-i18n="case_legacy_title">Модернізація legacy PHP-ПЗ для керування лікарським забезпеченням і виробництва блістерів</a>
-              </li>
-              <li>
-                <a href="/en/case-studies/totp-2fa-patient-data-security/" data-case-study="totp" data-i18n="case_totp_title">2FA на базі TOTP для захисту даних пацієнтів у TABChat</a>
+                <ul class="case-study-list">
+                  <li>
+                    <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" data-case-study="wwks2" data-i18n="case_wwks2_title">Інтеграція WWKS2 з автоматизованим зберіганням ліків</a>
+                  </li>
+                  <li>
+                    <a href="/en/case-studies/securpharm-nmvs-medication-verification/" data-case-study="nmvs" data-i18n="case_nmvs_title">Інтеграція securPharm/NMVS для перевірки лікарських засобів</a>
+                  </li>
+                  <li>
+                    <a href="/en/case-studies/legacy-php-healthcare-modernization/" data-case-study="legacy" data-i18n="case_legacy_title">Модернізація legacy PHP-ПЗ для керування лікарським забезпеченням і виробництва блістерів</a>
+                  </li>
+                  <li>
+                    <a href="/en/case-studies/totp-2fa-patient-data-security/" data-case-study="totp" data-i18n="case_totp_title">2FA на базі TOTP для захисту даних пацієнтів у TABChat</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <hr>
+      <hr id="education">
 
-      <div class="education-tail" id="education">
+      <div class="education-tail">
         <div class="row">
           <div class="one-third column">
             <h2><span data-i18n="section_education">Освіта</span> <a href="#education">¶</a></h2>

@@ -35,7 +35,7 @@
         "@id": "https://nixonch.github.io/fr/#profile",
         "url": "https://nixonch.github.io/fr/",
         "inLanguage": "fr",
-        "dateModified": "2026-08-09T00:00:00+02:00",
+        "dateModified": "2026-08-10T17:13:27+02:00",
         "mainEntity": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
@@ -91,7 +91,6 @@
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/skeleton.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="shortcut icon" href="../images/mn.ico">
@@ -108,6 +107,9 @@
     </nav>
     <input type="checkbox" id="navi-toggle" hidden>
     <div class="container">
+      <div class="print-cv-control noprint">
+        <button type="button" class="print-cv-button" data-print-cv title="Print CV" aria-label="Print CV"><span aria-hidden="true">🖨</span></button>
+      </div>
       <div class="summary">
         <label for="navi-toggle" class="navi-toggle navi-toggle-wide noprint" title="Toggle sidebar" aria-label="Toggle sidebar"></label>
         <label for="navi-toggle" class="navi-toggle navi-toggle-narrow noprint" title="Toggle sidebar" aria-label="Toggle sidebar"></label>
@@ -163,11 +165,11 @@
           </p>
         </div>
       </div>
-      <hr>
+      <hr id="summary">
 
       <div class="row">
         <div class="one-third column">
-          <h2><span data-i18n="section_summary">Profil</span> <a id="summary" href="#summary">¶</a></h2>
+          <h2><span data-i18n="section_summary">Profil</span> <a href="#summary">¶</a></h2>
         </div>
         <div class="two-thirds column" section="summary">
           <h3 data-i18n="summary_heading">Backend PHP et intégration de systèmes</h3>
@@ -179,11 +181,11 @@
           </p>
         </div>
       </div>
-      <hr>
+      <hr id="skills">
 
       <div class="row">
         <div class="one-third column">
-          <h2><span data-i18n="section_skills">Compétences</span> <a id="skills" href="#skills">¶</a></h2>
+          <h2><span data-i18n="section_skills">Compétences</span> <a href="#skills">¶</a></h2>
         </div>
         <div class="two-thirds column" section="skills">
           <h3 data-i18n="skills_programming_data">Programmation et données</h3>
@@ -194,13 +196,6 @@
             <span class="tag">Python</span>-
             <span class="tag">C/C++</span>-
             <span class="tag">Bash</span>
-          </p>
-          <div class="endtag"></div>
-
-          <h3 data-i18n="skills_ai_development">Développement assisté par l’IA</h3>
-          <p class="taglist2">
-            <span class="tag">OpenAI Codex</span>-
-            <span class="tag">Claude Code</span>
           </p>
           <div class="endtag"></div>
 
@@ -248,12 +243,19 @@
             <span class="tag" data-i18n="skills_production_logging">journalisation et diagnostic en production</span>
           </p>
           <div class="endtag"></div>
+
+          <h3 data-i18n="skills_ai_development">Développement assisté par l’IA</h3>
+          <p class="taglist2">
+            <span class="tag">OpenAI Codex</span>-
+            <span class="tag">Claude Code</span>
+          </p>
+          <div class="endtag"></div>
         </div>
       </div>
-      <hr>
+      <hr id="experience">
 
       <div class="row">
-        <div class="one-third column" id="experience">
+        <div class="one-third column">
           <h2><span data-i18n="section_experience">Expérience professionnelle</span> <a href="#experience">¶</a></h2>
         </div>
         <div class="two-thirds column" section="experience">
@@ -323,16 +325,24 @@
           </ul>
         </div>
       </div>
-      <hr>
+      <hr id="projects">
 
       <div class="row">
-        <div class="one-third column" id="projects">
+        <div class="one-third column">
           <h2><span data-i18n="section_projects">Projets sélectionnés /</span><br class="projects-title-break"> <span data-i18n="section_open_source">Open source</span> <a href="#projects">¶</a></h2>
         </div>
         <div class="two-thirds column" section="projects">
-          <h3><span class="date"><span>2020 <span class="duration" data-i18n="present">aujourd’hui</span></span></span> <span data-i18n="webrtc_role">Auteur de l’extension WebRTC SIP Phone</span></h3>
-          <h4 data-i18n="webrtc_description">Je développe et maintiens une extension de navigateur en JavaScript/WebRTC qui permet aux centres d’appels et à d’autres entreprises de lancer des appels SIP en cliquant sur les numéros de téléphone affichés sur les pages web.</h4>
-          <span data-i18n="chrome_store">Chrome Web Store :</span> <a href="https://chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib" target="_blank">chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib</a>
+          <h3><span class="date"><span>2020 <span class="duration" data-i18n="present">aujourd’hui</span></span></span> <span data-i18n="webrtc_role">Créateur et mainteneur</span></h3>
+          <h4 data-i18n="webrtc_project">WebRTC SIP Phone — extension de navigateur click-to-call</h4>
+          <ul>
+            <li>
+              <ul>
+                <li data-i18n="webrtc_item_1">Je développe et maintiens l’extension JavaScript/WebRTC.</li>
+                <li data-i18n="webrtc_item_2">Elle permet de lancer des appels SIP en cliquant sur les numéros de téléphone affichés sur les pages web, principalement pour les centres d’appels et d’autres entreprises.</li>
+                <li><span data-i18n="webrtc_item_3">Je publie l’extension sur le Chrome Web Store et en assure le support :</span> <a href="https://chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib" target="_blank">chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib</a></li>
+              </ul>
+            </li>
+          </ul>
           <hr>
 
           <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">aujourd’hui</span></span></span> <span data-i18n="sip_role">Propriétaire et développeur</span></h3>
@@ -347,33 +357,45 @@
           </ul>
           <hr>
 
-          <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">aujourd’hui</span></span></span> <span data-i18n="a2billing_role">Mainteneur d’A2Billing</span></h3>
-          <h4 data-i18n="a2billing_description">Je maintiens une plateforme de facturation télécom pour Asterisk sous licence AGPLv3 et je l’utilise pour développer et assurer le support de systèmes de facturation et de téléphonie IP basés sur PHP/MySQL.</h4>
-          <span data-i18n="source_code">Code source :</span> <a href="https://github.com/nixonch/a2billing" target="_blank">github.com/nixonch/a2billing</a>
+          <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">aujourd’hui</span></span></span> <span data-i18n="a2billing_role">Mainteneur du projet open source</span></h3>
+          <h4 data-i18n="a2billing_project">A2Billing — plateforme de facturation télécom pour Asterisk sous licence AGPLv3</h4>
+          <ul>
+            <li>
+              <ul>
+                <li data-i18n="a2billing_item_1">Je maintiens et fais évoluer la base de code PHP/MySQL.</li>
+                <li data-i18n="a2billing_item_2">Je développe et assure le support de systèmes de facturation télécom et de téléphonie IP basés sur la plateforme.</li>
+                <li><span data-i18n="source_code">Code source :</span> <a href="https://github.com/nixonch/a2billing" target="_blank">github.com/nixonch/a2billing</a></li>
+              </ul>
+            </li>
+          </ul>
           <div class="case-study-links noprint">
             <hr>
 
             <h3 data-i18n="case_studies_heading">Études de cas sur les logiciels de santé (en anglais)</h3>
-            <ul class="case-study-list">
+            <ul>
               <li>
-                <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" data-case-study="wwks2" data-i18n="case_wwks2_title">Intégration WWKS2 avec un stockage automatisé de médicaments</a>
-              </li>
-              <li>
-                <a href="/en/case-studies/securpharm-nmvs-medication-verification/" data-case-study="nmvs" data-i18n="case_nmvs_title">Intégration securPharm/NMVS pour la vérification des médicaments</a>
-              </li>
-              <li>
-                <a href="/en/case-studies/legacy-php-healthcare-modernization/" data-case-study="legacy" data-i18n="case_legacy_title">Modernisation de logiciels PHP legacy pour la gestion des traitements et la préparation de doses personnalisées</a>
-              </li>
-              <li>
-                <a href="/en/case-studies/totp-2fa-patient-data-security/" data-case-study="totp" data-i18n="case_totp_title">2FA basée sur TOTP pour protéger les données patients dans TABChat</a>
+                <ul class="case-study-list">
+                  <li>
+                    <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" data-case-study="wwks2" data-i18n="case_wwks2_title">Intégration WWKS2 avec un stockage automatisé de médicaments</a>
+                  </li>
+                  <li>
+                    <a href="/en/case-studies/securpharm-nmvs-medication-verification/" data-case-study="nmvs" data-i18n="case_nmvs_title">Intégration securPharm/NMVS pour la vérification des médicaments</a>
+                  </li>
+                  <li>
+                    <a href="/en/case-studies/legacy-php-healthcare-modernization/" data-case-study="legacy" data-i18n="case_legacy_title">Modernisation de logiciels PHP legacy pour la gestion des traitements et la préparation de doses personnalisées</a>
+                  </li>
+                  <li>
+                    <a href="/en/case-studies/totp-2fa-patient-data-security/" data-case-study="totp" data-i18n="case_totp_title">2FA basée sur TOTP pour protéger les données patients dans TABChat</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <hr>
+      <hr id="education">
 
-      <div class="education-tail" id="education">
+      <div class="education-tail">
         <div class="row">
           <div class="one-third column">
             <h2><span data-i18n="section_education">Formation</span> <a href="#education">¶</a></h2>

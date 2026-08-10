@@ -9,6 +9,9 @@ const projectRoot = path.resolve(__dirname, "..");
 const sourceHtmlPath = path.join(projectRoot, "index.html");
 const sourceI18nPath = path.join(projectRoot, "js", "i18n.js");
 const siteOrigin = "https://nixonch.github.io";
+const caseStudyDateModified = "2026-08-09T00:00:00+02:00";
+const caseStudyLastModified = caseStudyDateModified.slice(0, 10);
+const profileStructuredDataPattern = /(<script id="profile-structured-data" type="application\/ld\+json">)([\s\S]*?)(<\/script>)/;
 
 const languagePages = [
   { language: "en", directory: "en" },
@@ -67,15 +70,18 @@ function replaceTranslatedContent(html, dictionary) {
   }, html);
 }
 
-function replaceStructuredData(html, pageUrl, language, dictionary) {
-  const pattern = /(<script id="profile-structured-data" type="application\/ld\+json">)([\s\S]*?)(<\/script>)/;
-  const match = html.match(pattern);
+function readProfileStructuredData(html) {
+  const match = html.match(profileStructuredDataPattern);
 
   if (!match) {
     throw new Error("Profile structured data block not found in index.html");
   }
 
-  const structuredData = JSON.parse(match[2]);
+  return JSON.parse(match[2]);
+}
+
+function replaceStructuredData(html, pageUrl, language, dictionary) {
+  const structuredData = readProfileStructuredData(html);
   structuredData["@id"] = `${pageUrl}#profile`;
   structuredData.url = pageUrl;
   structuredData.inLanguage = language;
@@ -87,7 +93,7 @@ function replaceStructuredData(html, pageUrl, language, dictionary) {
     .map((line) => `      ${line}`)
     .join("\n");
 
-  return html.replace(pattern, `$1\n${serialized}\n    $3`);
+  return html.replace(profileStructuredDataPattern, `$1\n${serialized}\n    $3`);
 }
 
 function replaceCaseStudyLinks(html, localizedCaseStudyLinks) {
@@ -209,7 +215,7 @@ function renderCaseStudyPage(caseStudy, language) {
     mainEntityOfPage: pageUrl,
     inLanguage: language,
     datePublished: caseStudy.datePublished || "2026-07-30",
-    dateModified: "2026-08-09T00:00:00+02:00",
+    dateModified: caseStudyDateModified,
     author: {
       "@type": "Person",
       "@id": `${siteOrigin}/#person`,
@@ -336,15 +342,15 @@ function renderSitemapAlternates(alternates) {
   )).join("\n");
 }
 
-function renderSitemapEntry(url, alternates) {
+function renderSitemapEntry(url, alternates, lastModified) {
   return `  <url>
     <loc>${url}</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>${lastModified}</lastmod>
 ${renderSitemapAlternates(alternates)}
   </url>`;
 }
 
-function generateSitemap() {
+function generateSitemap(profileLastModified) {
   const profileAlternates = [
     ...languagePages.map((page) => ({
       language: page.language,
@@ -353,9 +359,13 @@ function generateSitemap() {
     { language: "x-default", url: `${siteOrigin}/` }
   ];
   const entries = [
-    renderSitemapEntry(`${siteOrigin}/`, profileAlternates),
+    renderSitemapEntry(`${siteOrigin}/`, profileAlternates, profileLastModified),
     ...languagePages.map((page) => (
-      renderSitemapEntry(`${siteOrigin}/${page.directory}/`, profileAlternates)
+      renderSitemapEntry(
+        `${siteOrigin}/${page.directory}/`,
+        profileAlternates,
+        profileLastModified
+      )
     ))
   ];
 
@@ -369,7 +379,11 @@ function generateSitemap() {
     ];
 
     for (const language of Object.keys(caseStudy.locales)) {
-      entries.push(renderSitemapEntry(getCaseStudyUrl(caseStudy, language), caseAlternates));
+      entries.push(renderSitemapEntry(
+        getCaseStudyUrl(caseStudy, language),
+        caseAlternates,
+        caseStudyLastModified
+      ));
     }
   }
 
@@ -382,6 +396,7 @@ ${entries.join("\n")}
 }
 
 const template = fs.readFileSync(sourceHtmlPath, "utf8");
+const profileLastModified = readProfileStructuredData(template).dateModified.slice(0, 10);
 const i18nSource = fs.readFileSync(sourceI18nPath, "utf8").replace(/\r\n?/g, "\n");
 const translations = extractObject(i18nSource, "translations", "\n\n  var caseStudyLinks");
 const caseStudyLinks = extractObject(i18nSource, "caseStudyLinks", "\n\n  var caseStudyTechnologyPatterns");
@@ -413,7 +428,11 @@ for (const caseStudy of caseStudies) {
   }
 }
 
-fs.writeFileSync(path.join(projectRoot, "sitemap.xml"), generateSitemap(), "utf8");
+fs.writeFileSync(
+  path.join(projectRoot, "sitemap.xml"),
+  generateSitemap(profileLastModified),
+  "utf8"
+);
 
 console.log(
   `Generated ${languagePages.length} localized profile pages and ${caseStudies.length * 3} case-study pages.`

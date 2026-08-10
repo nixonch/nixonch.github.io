@@ -35,7 +35,7 @@
         "@id": "https://nixonch.github.io/de/#profile",
         "url": "https://nixonch.github.io/de/",
         "inLanguage": "de",
-        "dateModified": "2026-08-09T00:00:00+02:00",
+        "dateModified": "2026-08-10T17:13:27+02:00",
         "mainEntity": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
@@ -91,7 +91,6 @@
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/skeleton.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="shortcut icon" href="../images/mn.ico">
@@ -108,6 +107,9 @@
     </nav>
     <input type="checkbox" id="navi-toggle" hidden>
     <div class="container">
+      <div class="print-cv-control noprint">
+        <button type="button" class="print-cv-button" data-print-cv title="Print CV" aria-label="Print CV"><span aria-hidden="true">🖨</span></button>
+      </div>
       <div class="summary">
         <label for="navi-toggle" class="navi-toggle navi-toggle-wide noprint" title="Toggle sidebar" aria-label="Toggle sidebar"></label>
         <label for="navi-toggle" class="navi-toggle navi-toggle-narrow noprint" title="Toggle sidebar" aria-label="Toggle sidebar"></label>
@@ -163,11 +165,11 @@
           </p>
         </div>
       </div>
-      <hr>
+      <hr id="summary">
 
       <div class="row">
         <div class="one-third column">
-          <h2><span data-i18n="section_summary">Profil</span> <a id="summary" href="#summary">¶</a></h2>
+          <h2><span data-i18n="section_summary">Profil</span> <a href="#summary">¶</a></h2>
         </div>
         <div class="two-thirds column" section="summary">
           <h3 data-i18n="summary_heading">PHP-Backend &amp; Systemintegration</h3>
@@ -179,11 +181,11 @@
           </p>
         </div>
       </div>
-      <hr>
+      <hr id="skills">
 
       <div class="row">
         <div class="one-third column">
-          <h2><span data-i18n="section_skills">Kenntnisse</span> <a id="skills" href="#skills">¶</a></h2>
+          <h2><span data-i18n="section_skills">Kenntnisse</span> <a href="#skills">¶</a></h2>
         </div>
         <div class="two-thirds column" section="skills">
           <h3 data-i18n="skills_programming_data">Programmierung &amp; Daten</h3>
@@ -194,13 +196,6 @@
             <span class="tag">Python</span>-
             <span class="tag">C/C++</span>-
             <span class="tag">Bash</span>
-          </p>
-          <div class="endtag"></div>
-
-          <h3 data-i18n="skills_ai_development">KI-gestützte Softwareentwicklung</h3>
-          <p class="taglist2">
-            <span class="tag">OpenAI Codex</span>-
-            <span class="tag">Claude Code</span>
           </p>
           <div class="endtag"></div>
 
@@ -248,12 +243,19 @@
             <span class="tag" data-i18n="skills_production_logging">Produktions-Logging und Fehleranalyse</span>
           </p>
           <div class="endtag"></div>
+
+          <h3 data-i18n="skills_ai_development">KI-gestützte Softwareentwicklung</h3>
+          <p class="taglist2">
+            <span class="tag">OpenAI Codex</span>-
+            <span class="tag">Claude Code</span>
+          </p>
+          <div class="endtag"></div>
         </div>
       </div>
-      <hr>
+      <hr id="experience">
 
       <div class="row">
-        <div class="one-third column" id="experience">
+        <div class="one-third column">
           <h2><span data-i18n="section_experience">Berufserfahrung</span> <a href="#experience">¶</a></h2>
         </div>
         <div class="two-thirds column" section="experience">
@@ -323,16 +325,24 @@
           </ul>
         </div>
       </div>
-      <hr>
+      <hr id="projects">
 
       <div class="row">
-        <div class="one-third column" id="projects">
+        <div class="one-third column">
           <h2><span data-i18n="section_projects">Ausgewählte Projekte /</span><br class="projects-title-break"> <span data-i18n="section_open_source">Open Source</span> <a href="#projects">¶</a></h2>
         </div>
         <div class="two-thirds column" section="projects">
-          <h3><span class="date"><span>2020 <span class="duration" data-i18n="present">heute</span></span></span> <span data-i18n="webrtc_role">Entwickler der Browsererweiterung WebRTC SIP Phone</span></h3>
-          <h4 data-i18n="webrtc_description">Ich entwickle und pflege eine JavaScript-/WebRTC-Browsererweiterung, mit der Callcenter und andere Unternehmen per Klick auf Telefonnummern in Webseiten SIP-Anrufe starten können.</h4>
-          <span data-i18n="chrome_store">Chrome Web Store:</span> <a href="https://chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib" target="_blank">chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib</a>
+          <h3><span class="date"><span>2020 <span class="duration" data-i18n="present">heute</span></span></span> <span data-i18n="webrtc_role">Entwickler und Maintainer</span></h3>
+          <h4 data-i18n="webrtc_project">WebRTC SIP Phone — Click-to-Call-Browsererweiterung</h4>
+          <ul>
+            <li>
+              <ul>
+                <li data-i18n="webrtc_item_1">Ich entwickle und pflege die JavaScript-/WebRTC-Erweiterung.</li>
+                <li data-i18n="webrtc_item_2">Sie ermöglicht SIP-Anrufe per Klick auf Telefonnummern in Webseiten, insbesondere für Callcenter und andere Unternehmen.</li>
+                <li><span data-i18n="webrtc_item_3">Ich veröffentliche und unterstütze die Erweiterung über den Chrome Web Store:</span> <a href="https://chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib" target="_blank">chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib</a></li>
+              </ul>
+            </li>
+          </ul>
           <hr>
 
           <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">heute</span></span></span> <span data-i18n="sip_role">Inhaber und Entwickler</span></h3>
@@ -347,33 +357,45 @@
           </ul>
           <hr>
 
-          <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">heute</span></span></span> <span data-i18n="a2billing_role">Maintainer von A2Billing</span></h3>
-          <h4 data-i18n="a2billing_description">Ich pflege eine AGPLv3-lizenzierte Telekommunikations-Abrechnungsplattform für Asterisk und nutze sie zum Aufbau und Support von PHP-/MySQL-basierten Abrechnungs- und Telefonanlagen.</h4>
-          <span data-i18n="source_code">Quellcode:</span> <a href="https://github.com/nixonch/a2billing" target="_blank">github.com/nixonch/a2billing</a>
+          <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">heute</span></span></span> <span data-i18n="a2billing_role">Maintainer des Open-Source-Projekts</span></h3>
+          <h4 data-i18n="a2billing_project">A2Billing — AGPLv3-lizenzierte Telekommunikations-Abrechnungsplattform für Asterisk</h4>
+          <ul>
+            <li>
+              <ul>
+                <li data-i18n="a2billing_item_1">Ich pflege und erweitere die PHP-/MySQL-Codebasis.</li>
+                <li data-i18n="a2billing_item_2">Auf Grundlage der Plattform entwickle und unterstütze ich Telekommunikations-Abrechnungssysteme und IP-Telefonanlagen.</li>
+                <li><span data-i18n="source_code">Quellcode:</span> <a href="https://github.com/nixonch/a2billing" target="_blank">github.com/nixonch/a2billing</a></li>
+              </ul>
+            </li>
+          </ul>
           <div class="case-study-links noprint">
             <hr>
 
             <h3 data-i18n="case_studies_heading">Fallstudien zu Software im Gesundheitswesen</h3>
-            <ul class="case-study-list">
+            <ul>
               <li>
-                <a href="/de/fallstudien/wwks2-apothekenlager-integration/" data-case-study="wwks2" data-i18n="case_wwks2_title">WWKS2-Integration mit automatisierter Arzneimittellagerung</a>
-              </li>
-              <li>
-                <a href="/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/" data-case-study="nmvs" data-i18n="case_nmvs_title">securPharm/NMVS-Integration zur Arzneimittelverifikation</a>
-              </li>
-              <li>
-                <a href="/de/fallstudien/legacy-php-gesundheits-it-modernisierung/" data-case-study="legacy" data-i18n="case_legacy_title">Modernisierung von Legacy-PHP-Software für Medikationsmanagement und Blisterproduktion</a>
-              </li>
-              <li>
-                <a href="/de/fallstudien/totp-2fa-patientendaten-sicherheit/" data-case-study="totp" data-i18n="case_totp_title">TOTP-basierte 2FA zum Schutz von Patientendaten in TABChat</a>
+                <ul class="case-study-list">
+                  <li>
+                    <a href="/de/fallstudien/wwks2-apothekenlager-integration/" data-case-study="wwks2" data-i18n="case_wwks2_title">WWKS2-Integration mit automatisierter Arzneimittellagerung</a>
+                  </li>
+                  <li>
+                    <a href="/de/fallstudien/securpharm-nmvs-arzneimittelverifikation/" data-case-study="nmvs" data-i18n="case_nmvs_title">securPharm/NMVS-Integration zur Arzneimittelverifikation</a>
+                  </li>
+                  <li>
+                    <a href="/de/fallstudien/legacy-php-gesundheits-it-modernisierung/" data-case-study="legacy" data-i18n="case_legacy_title">Modernisierung von Legacy-PHP-Software für Medikationsmanagement und Blisterproduktion</a>
+                  </li>
+                  <li>
+                    <a href="/de/fallstudien/totp-2fa-patientendaten-sicherheit/" data-case-study="totp" data-i18n="case_totp_title">TOTP-basierte 2FA zum Schutz von Patientendaten in TABChat</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <hr>
+      <hr id="education">
 
-      <div class="education-tail" id="education">
+      <div class="education-tail">
         <div class="row">
           <div class="one-third column">
             <h2><span data-i18n="section_education">Ausbildung</span> <a href="#education">¶</a></h2>

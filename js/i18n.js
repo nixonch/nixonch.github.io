@@ -18,6 +18,7 @@
       meta_title: "Nick Mitin — Senior Software Engineer",
       meta_description: "Senior Software Engineer focused on PHP backend development, system integration, software for medication management and patient-specific blister production, pharmaceutical logistics, and Linux-based services.",
       language_selector: "Choose language",
+      print_cv: "Print CV",
       nav_summary: "Summary",
       nav_skills: "Technical skills",
       nav_experience: "Professional experience",
@@ -82,15 +83,20 @@
       case_nmvs_title: "securPharm/NMVS medication verification integration",
       case_legacy_title: "Modernizing legacy PHP software for medication management and blister production",
       case_totp_title: "TOTP-based 2FA for patient-data protection in TABChat",
-      webrtc_role: "Author of WebRTC SIP Phone extension",
-      webrtc_description: "Develop and maintain a JavaScript/WebRTC browser extension that lets call centers and other businesses place SIP calls by clicking phone numbers on web pages.",
+      webrtc_role: "Creator and Maintainer",
+      webrtc_project: "WebRTC SIP Phone — click-to-call browser extension",
+      webrtc_item_1: "Develop and maintain the JavaScript/WebRTC extension.",
+      webrtc_item_2: "Enable SIP calls by clicking phone numbers on web pages, primarily for call centers and other businesses.",
+      webrtc_item_3: "Publish and support the extension through the Chrome Web Store:",
       chrome_store: "Chrome Web Store:",
       sip_role: "Owner and Developer",
       sip_description: "Cloud IP PBX service at",
       sip_item_1: "Develop and operate the Linux/Asterisk/A2Billing platform.",
       sip_item_2: "Handle production operations and customer support.",
-      a2billing_role: "Maintainer of A2Billing",
-      a2billing_description: "Maintain an AGPLv3 telecom billing platform for Asterisk and use it to build and support PHP/MySQL billing and PBX systems.",
+      a2billing_role: "Open-source Project Maintainer",
+      a2billing_project: "A2Billing — AGPLv3 telecom billing platform for Asterisk",
+      a2billing_item_1: "Maintain and extend the PHP/MySQL codebase.",
+      a2billing_item_2: "Build and support telecom billing and IP PBX systems based on the platform.",
       source_code: "Source code:",
       section_education: "Education",
       education_university: "Kyiv National University of Construction and Architecture",
@@ -105,6 +111,7 @@
       meta_title: "Nick Mitin — Senior Softwareentwickler",
       meta_description: "Senior Softwareentwickler mit Schwerpunkt auf PHP-Backend-Entwicklung, Systemintegration, Software für Medikationsmanagement und patientenindividuelle Verblisterung, Pharmalogistik und Linux-basierten Diensten.",
       language_selector: "Sprache auswählen",
+      print_cv: "Lebenslauf drucken",
       nav_summary: "Profil",
       nav_skills: "Technische Kenntnisse",
       nav_experience: "Berufserfahrung",
@@ -169,15 +176,20 @@
       case_nmvs_title: "securPharm/NMVS-Integration zur Arzneimittelverifikation",
       case_legacy_title: "Modernisierung von Legacy-PHP-Software für Medikationsmanagement und Blisterproduktion",
       case_totp_title: "TOTP-basierte 2FA zum Schutz von Patientendaten in TABChat",
-      webrtc_role: "Entwickler der Browsererweiterung WebRTC SIP Phone",
-      webrtc_description: "Ich entwickle und pflege eine JavaScript-/WebRTC-Browsererweiterung, mit der Callcenter und andere Unternehmen per Klick auf Telefonnummern in Webseiten SIP-Anrufe starten können.",
+      webrtc_role: "Entwickler und Maintainer",
+      webrtc_project: "WebRTC SIP Phone — Click-to-Call-Browsererweiterung",
+      webrtc_item_1: "Ich entwickle und pflege die JavaScript-/WebRTC-Erweiterung.",
+      webrtc_item_2: "Sie ermöglicht SIP-Anrufe per Klick auf Telefonnummern in Webseiten, insbesondere für Callcenter und andere Unternehmen.",
+      webrtc_item_3: "Ich veröffentliche und unterstütze die Erweiterung über den Chrome Web Store:",
       chrome_store: "Chrome Web Store:",
       sip_role: "Inhaber und Entwickler",
       sip_description: "Cloud-IP-Telefonanlage unter",
       sip_item_1: "Ich entwickle und betreibe die Plattform auf Basis von Linux, Asterisk und A2Billing.",
       sip_item_2: "Ich kümmere mich um den Produktivbetrieb und den Kundensupport.",
-      a2billing_role: "Maintainer von A2Billing",
-      a2billing_description: "Ich pflege eine AGPLv3-lizenzierte Telekommunikations-Abrechnungsplattform für Asterisk und nutze sie zum Aufbau und Support von PHP-/MySQL-basierten Abrechnungs- und Telefonanlagen.",
+      a2billing_role: "Maintainer des Open-Source-Projekts",
+      a2billing_project: "A2Billing — AGPLv3-lizenzierte Telekommunikations-Abrechnungsplattform für Asterisk",
+      a2billing_item_1: "Ich pflege und erweitere die PHP-/MySQL-Codebasis.",
+      a2billing_item_2: "Auf Grundlage der Plattform entwickle und unterstütze ich Telekommunikations-Abrechnungssysteme und IP-Telefonanlagen.",
       source_code: "Quellcode:",
       section_education: "Ausbildung",
       education_university: "Nationale Universität für Bauwesen und Architektur Kyjiw",
@@ -192,6 +204,7 @@
       meta_title: "Nick Mitin — Ingeniero de software sénior",
       meta_description: "Ingeniero de software sénior especializado en backend PHP, integración de sistemas y software para la gestión de la medicación, la producción de blísteres personalizados y la logística farmacéutica, con experiencia en securPharm/NMVS aplicable a SEVeM.",
       language_selector: "Elegir idioma",
+      print_cv: "Imprimir CV",
       nav_summary: "Perfil",
       nav_skills: "Competencias técnicas",
       nav_experience: "Experiencia profesional",
@@ -256,15 +269,20 @@
       case_nmvs_title: "Integración securPharm/NMVS: experiencia transferible a SEVeM",
       case_legacy_title: "Modernización de software PHP legacy para gestión de la medicación y producción de blísteres",
       case_totp_title: "2FA basada en TOTP para proteger datos de pacientes en TABChat",
-      webrtc_role: "Autor de la extensión WebRTC SIP Phone",
-      webrtc_description: "Desarrollo y mantengo una extensión de navegador en JavaScript/WebRTC que permite a centros de llamadas y otras empresas iniciar llamadas SIP haciendo clic en números de teléfono de una página web.",
+      webrtc_role: "Creador y responsable del mantenimiento",
+      webrtc_project: "WebRTC SIP Phone — extensión de navegador click-to-call",
+      webrtc_item_1: "Desarrollo y mantengo la extensión en JavaScript/WebRTC.",
+      webrtc_item_2: "Permite iniciar llamadas SIP haciendo clic en números de teléfono de páginas web, principalmente para centros de llamadas y otras empresas.",
+      webrtc_item_3: "Publico y doy soporte a la extensión a través de Chrome Web Store:",
       chrome_store: "Chrome Web Store:",
       sip_role: "Propietario y desarrollador",
       sip_description: "Servicio de centralita IP en la nube en",
       sip_item_1: "Desarrollo y opero la plataforma basada en Linux, Asterisk y A2Billing.",
       sip_item_2: "Me encargo de la operación en producción y de la atención al cliente.",
-      a2billing_role: "Responsable del mantenimiento de A2Billing",
-      a2billing_description: "Mantengo una plataforma de facturación de telecomunicaciones para Asterisk con licencia AGPLv3 y la utilizo para crear y dar soporte a sistemas de facturación y centralitas basados en PHP/MySQL.",
+      a2billing_role: "Responsable del proyecto de código abierto",
+      a2billing_project: "A2Billing — plataforma de facturación de telecomunicaciones para Asterisk con licencia AGPLv3",
+      a2billing_item_1: "Mantengo y amplío el código PHP/MySQL.",
+      a2billing_item_2: "Creo y doy soporte a sistemas de facturación de telecomunicaciones y centralitas IP basados en la plataforma.",
       source_code: "Código fuente:",
       section_education: "Formación académica",
       education_university: "Universidad Nacional de Construcción y Arquitectura de Kyiv",
@@ -279,6 +297,7 @@
       meta_title: "Nick Mitin — Ingénieur logiciel senior",
       meta_description: "Ingénieur logiciel senior spécialisé dans le développement backend PHP, l’intégration de systèmes, les logiciels de gestion des traitements et de préparation personnalisée des doses, la logistique pharmaceutique et les services sous Linux.",
       language_selector: "Choisir la langue",
+      print_cv: "Imprimer le CV",
       nav_summary: "Profil",
       nav_skills: "Compétences techniques",
       nav_experience: "Expérience professionnelle",
@@ -343,15 +362,20 @@
       case_nmvs_title: "Intégration securPharm/NMVS pour la vérification des médicaments",
       case_legacy_title: "Modernisation de logiciels PHP legacy pour la gestion des traitements et la préparation de doses personnalisées",
       case_totp_title: "2FA basée sur TOTP pour protéger les données patients dans TABChat",
-      webrtc_role: "Auteur de l’extension WebRTC SIP Phone",
-      webrtc_description: "Je développe et maintiens une extension de navigateur en JavaScript/WebRTC qui permet aux centres d’appels et à d’autres entreprises de lancer des appels SIP en cliquant sur les numéros de téléphone affichés sur les pages web.",
+      webrtc_role: "Créateur et mainteneur",
+      webrtc_project: "WebRTC SIP Phone — extension de navigateur click-to-call",
+      webrtc_item_1: "Je développe et maintiens l’extension JavaScript/WebRTC.",
+      webrtc_item_2: "Elle permet de lancer des appels SIP en cliquant sur les numéros de téléphone affichés sur les pages web, principalement pour les centres d’appels et d’autres entreprises.",
+      webrtc_item_3: "Je publie l’extension sur le Chrome Web Store et en assure le support :",
       chrome_store: "Chrome Web Store :",
       sip_role: "Propriétaire et développeur",
       sip_description: "Service de téléphonie IP hébergé dans le cloud sur",
       sip_item_1: "Je développe et exploite la plateforme Linux/Asterisk/A2Billing.",
       sip_item_2: "Je gère l’exploitation en production et le support client.",
-      a2billing_role: "Mainteneur d’A2Billing",
-      a2billing_description: "Je maintiens une plateforme de facturation télécom pour Asterisk sous licence AGPLv3 et je l’utilise pour développer et assurer le support de systèmes de facturation et de téléphonie IP basés sur PHP/MySQL.",
+      a2billing_role: "Mainteneur du projet open source",
+      a2billing_project: "A2Billing — plateforme de facturation télécom pour Asterisk sous licence AGPLv3",
+      a2billing_item_1: "Je maintiens et fais évoluer la base de code PHP/MySQL.",
+      a2billing_item_2: "Je développe et assure le support de systèmes de facturation télécom et de téléphonie IP basés sur la plateforme.",
       source_code: "Code source :",
       section_education: "Formation",
       education_university: "Université nationale de construction et d’architecture de Kyiv",
@@ -366,6 +390,7 @@
       meta_title: "Nick Mitin — Старший інженер-програміст",
       meta_description: "Старший інженер-програміст зі спеціалізацією на PHP-бекенді, системній інтеграції, ПЗ для керування лікарським забезпеченням та індивідуального фасування ліків за дозами, фармацевтичній логістиці й сервісах на базі Linux.",
       language_selector: "Вибрати мову",
+      print_cv: "Роздрукувати CV",
       nav_summary: "Про мене",
       nav_skills: "Технічні навички",
       nav_experience: "Досвід роботи",
@@ -430,15 +455,20 @@
       case_nmvs_title: "Інтеграція securPharm/NMVS для перевірки лікарських засобів",
       case_legacy_title: "Модернізація legacy PHP-ПЗ для керування лікарським забезпеченням і виробництва блістерів",
       case_totp_title: "2FA на базі TOTP для захисту даних пацієнтів у TABChat",
-      webrtc_role: "Автор розширення WebRTC SIP Phone",
-      webrtc_description: "Розробляю та підтримую браузерне розширення на JavaScript/WebRTC, за допомогою якого кол-центри та інші компанії можуть здійснювати SIP-дзвінки, просто натискаючи на номери телефонів на вебсторінках.",
+      webrtc_role: "Автор і мейнтейнер",
+      webrtc_project: "WebRTC SIP Phone — браузерне розширення click-to-call",
+      webrtc_item_1: "Розробляю та підтримую розширення на JavaScript/WebRTC.",
+      webrtc_item_2: "Розширення дає змогу здійснювати SIP-дзвінки натисканням на номери телефонів на вебсторінках, насамперед для кол-центрів та інших компаній.",
+      webrtc_item_3: "Публікую та підтримую розширення через Chrome Web Store:",
       chrome_store: "Chrome Web Store:",
       sip_role: "Власник і розробник",
       sip_description: "Хмарний сервіс IP-АТС на",
       sip_item_1: "Розробляю та підтримую платформу на базі Linux, Asterisk і A2Billing.",
       sip_item_2: "Відповідаю за роботу сервісу у продакшені та підтримку клієнтів.",
-      a2billing_role: "Мейнтейнер A2Billing",
-      a2billing_description: "Підтримую телекомунікаційну білінгову платформу для Asterisk під ліцензією AGPLv3 і використовую її для створення та супроводу білінгових систем і АТС на PHP/MySQL.",
+      a2billing_role: "Мейнтейнер open-source-проєкту",
+      a2billing_project: "A2Billing — телекомунікаційна білінгова платформа для Asterisk під ліцензією AGPLv3",
+      a2billing_item_1: "Підтримую та розширюю кодову базу на PHP/MySQL.",
+      a2billing_item_2: "Створюю та супроводжую білінгові системи й IP-АТС на базі платформи.",
       source_code: "Вихідний код:",
       section_education: "Освіта",
       education_university: "Київський національний університет будівництва і архітектури",
@@ -453,6 +483,7 @@
       meta_title: "Nick Mitin — Старший инженер-программист",
       meta_description: "Старший инженер-программист со специализацией на PHP-бэкенде, системной интеграции, ПО для управления лекарственным обеспечением и индивидуальной дозированной упаковки лекарств, фармацевтической логистике и сервисах на базе Linux.",
       language_selector: "Выбрать язык",
+      print_cv: "Распечатать резюме",
       nav_summary: "Обо мне",
       nav_skills: "Технические навыки",
       nav_experience: "Опыт работы",
@@ -517,15 +548,20 @@
       case_nmvs_title: "Интеграция securPharm/NMVS для проверки лекарственных средств",
       case_legacy_title: "Модернизация legacy PHP-ПО для управления лекарственным обеспечением и производства блистеров",
       case_totp_title: "2FA на базе TOTP для защиты данных пациентов в TABChat",
-      webrtc_role: "Автор расширения WebRTC SIP Phone",
-      webrtc_description: "Разрабатываю и поддерживаю браузерное расширение на JavaScript/WebRTC, с помощью которого колл-центры и другие компании могут совершать SIP-звонки, просто нажимая на номера телефонов на веб-страницах.",
+      webrtc_role: "Создатель и мейнтейнер",
+      webrtc_project: "WebRTC SIP Phone — браузерное расширение click-to-call",
+      webrtc_item_1: "Разрабатываю и поддерживаю расширение на JavaScript/WebRTC.",
+      webrtc_item_2: "Расширение позволяет совершать SIP-звонки нажатием на номера телефонов на веб-страницах, прежде всего для колл-центров и других компаний.",
+      webrtc_item_3: "Публикую и поддерживаю расширение через Chrome Web Store:",
       chrome_store: "Chrome Web Store:",
       sip_role: "Владелец и разработчик",
       sip_description: "Облачный сервис IP-АТС на",
       sip_item_1: "Разрабатываю и поддерживаю платформу на базе Linux, Asterisk и A2Billing.",
       sip_item_2: "Отвечаю за работу сервиса в продакшене и поддержку клиентов.",
-      a2billing_role: "Мейнтейнер A2Billing",
-      a2billing_description: "Поддерживаю телекоммуникационную биллинговую платформу для Asterisk под лицензией AGPLv3 и использую её для создания и сопровождения биллинговых систем и АТС на PHP/MySQL.",
+      a2billing_role: "Мейнтейнер open-source-проекта",
+      a2billing_project: "A2Billing — телекоммуникационная биллинговая платформа для Asterisk под лицензией AGPLv3",
+      a2billing_item_1: "Поддерживаю и расширяю кодовую базу на PHP/MySQL.",
+      a2billing_item_2: "Создаю и сопровождаю биллинговые системы и IP-АТС на базе платформы.",
       source_code: "Исходный код:",
       section_education: "Образование",
       education_university: "Киевский национальный университет строительства и архитектуры",
@@ -717,6 +753,12 @@
       languageSelectors[selectorIndex].setAttribute("aria-label", dictionary.language_selector);
     }
 
+    var printButton = document.querySelector("[data-print-cv]");
+    if (printButton) {
+      printButton.setAttribute("title", dictionary.print_cv);
+      printButton.setAttribute("aria-label", dictionary.print_cv);
+    }
+
     var localizedUniversityLinks = universityLinks[language] || universityLinks.default;
     var facultyLink = document.querySelector("[data-faculty-link]");
     if (facultyLink) {
@@ -812,8 +854,21 @@
     });
   }
 
+  function initializePrintButton() {
+    var printButton = document.querySelector("[data-print-cv]");
+
+    if (!printButton) {
+      return;
+    }
+
+    printButton.addEventListener("click", function () {
+      window.print();
+    });
+  }
+
   try {
     initializeSidebarClosing();
+    initializePrintButton();
     initialize();
   } finally {
     document.documentElement.classList.remove("i18n-pending");

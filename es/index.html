@@ -35,7 +35,7 @@
         "@id": "https://nixonch.github.io/es/#profile",
         "url": "https://nixonch.github.io/es/",
         "inLanguage": "es",
-        "dateModified": "2026-08-09T00:00:00+02:00",
+        "dateModified": "2026-08-10T17:13:27+02:00",
         "mainEntity": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
@@ -91,7 +91,6 @@
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/skeleton.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="shortcut icon" href="../images/mn.ico">
@@ -108,6 +107,9 @@
     </nav>
     <input type="checkbox" id="navi-toggle" hidden>
     <div class="container">
+      <div class="print-cv-control noprint">
+        <button type="button" class="print-cv-button" data-print-cv title="Print CV" aria-label="Print CV"><span aria-hidden="true">🖨</span></button>
+      </div>
       <div class="summary">
         <label for="navi-toggle" class="navi-toggle navi-toggle-wide noprint" title="Toggle sidebar" aria-label="Toggle sidebar"></label>
         <label for="navi-toggle" class="navi-toggle navi-toggle-narrow noprint" title="Toggle sidebar" aria-label="Toggle sidebar"></label>
@@ -163,11 +165,11 @@
           </p>
         </div>
       </div>
-      <hr>
+      <hr id="summary">
 
       <div class="row">
         <div class="one-third column">
-          <h2><span data-i18n="section_summary">Perfil</span> <a id="summary" href="#summary">¶</a></h2>
+          <h2><span data-i18n="section_summary">Perfil</span> <a href="#summary">¶</a></h2>
         </div>
         <div class="two-thirds column" section="summary">
           <h3 data-i18n="summary_heading">Backend en PHP e integración de sistemas</h3>
@@ -179,11 +181,11 @@
           </p>
         </div>
       </div>
-      <hr>
+      <hr id="skills">
 
       <div class="row">
         <div class="one-third column">
-          <h2><span data-i18n="section_skills">Competencias</span> <a id="skills" href="#skills">¶</a></h2>
+          <h2><span data-i18n="section_skills">Competencias</span> <a href="#skills">¶</a></h2>
         </div>
         <div class="two-thirds column" section="skills">
           <h3 data-i18n="skills_programming_data">Programación y datos</h3>
@@ -194,13 +196,6 @@
             <span class="tag">Python</span>-
             <span class="tag">C/C++</span>-
             <span class="tag">Bash</span>
-          </p>
-          <div class="endtag"></div>
-
-          <h3 data-i18n="skills_ai_development">Desarrollo asistido por IA</h3>
-          <p class="taglist2">
-            <span class="tag">OpenAI Codex</span>-
-            <span class="tag">Claude Code</span>
           </p>
           <div class="endtag"></div>
 
@@ -248,12 +243,19 @@
             <span class="tag" data-i18n="skills_production_logging">registro y diagnóstico de incidencias en producción</span>
           </p>
           <div class="endtag"></div>
+
+          <h3 data-i18n="skills_ai_development">Desarrollo asistido por IA</h3>
+          <p class="taglist2">
+            <span class="tag">OpenAI Codex</span>-
+            <span class="tag">Claude Code</span>
+          </p>
+          <div class="endtag"></div>
         </div>
       </div>
-      <hr>
+      <hr id="experience">
 
       <div class="row">
-        <div class="one-third column" id="experience">
+        <div class="one-third column">
           <h2><span data-i18n="section_experience">Experiencia profesional</span> <a href="#experience">¶</a></h2>
         </div>
         <div class="two-thirds column" section="experience">
@@ -323,16 +325,24 @@
           </ul>
         </div>
       </div>
-      <hr>
+      <hr id="projects">
 
       <div class="row">
-        <div class="one-third column" id="projects">
+        <div class="one-third column">
           <h2><span data-i18n="section_projects">Proyectos seleccionados /</span><br class="projects-title-break"> <span data-i18n="section_open_source">Código abierto</span> <a href="#projects">¶</a></h2>
         </div>
         <div class="two-thirds column" section="projects">
-          <h3><span class="date"><span>2020 <span class="duration" data-i18n="present">Actualidad</span></span></span> <span data-i18n="webrtc_role">Autor de la extensión WebRTC SIP Phone</span></h3>
-          <h4 data-i18n="webrtc_description">Desarrollo y mantengo una extensión de navegador en JavaScript/WebRTC que permite a centros de llamadas y otras empresas iniciar llamadas SIP haciendo clic en números de teléfono de una página web.</h4>
-          <span data-i18n="chrome_store">Chrome Web Store:</span> <a href="https://chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib" target="_blank">chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib</a>
+          <h3><span class="date"><span>2020 <span class="duration" data-i18n="present">Actualidad</span></span></span> <span data-i18n="webrtc_role">Creador y responsable del mantenimiento</span></h3>
+          <h4 data-i18n="webrtc_project">WebRTC SIP Phone — extensión de navegador click-to-call</h4>
+          <ul>
+            <li>
+              <ul>
+                <li data-i18n="webrtc_item_1">Desarrollo y mantengo la extensión en JavaScript/WebRTC.</li>
+                <li data-i18n="webrtc_item_2">Permite iniciar llamadas SIP haciendo clic en números de teléfono de páginas web, principalmente para centros de llamadas y otras empresas.</li>
+                <li><span data-i18n="webrtc_item_3">Publico y doy soporte a la extensión a través de Chrome Web Store:</span> <a href="https://chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib" target="_blank">chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib</a></li>
+              </ul>
+            </li>
+          </ul>
           <hr>
 
           <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">Actualidad</span></span></span> <span data-i18n="sip_role">Propietario y desarrollador</span></h3>
@@ -347,33 +357,45 @@
           </ul>
           <hr>
 
-          <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">Actualidad</span></span></span> <span data-i18n="a2billing_role">Responsable del mantenimiento de A2Billing</span></h3>
-          <h4 data-i18n="a2billing_description">Mantengo una plataforma de facturación de telecomunicaciones para Asterisk con licencia AGPLv3 y la utilizo para crear y dar soporte a sistemas de facturación y centralitas basados en PHP/MySQL.</h4>
-          <span data-i18n="source_code">Código fuente:</span> <a href="https://github.com/nixonch/a2billing" target="_blank">github.com/nixonch/a2billing</a>
+          <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">Actualidad</span></span></span> <span data-i18n="a2billing_role">Responsable del proyecto de código abierto</span></h3>
+          <h4 data-i18n="a2billing_project">A2Billing — plataforma de facturación de telecomunicaciones para Asterisk con licencia AGPLv3</h4>
+          <ul>
+            <li>
+              <ul>
+                <li data-i18n="a2billing_item_1">Mantengo y amplío el código PHP/MySQL.</li>
+                <li data-i18n="a2billing_item_2">Creo y doy soporte a sistemas de facturación de telecomunicaciones y centralitas IP basados en la plataforma.</li>
+                <li><span data-i18n="source_code">Código fuente:</span> <a href="https://github.com/nixonch/a2billing" target="_blank">github.com/nixonch/a2billing</a></li>
+              </ul>
+            </li>
+          </ul>
           <div class="case-study-links noprint">
             <hr>
 
             <h3 data-i18n="case_studies_heading">Casos prácticos de software sanitario</h3>
-            <ul class="case-study-list">
+            <ul>
               <li>
-                <a href="/es/casos/integracion-wwks2-almacen-farmacia/" data-case-study="wwks2" data-i18n="case_wwks2_title">Integración WWKS2 con almacenamiento automatizado de medicamentos</a>
-              </li>
-              <li>
-                <a href="/es/casos/securpharm-nmvs-verificacion-medicamentos/" data-case-study="nmvs" data-i18n="case_nmvs_title">Integración securPharm/NMVS: experiencia transferible a SEVeM</a>
-              </li>
-              <li>
-                <a href="/es/casos/modernizacion-php-legacy-software-sanitario/" data-case-study="legacy" data-i18n="case_legacy_title">Modernización de software PHP legacy para gestión de la medicación y producción de blísteres</a>
-              </li>
-              <li>
-                <a href="/es/casos/totp-2fa-seguridad-datos-pacientes/" data-case-study="totp" data-i18n="case_totp_title">2FA basada en TOTP para proteger datos de pacientes en TABChat</a>
+                <ul class="case-study-list">
+                  <li>
+                    <a href="/es/casos/integracion-wwks2-almacen-farmacia/" data-case-study="wwks2" data-i18n="case_wwks2_title">Integración WWKS2 con almacenamiento automatizado de medicamentos</a>
+                  </li>
+                  <li>
+                    <a href="/es/casos/securpharm-nmvs-verificacion-medicamentos/" data-case-study="nmvs" data-i18n="case_nmvs_title">Integración securPharm/NMVS: experiencia transferible a SEVeM</a>
+                  </li>
+                  <li>
+                    <a href="/es/casos/modernizacion-php-legacy-software-sanitario/" data-case-study="legacy" data-i18n="case_legacy_title">Modernización de software PHP legacy para gestión de la medicación y producción de blísteres</a>
+                  </li>
+                  <li>
+                    <a href="/es/casos/totp-2fa-seguridad-datos-pacientes/" data-case-study="totp" data-i18n="case_totp_title">2FA basada en TOTP para proteger datos de pacientes en TABChat</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <hr>
+      <hr id="education">
 
-      <div class="education-tail" id="education">
+      <div class="education-tail">
         <div class="row">
           <div class="one-third column">
             <h2><span data-i18n="section_education">Formación académica</span> <a href="#education">¶</a></h2>

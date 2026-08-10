@@ -35,7 +35,7 @@
         "@id": "https://nixonch.github.io/#profile",
         "url": "https://nixonch.github.io/",
         "inLanguage": ["en", "de", "es", "fr", "uk", "ru"],
-        "dateModified": "2026-08-09T00:00:00+02:00",
+        "dateModified": "2026-08-10T17:13:27+02:00",
         "mainEntity": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
@@ -91,7 +91,6 @@
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/skeleton.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="shortcut icon" href="images/mn.ico">
@@ -108,6 +107,9 @@
     </nav>
     <input type="checkbox" id="navi-toggle" hidden>
     <div class="container">
+      <div class="print-cv-control noprint">
+        <button type="button" class="print-cv-button" data-print-cv title="Print CV" aria-label="Print CV"><span aria-hidden="true">🖨</span></button>
+      </div>
       <div class="summary">
         <label for="navi-toggle" class="navi-toggle navi-toggle-wide noprint" title="Toggle sidebar" aria-label="Toggle sidebar"></label>
         <label for="navi-toggle" class="navi-toggle navi-toggle-narrow noprint" title="Toggle sidebar" aria-label="Toggle sidebar"></label>
@@ -200,13 +202,6 @@
           </p>
           <div class="endtag"></div>
 
-          <h3 data-i18n="skills_ai_development">AI-Assisted Development</h3>
-          <p class="taglist2">
-            <span class="tag">OpenAI Codex</span>-
-            <span class="tag">Claude Code</span>
-          </p>
-          <div class="endtag"></div>
-
           <h3 data-i18n="skills_backend_web">Backend &amp; Web</h3>
           <p class="taglist2">
             <span class="tag">CakePHP</span>-
@@ -249,6 +244,13 @@
             <span class="tag">cron</span>-
             <span class="tag">Git</span>-
             <span class="tag" data-i18n="skills_production_logging">production logging and troubleshooting</span>
+          </p>
+          <div class="endtag"></div>
+
+          <h3 data-i18n="skills_ai_development">AI-Assisted Development</h3>
+          <p class="taglist2">
+            <span class="tag">OpenAI Codex</span>-
+            <span class="tag">Claude Code</span>
           </p>
           <div class="endtag"></div>
         </div>
@@ -333,9 +335,17 @@
           <h2><span data-i18n="section_projects">Selected Projects /</span><br class="projects-title-break"> <span data-i18n="section_open_source">Open Source</span> <a href="#projects">¶</a></h2>
         </div>
         <div class="two-thirds column" section="projects">
-          <h3><span class="date"><span>2020 <span class="duration" data-i18n="present">Present</span></span></span> <span data-i18n="webrtc_role">Author of WebRTC SIP Phone extension</span></h3>
-          <h4 data-i18n="webrtc_description">Develop and maintain a JavaScript/WebRTC browser extension that lets call centers and other businesses place SIP calls by clicking phone numbers on web pages.</h4>
-          <span data-i18n="chrome_store">Chrome Web Store:</span> <a href="https://chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib" target="_blank">chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib</a>
+          <h3><span class="date"><span>2020 <span class="duration" data-i18n="present">Present</span></span></span> <span data-i18n="webrtc_role">Creator and Maintainer</span></h3>
+          <h4 data-i18n="webrtc_project">WebRTC SIP Phone — click-to-call browser extension</h4>
+          <ul>
+            <li>
+              <ul>
+                <li data-i18n="webrtc_item_1">Develop and maintain the JavaScript/WebRTC extension.</li>
+                <li data-i18n="webrtc_item_2">Enable SIP calls by clicking phone numbers on web pages, primarily for call centers and other businesses.</li>
+                <li><span data-i18n="webrtc_item_3">Publish and support the extension through the Chrome Web Store:</span> <a href="https://chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib" target="_blank">chrome.google.com/webstore/detail/webrtc-sip-phone-with-cli/pofkcckikkdhiieipefhkaelgnbdkcib</a></li>
+              </ul>
+            </li>
+          </ul>
           <hr>
 
           <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">Present</span></span></span> <span data-i18n="sip_role">Owner and Developer</span></h3>
@@ -350,25 +360,37 @@
           </ul>
           <hr>
 
-          <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">Present</span></span></span> <span data-i18n="a2billing_role">Maintainer of A2Billing</span></h3>
-          <h4 data-i18n="a2billing_description">Maintain an AGPLv3 telecom billing platform for Asterisk and use it to build and support PHP/MySQL billing and PBX systems.</h4>
-          <span data-i18n="source_code">Source code:</span> <a href="https://github.com/nixonch/a2billing" target="_blank">github.com/nixonch/a2billing</a>
+          <h3><span class="date"><span>2009 <span class="duration" data-i18n="present">Present</span></span></span> <span data-i18n="a2billing_role">Open-source Project Maintainer</span></h3>
+          <h4 data-i18n="a2billing_project">A2Billing — AGPLv3 telecom billing platform for Asterisk</h4>
+          <ul>
+            <li>
+              <ul>
+                <li data-i18n="a2billing_item_1">Maintain and extend the PHP/MySQL codebase.</li>
+                <li data-i18n="a2billing_item_2">Build and support telecom billing and IP PBX systems based on the platform.</li>
+                <li><span data-i18n="source_code">Source code:</span> <a href="https://github.com/nixonch/a2billing" target="_blank">github.com/nixonch/a2billing</a></li>
+              </ul>
+            </li>
+          </ul>
           <div class="case-study-links noprint">
             <hr>
 
             <h3 data-i18n="case_studies_heading">Healthcare Software Case Studies</h3>
-            <ul class="case-study-list">
+            <ul>
               <li>
-                <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" data-case-study="wwks2" data-i18n="case_wwks2_title">WWKS2 integration with automated medication storage</a>
-              </li>
-              <li>
-                <a href="/en/case-studies/securpharm-nmvs-medication-verification/" data-case-study="nmvs" data-i18n="case_nmvs_title">securPharm/NMVS medication verification integration</a>
-              </li>
-              <li>
-                <a href="/en/case-studies/legacy-php-healthcare-modernization/" data-case-study="legacy" data-i18n="case_legacy_title">Modernizing legacy PHP software for medication management and blister production</a>
-              </li>
-              <li>
-                <a href="/en/case-studies/totp-2fa-patient-data-security/" data-case-study="totp" data-i18n="case_totp_title">TOTP-based 2FA for patient-data protection in TABChat</a>
+                <ul class="case-study-list">
+                  <li>
+                    <a href="/en/case-studies/wwks2-pharmacy-warehouse-integration/" data-case-study="wwks2" data-i18n="case_wwks2_title">WWKS2 integration with automated medication storage</a>
+                  </li>
+                  <li>
+                    <a href="/en/case-studies/securpharm-nmvs-medication-verification/" data-case-study="nmvs" data-i18n="case_nmvs_title">securPharm/NMVS medication verification integration</a>
+                  </li>
+                  <li>
+                    <a href="/en/case-studies/legacy-php-healthcare-modernization/" data-case-study="legacy" data-i18n="case_legacy_title">Modernizing legacy PHP software for medication management and blister production</a>
+                  </li>
+                  <li>
+                    <a href="/en/case-studies/totp-2fa-patient-data-security/" data-case-study="totp" data-i18n="case_totp_title">TOTP-based 2FA for patient-data protection in TABChat</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>

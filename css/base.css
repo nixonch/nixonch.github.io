@@ -1,11 +1,10 @@
 
 /*
-* Skeleton V1.2
-* Copyright 2011, Dave Gamache
-* www.getskeleton.com
-* Free to use under the MIT license.
+* Site styles based on Skeleton V1.2 (2012-06-20) by Dave Gamache
+* Original Skeleton code copyright 2011, Dave Gamache
+* Modified and extended by Mykola Mitin, 2015-2026
+* Original Skeleton code is available under the MIT License:
 * http://www.opensource.org/licenses/mit-license.php
-* 6/20/2012
 */
 
 html.i18n-pending body {
@@ -494,7 +493,7 @@ html.i18n-pending body {
 	.toc a, .column a {
 		text-decoration: none;
 		font-weight: 300;
-		padding: 1px 0.3em;
+		padding: 1px 0.3em 1px 0;
 		border-radius: 2px;
 		color: #bf7b43;
 	}
@@ -535,7 +534,6 @@ html.i18n-pending body {
 	}
 	ul li ul li span {
 		color: #333;
-		padding-left: 0.3em;
 	}
 	p + ul li ul {
 		margin-top: 0;
@@ -808,6 +806,90 @@ html.i18n-pending body {
 		padding-left: 20px;
 	}
 	@media screen {
+		.print-cv-control {
+			position: sticky;
+			top: 12px;
+			display: flex;
+			justify-content: flex-end;
+			height: 0;
+			z-index: 1000;
+			pointer-events: none;
+		}
+
+		.print-cv-button {
+			box-sizing: border-box;
+			display: grid;
+			place-items: center;
+			width: 40px;
+			height: 40px;
+			margin: 0;
+			padding: 0;
+			border: 0;
+			border-radius: 0;
+			background: transparent;
+			box-shadow: none;
+			color: #bf7b43;
+			font: 40px/1 "Segoe UI Symbol", "Noto Sans Symbols 2", sans-serif;
+			text-shadow: none;
+			cursor: pointer;
+			pointer-events: auto;
+		}
+
+		.print-cv-button span {
+			display: block;
+			line-height: 1;
+			transition: filter .2s ease, transform .2s ease;
+		}
+
+		.print-cv-button:hover,
+		.print-cv-button:focus-visible {
+			border: 0;
+			background: transparent;
+			color: #bf7b43;
+			outline: none;
+		}
+
+		.print-cv-button:hover span,
+		.print-cv-button:focus-visible span {
+			filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+			transform: scale(1.08);
+		}
+
+		@media (max-width: 767px) {
+			.print-cv-button {
+				border: 1px solid #dadada;
+				border-radius: 4px;
+				background: rgba(255, 255, 255, 0.94);
+				box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.12);
+				font-size: 24px;
+			}
+
+			.print-cv-button:hover,
+			.print-cv-button:focus-visible {
+				border: 1px solid #bf7b43;
+				background: #bf7b43;
+				color: white;
+			}
+
+			.print-cv-button:hover span,
+			.print-cv-button:focus-visible span {
+				filter: none;
+				transform: none;
+			}
+		}
+
+		@media (min-width: 1100px) {
+			.print-cv-button {
+				transform: translateX(calc(100% + var(--cv-inline-padding) + 8px));
+			}
+		}
+
+		@media (min-width: 1211px) and (max-width: 1258px) {
+			#navi-toggle:checked ~ .container .print-cv-button {
+				transform: none;
+			}
+		}
+
 		body {
 			container-type: inline-size;
 		}
@@ -1118,6 +1200,12 @@ h4 {
 		}
 		.tag {
 			color: black !important;
+		}
+		a[href]:not([href^="#"]) {
+			color: #8f4f24 !important;
+			text-decoration: underline !important;
+			text-decoration-thickness: 0.6pt;
+			text-underline-offset: 0.12em;
 		}
 		.infos {
 			display: block !important;
