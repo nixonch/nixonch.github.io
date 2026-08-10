@@ -774,14 +774,27 @@
     var sidebarToggle = document.getElementById("navi-toggle");
     var sidebar = document.querySelector(".summary");
     var sidebarSectionLinks = document.querySelectorAll('.summary .toc > a[href^="#"]');
+    var wideSidebar = null;
 
-    if (!sidebarToggle || !sidebar || typeof window.matchMedia !== "function") {
+    if (!sidebarToggle || !sidebar) {
       return;
     }
 
+    function updateSidebarMode() {
+      var nextWideSidebar = document.body.clientWidth >= 1211;
+
+      if (nextWideSidebar !== wideSidebar) {
+        sidebarToggle.checked = nextWideSidebar;
+        wideSidebar = nextWideSidebar;
+      }
+    }
+
+    updateSidebarMode();
+    window.addEventListener("resize", updateSidebarMode);
+
     for (var linkIndex = 0; linkIndex < sidebarSectionLinks.length; linkIndex += 1) {
       sidebarSectionLinks[linkIndex].addEventListener("click", function () {
-        if (window.matchMedia("(max-width: 1450px)").matches) {
+        if (!wideSidebar) {
           sidebarToggle.checked = false;
         }
       });
@@ -790,7 +803,7 @@
     document.addEventListener("click", function (event) {
       if (
         sidebarToggle.checked &&
-        window.matchMedia("(max-width: 1450px)").matches &&
+        !wideSidebar &&
         event.target !== sidebarToggle &&
         !sidebar.contains(event.target)
       ) {
