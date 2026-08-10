@@ -880,7 +880,7 @@ html.i18n-pending body {
 
 		@media (min-width: 1100px) {
 			.print-cv-button {
-				transform: translateX(calc(100% + var(--cv-inline-padding) + 8px));
+				transform: translateX(100%);
 			}
 		}
 
