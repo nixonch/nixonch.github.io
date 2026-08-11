@@ -38,7 +38,7 @@ const caseStudies = [
     id: "wwks2",
     publicationTitle: "WWKS2 pharmacy warehouse integration for medication workflows",
     publicationDescription: "Asynchronous WWKS2 integration connecting medication-management and blister-production software with automated pharmacy storage via TCP and XML.",
-    publicationImage: "/images/case-studies/wwks2-pharmacy-warehouse-integration.jpg",
+    publicationImage: "/images/case-studies/wwks2-pharmacy-warehouse-integration-v2.jpg",
     publicationImageAlt: "Medication data flowing through a WWKS2 integration to automated pharmacy storage",
     technologies: [
       "PHP",
@@ -169,7 +169,7 @@ const caseStudies = [
     id: "nmvs",
     publicationTitle: "securPharm/NMVS medication verification integration",
     publicationDescription: "Integration of medication-handling workflows with the German NMVS for verification, decommissioning, undo operations, and resilient error handling.",
-    publicationImage: "/images/case-studies/securpharm-nmvs-medication-verification.jpg",
+    publicationImage: "/images/case-studies/securpharm-nmvs-medication-verification-v2.jpg",
     publicationImageAlt: "Medicine package verification through a secure national verification gateway",
     technologies: [
       "securPharm",
@@ -303,7 +303,7 @@ const caseStudies = [
     id: "legacy",
     publicationTitle: "Modernizing legacy PHP healthcare software",
     publicationDescription: "Incremental modernization of legacy PHP healthcare software through controlled integrations, automated tests, database migrations, and structured logging.",
-    publicationImage: "/images/case-studies/legacy-php-healthcare-modernization.jpg",
+    publicationImage: "/images/case-studies/legacy-php-healthcare-modernization-v2.jpg",
     publicationImageAlt: "Legacy healthcare software being incrementally transformed into modular tested components",
     technologies: [
       "PHP",
@@ -436,7 +436,7 @@ const caseStudies = [
     id: "totp",
     publicationTitle: "TOTP-based 2FA for patient-data protection in a healthcare web application",
     publicationDescription: "Implementation of TOTP-based 2FA in a healthcare web application with CakePHP, role-based access control, trusted devices, database migrations, and security testing.",
-    publicationImage: "/images/case-studies/totp-2fa-patient-data-security.jpg",
+    publicationImage: "/images/case-studies/totp-2fa-patient-data-security-v2.jpg",
     publicationImageAlt: "Two-factor authentication protecting role-based access to patient data",
     technologies: [
       "PHP",
