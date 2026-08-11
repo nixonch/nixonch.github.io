@@ -2,8 +2,8 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>2FA basada en TOTP para proteger datos de pacientes en TABChat — Nick Mitin</title>
-    <meta name="description" content="Implementación de 2FA basada en TOTP en TABChat con CakePHP, control de acceso por roles, dispositivos de confianza y pruebas de seguridad." />
+    <title>2FA basada en TOTP para proteger datos de pacientes en una aplicación web sanitaria — Nick Mitin</title>
+    <meta name="description" content="Implementación de 2FA basada en TOTP en una aplicación web sanitaria con CakePHP, control de acceso por roles, dispositivos de confianza y pruebas de seguridad." />
     <meta name="author" content="Nick Mitin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -24,13 +24,13 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "@id": "https://nixonch.github.io/es/casos/totp-2fa-seguridad-datos-pacientes/#article",
-        "headline": "2FA basada en TOTP para proteger datos de pacientes en TABChat",
-        "description": "Implementación de 2FA basada en TOTP en TABChat con CakePHP, control de acceso por roles, dispositivos de confianza y pruebas de seguridad.",
+        "headline": "2FA basada en TOTP para proteger datos de pacientes en una aplicación web sanitaria",
+        "description": "Implementación de 2FA basada en TOTP en una aplicación web sanitaria con CakePHP, control de acceso por roles, dispositivos de confianza y pruebas de seguridad.",
         "url": "https://nixonch.github.io/es/casos/totp-2fa-seguridad-datos-pacientes/",
         "mainEntityOfPage": "https://nixonch.github.io/es/casos/totp-2fa-seguridad-datos-pacientes/",
         "inLanguage": "es",
         "datePublished": "2026-08-09",
-        "dateModified": "2026-08-10T18:33:38+02:00",
+        "dateModified": "2026-08-11T11:23:13+02:00",
         "author": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
@@ -92,13 +92,13 @@
       <a class="case-study-back" href="/" onclick="if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && canGoBackWithinSite) { event.preventDefault(); window.history.back(); }">↩ Volver al CV</a>
       <header class="case-study-header">
         <p class="case-study-label">Caso técnico</p>
-        <h1>2FA basada en TOTP para proteger datos de pacientes en TABChat</h1>
-        <p class="case-study-lead">Implementación de 2FA basada en TOTP en TABChat con CakePHP, control de acceso por roles, dispositivos de confianza y pruebas de seguridad.</p>
+        <h1>2FA basada en TOTP para proteger datos de pacientes en una aplicación web sanitaria</h1>
+        <p class="case-study-lead">Implementación de 2FA basada en TOTP en una aplicación web sanitaria con CakePHP, control de acceso por roles, dispositivos de confianza y pruebas de seguridad.</p>
       </header>
       <article class="case-study-article">
         <section class="case-study-section">
           <h2>Contexto</h2>
-          <p>TABChat es una aplicación web sanitaria en la nube que trabaja con datos de pacientes. En el contexto de la ley alemana Digital-Gesetz (DigiG), el ticket del proyecto exigía autenticación de dos factores para reforzar el acceso a sistemas en la nube que tratan estos datos.</p>
+          <p>El proyecto abarcaba una aplicación web sanitaria en la nube que procesa datos de pacientes. En el contexto de la ley alemana Digital-Gesetz (DigiG), el ticket del proyecto exigía autenticación de dos factores para reforzar el acceso a sistemas en la nube que tratan estos datos.</p>
           <p>La implementación debía integrarse en el flujo de autenticación, los roles y los permisos existentes. También tenía que ofrecer procesos prácticos para usuarios y administradores en distintos navegadores y terminales, no limitarse a una pantalla aislada para comprobar códigos.</p>
         </section>
         <section class="case-study-section">

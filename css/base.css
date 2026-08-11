@@ -1108,8 +1108,8 @@ h4 {
 		}
 		body {
 			background: #fff;
-			font-size: 14pt;
-			line-height: 1.3em !important;
+			font-size: 12pt;
+			line-height: 1.35em !important;
 			text-shadow: none !important;
 			margin: 0 !important;
 			padding: 0 !important;
@@ -1133,7 +1133,8 @@ h4 {
 		ul li ul li span {
 		}
 		h3 {
-			font-size: 20pt !important;
+			font-size: 18pt !important;
+			line-height: 1.25em !important;
 		}
 		div[section="experience"] h3 {
 			padding-top: 1.5em;
@@ -1143,16 +1144,18 @@ h4 {
 			margin-top: 0;
 		}
 		h3 span.date {
-			font-size: 16pt;
+			font-size: 12pt;
 			padding-right: 0.5em;
 		}
 		h4 {
-			font-size: 20pt !important;
+			font-size: 15pt !important;
+			line-height: 1.3em !important;
 			padding-bottom: 0.5em;
 			padding-top: 0.6em;
 		}
 		h2 {
-			font-size: 18pt !important;
+			font-size: 17pt !important;
+			line-height: 1.25em !important;
 			padding-left: 0 !important;
 			margin-left: 0 !important;
 			text-shadow: none !important;
@@ -1161,9 +1164,11 @@ h4 {
 			display: none;
 		}
 		.subheader {
-			font-size: 15pt;
+			font-size: 14pt;
 		}
 		.column {
+			font-size: 12pt !important;
+			line-height: 1.35em !important;
 			padding: 0 !important;
 			margin:  0 !important;
 		}

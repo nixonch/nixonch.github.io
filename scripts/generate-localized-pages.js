@@ -349,6 +349,18 @@ function getCaseStudyUrl(caseStudy, language) {
   return `${siteOrigin}${getCaseStudyPath(caseStudy, language)}`;
 }
 
+function getCaseStudyRouterPath(caseStudy) {
+  return `/case-studies/${caseStudy.locales.en.slug}/`;
+}
+
+function getCaseStudyRouterUrl(caseStudy) {
+  return `${siteOrigin}${getCaseStudyRouterPath(caseStudy)}`;
+}
+
+function getCaseStudyPublicationImageUrl(caseStudy) {
+  return `${siteOrigin}${caseStudy.publicationImage}`;
+}
+
 function renderAlternateLinks(caseStudy) {
   const links = Object.keys(caseStudy.locales).map((language) => (
     `    <link rel="alternate" hreflang="${language}" href="${getCaseStudyUrl(caseStudy, language)}" />`
@@ -501,6 +513,68 @@ ${related}
 `;
 }
 
+function renderCaseStudyRouterPage(caseStudy) {
+  const publicationTitle = caseStudy.publicationTitle;
+  const publicationDescription = caseStudy.publicationDescription;
+  const publicationImageUrl = getCaseStudyPublicationImageUrl(caseStudy);
+  const routerUrl = getCaseStudyRouterUrl(caseStudy);
+  const targetAttributes = Object.keys(caseStudy.locales)
+    .map((language) => (
+      `      data-${language}-url="${escapeAttribute(getCaseStudyPath(caseStudy, language))}"`
+    ))
+    .join("\n");
+  const languageLinks = Object.keys(caseStudy.locales)
+    .map((language) => (
+      `        <li><a href="${escapeAttribute(getCaseStudyPath(caseStudy, language))}">${escapeHtml(language.toUpperCase())}</a></li>`
+    ))
+    .join("\n");
+
+  return `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>${escapeHtml(`${publicationTitle} — Nick Mitin`)}</title>
+    <meta name="description" content="${escapeAttribute(publicationDescription)}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="${getCaseStudyUrl(caseStudy, "en")}" />
+${renderAlternateLinks(caseStudy)}
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nick Mitin — Senior Software Engineer" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="${escapeAttribute(publicationTitle)}" />
+    <meta property="og:description" content="${escapeAttribute(publicationDescription)}" />
+    <meta property="og:url" content="${routerUrl}" />
+    <meta property="og:image" content="${publicationImageUrl}" />
+    <meta property="og:image:secure_url" content="${publicationImageUrl}" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:image:alt" content="${escapeAttribute(caseStudy.publicationImageAlt)}" />
+    <meta name="author" content="Nick Mitin" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${escapeAttribute(publicationTitle)}" />
+    <meta name="twitter:description" content="${escapeAttribute(publicationDescription)}" />
+    <meta name="twitter:image" content="${publicationImageUrl}" />
+    <meta name="twitter:image:alt" content="${escapeAttribute(caseStudy.publicationImageAlt)}" />
+    <script
+      id="case-study-router"
+      src="/js/i18n.js"
+${targetAttributes}
+      defer></script>
+  </head>
+  <body>
+    <main>
+      <p>Open the technical case study:</p>
+      <ul>
+${languageLinks}
+      </ul>
+    </main>
+  </body>
+</html>
+`;
+}
+
 function renderSitemapAlternates(alternates) {
   return alternates.map((alternate) => (
     `    <xhtml:link rel="alternate" hreflang="${alternate.language}" href="${alternate.url}" />`
@@ -591,6 +665,19 @@ for (const caseStudy of caseStudies) {
     fs.mkdirSync(outputDirectory, { recursive: true });
     fs.writeFileSync(outputPath, renderCaseStudyPage(caseStudy, language), "utf8");
   }
+
+  const routerOutputDirectory = path.join(
+    projectRoot,
+    "case-studies",
+    caseStudy.locales.en.slug
+  );
+
+  fs.mkdirSync(routerOutputDirectory, { recursive: true });
+  fs.writeFileSync(
+    path.join(routerOutputDirectory, "index.html"),
+    renderCaseStudyRouterPage(caseStudy),
+    "utf8"
+  );
 }
 
 fs.writeFileSync(
@@ -600,5 +687,5 @@ fs.writeFileSync(
 );
 
 console.log(
-  `Generated ${languagePages.length} localized profile pages and ${caseStudies.length * 3} case-study pages.`
+  `Generated ${languagePages.length} localized profile pages, ${caseStudies.length * 3} localized case-study pages, and ${caseStudies.length} case-study routers.`
 );

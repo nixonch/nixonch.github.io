@@ -2,6 +2,7 @@
   "use strict";
 
   var supportedLanguages = ["en", "de", "es", "fr", "uk", "ru"];
+  var caseStudyLanguages = ["en", "de", "es"];
   var languagePathAliases = {
     en: "en",
     de: "de",
@@ -58,7 +59,7 @@
       pdms_item_3: "Built a WWKS2 service that connects medication-management and blister-production software to BD Rowa automated storage systems using asynchronous TCP communication and XML messages. It handles message correlation, buffering, backpressure, retries, and connection recovery.",
       pdms_item_4: "Connected external services to day-to-day workflows for goods receipt, medication storage and retrieval, dispensing and blister production, returns, stock control, and task tracking.",
       pdms_item_5: "Write unit and integration tests with PHPUnit, fixtures, and mocked integrations. Maintain the supporting Linux services with systemd and troubleshoot production issues.",
-      pdms_item_6: "Designed and implemented 2FA / TOTP (RFC 6238), built on HOTP (RFC 4226), for the TABChat medical web application to strengthen patient-data protection in the context of Germany's DigiG. The solution includes QR provisioning for Google Authenticator and compatible apps, CakePHP middleware integration, RBAC-controlled activation, deactivation, and forced reauthentication, 24-hour trusted-device sessions with administrator revocation, database migrations, and PHPUnit security tests.",
+      pdms_item_6: "Designed and implemented 2FA / TOTP (RFC 6238), built on HOTP (RFC 4226), for a medical web application to strengthen patient-data protection in the context of Germany's DigiG. The solution includes QR provisioning for Google Authenticator and compatible apps, CakePHP middleware integration, RBAC-controlled activation, deactivation, and forced reauthentication, 24-hour trusted-device sessions with administrator revocation, database migrations, and PHPUnit security tests.",
       technion_role: "Embedded Software Engineer",
       technion_company: "Technion – Israel Institute of Technology",
       technion_item_1: "Designed and built inter-module communication interfaces for small satellites based on Atmel microcontrollers.",
@@ -82,7 +83,7 @@
       case_wwks2_title: "WWKS2 integration with automated medication storage",
       case_nmvs_title: "securPharm/NMVS medication verification integration",
       case_legacy_title: "Modernizing legacy PHP software for medication management and blister production",
-      case_totp_title: "TOTP-based 2FA for patient-data protection in TABChat",
+      case_totp_title: "TOTP-based 2FA for patient-data protection in a healthcare web application",
       webrtc_role: "Creator and Maintainer",
       webrtc_project: "WebRTC SIP Phone — click-to-call browser extension",
       webrtc_item_1: "Develop and maintain the JavaScript/WebRTC extension.",
@@ -151,7 +152,7 @@
       pdms_item_3: "Ich habe einen WWKS2-Dienst entwickelt, der Software für Medikationsmanagement und Blisterproduktion über asynchrone TCP-Kommunikation und XML-Nachrichten mit automatisierten Lagersystemen von BD Rowa verbindet. Er kümmert sich um Nachrichtenzuordnung, Pufferung, Backpressure, Wiederholungsversuche und die Wiederherstellung abgebrochener Verbindungen.",
       pdms_item_4: "Ich habe externe Dienste in die täglichen Abläufe für Wareneingang, Ein- und Auslagerung von Arzneimitteln, Abgabe und Blisterproduktion, Rückgaben, Bestandskontrolle und Aufgabenverfolgung eingebunden.",
       pdms_item_5: "Ich schreibe Unit- und Integrationstests mit PHPUnit, Fixtures und gemockten Anbindungen, betreue die zugehörigen Linux-Dienste mit systemd und analysiere Probleme im Produktivbetrieb.",
-      pdms_item_6: "Ich habe 2FA / TOTP (RFC 6238), aufbauend auf HOTP (RFC 4226), für die medizinische Webanwendung TABChat konzipiert und umgesetzt, um den Schutz von Patientendaten im Kontext des deutschen DigiG zu stärken. Dazu gehören die Einrichtung per QR-Code für Google Authenticator und kompatible Apps, die Integration über CakePHP-Middleware, rollen- und rechtegesteuerte Abläufe für Aktivierung, Deaktivierung und erzwungene erneute Authentifizierung, je Gerät getrennte vertrauenswürdige Sitzungen mit 24 Stunden Gültigkeit und administrativer Rücksetzung, Datenbankmigrationen und Sicherheitstests mit PHPUnit.",
+      pdms_item_6: "Ich habe 2FA / TOTP (RFC 6238), aufbauend auf HOTP (RFC 4226), für eine medizinische Webanwendung konzipiert und umgesetzt, um den Schutz von Patientendaten im Kontext des deutschen DigiG zu stärken. Dazu gehören die Einrichtung per QR-Code für Google Authenticator und kompatible Apps, die Integration über CakePHP-Middleware, rollen- und rechtegesteuerte Abläufe für Aktivierung, Deaktivierung und erzwungene erneute Authentifizierung, je Gerät getrennte vertrauenswürdige Sitzungen mit 24 Stunden Gültigkeit und administrativer Rücksetzung, Datenbankmigrationen und Sicherheitstests mit PHPUnit.",
       technion_role: "Embedded-Softwareentwickler",
       technion_company: "Technion – Israel Institute of Technology",
       technion_item_1: "Ich habe Kommunikationsschnittstellen zwischen den Modulen kleiner Satelliten auf Basis von Atmel-Mikrocontrollern konzipiert und entwickelt.",
@@ -175,7 +176,7 @@
       case_wwks2_title: "WWKS2-Integration mit automatisierter Arzneimittellagerung",
       case_nmvs_title: "securPharm/NMVS-Integration zur Arzneimittelverifikation",
       case_legacy_title: "Modernisierung von Legacy-PHP-Software für Medikationsmanagement und Blisterproduktion",
-      case_totp_title: "TOTP-basierte 2FA zum Schutz von Patientendaten in TABChat",
+      case_totp_title: "TOTP-basierte 2FA zum Schutz von Patientendaten in einer medizinischen Webanwendung",
       webrtc_role: "Entwickler und Maintainer",
       webrtc_project: "WebRTC SIP Phone — Click-to-Call-Browsererweiterung",
       webrtc_item_1: "Ich entwickle und pflege die JavaScript-/WebRTC-Erweiterung.",
@@ -244,7 +245,7 @@
       pdms_item_3: "Desarrollé un servicio WWKS2 que conecta software de gestión de la medicación y producción de blísteres con los sistemas automatizados de almacenamiento BD Rowa mediante comunicación TCP asíncrona y mensajes XML. Gestiona la correlación de mensajes, el almacenamiento en búfer, la contrapresión, los reintentos y la recuperación de la conexión.",
       pdms_item_4: "Integré servicios externos en los flujos diarios de recepción, almacenamiento y retirada de medicamentos, dispensación y producción de blísteres, devoluciones, control de existencias y seguimiento de tareas.",
       pdms_item_5: "Escribo pruebas unitarias y de integración con PHPUnit, fixtures e integraciones simuladas. También mantengo los servicios Linux asociados con systemd y diagnostico incidencias en producción.",
-      pdms_item_6: "Diseñé e implementé 2FA / TOTP (RFC 6238), basado en HOTP (RFC 4226), para la aplicación web sanitaria TABChat, con el fin de reforzar la protección de los datos de pacientes en el contexto de la ley alemana DigiG. Incluye configuración mediante código QR para Google Authenticator y aplicaciones compatibles, integración con middleware de CakePHP, flujos de activación, desactivación y nueva autenticación forzada controlados por roles y permisos, sesiones de confianza independientes por dispositivo durante 24 horas y revocables por un administrador, migraciones de base de datos y pruebas de seguridad con PHPUnit.",
+      pdms_item_6: "Diseñé e implementé 2FA / TOTP (RFC 6238), basado en HOTP (RFC 4226), para una aplicación web sanitaria, con el fin de reforzar la protección de los datos de pacientes en el contexto de la ley alemana DigiG. Incluye configuración mediante código QR para Google Authenticator y aplicaciones compatibles, integración con middleware de CakePHP, flujos de activación, desactivación y nueva autenticación forzada controlados por roles y permisos, sesiones de confianza independientes por dispositivo durante 24 horas y revocables por un administrador, migraciones de base de datos y pruebas de seguridad con PHPUnit.",
       technion_role: "Ingeniero de software embebido",
       technion_company: "Technion – Instituto de Tecnología de Israel",
       technion_item_1: "Diseñé y desarrollé interfaces de comunicación entre módulos para pequeños satélites basados en microcontroladores Atmel.",
@@ -268,7 +269,7 @@
       case_wwks2_title: "Integración WWKS2 con almacenamiento automatizado de medicamentos",
       case_nmvs_title: "Integración securPharm/NMVS: experiencia transferible a SEVeM",
       case_legacy_title: "Modernización de software PHP legacy para gestión de la medicación y producción de blísteres",
-      case_totp_title: "2FA basada en TOTP para proteger datos de pacientes en TABChat",
+      case_totp_title: "2FA basada en TOTP para proteger datos de pacientes en una aplicación web sanitaria",
       webrtc_role: "Creador y responsable del mantenimiento",
       webrtc_project: "WebRTC SIP Phone — extensión de navegador click-to-call",
       webrtc_item_1: "Desarrollo y mantengo la extensión en JavaScript/WebRTC.",
@@ -337,7 +338,7 @@
       pdms_item_3: "J’ai développé un service WWKS2 qui relie les logiciels de gestion des traitements et de production de doses personnalisées aux systèmes de stockage automatisé BD Rowa via des communications TCP asynchrones et des messages XML. Il gère la corrélation des messages, la mise en mémoire tampon, la contre-pression, les nouvelles tentatives et le rétablissement de la connexion.",
       pdms_item_4: "J’ai intégré des services externes aux processus quotidiens de réception, de stockage et de déstockage des médicaments, de délivrance et de préparation de doses personnalisées, de retour, de contrôle des stocks et de suivi des tâches.",
       pdms_item_5: "J’écris des tests unitaires et d’intégration avec PHPUnit, des fixtures et des intégrations simulées. Je maintiens également les services Linux associés avec systemd et diagnostique les incidents en production.",
-      pdms_item_6: "J’ai conçu et mis en œuvre la 2FA / TOTP (RFC 6238), fondée sur HOTP (RFC 4226), pour l’application web médicale TABChat afin de renforcer la protection des données patients dans le contexte de la loi allemande DigiG. La solution comprend l’enrôlement par QR code dans Google Authenticator et les applications compatibles, l’intégration via le middleware CakePHP, des parcours d’activation, de désactivation et de nouvelle authentification forcée soumis aux rôles et aux droits, des sessions de confiance distinctes par appareil, valables 24 heures et révocables par un administrateur, les migrations de base de données et les tests de sécurité avec PHPUnit.",
+      pdms_item_6: "J’ai conçu et mis en œuvre la 2FA / TOTP (RFC 6238), fondée sur HOTP (RFC 4226), pour une application web médicale afin de renforcer la protection des données patients dans le contexte de la loi allemande DigiG. La solution comprend l’enrôlement par QR code dans Google Authenticator et les applications compatibles, l’intégration via le middleware CakePHP, des parcours d’activation, de désactivation et de nouvelle authentification forcée soumis aux rôles et aux droits, des sessions de confiance distinctes par appareil, valables 24 heures et révocables par un administrateur, les migrations de base de données et les tests de sécurité avec PHPUnit.",
       technion_role: "Ingénieur logiciel embarqué",
       technion_company: "Technion – Institut israélien de technologie",
       technion_item_1: "J’ai conçu et développé des interfaces de communication intermodules pour de petits satellites basés sur des microcontrôleurs Atmel.",
@@ -361,7 +362,7 @@
       case_wwks2_title: "Intégration WWKS2 avec un stockage automatisé de médicaments",
       case_nmvs_title: "Intégration securPharm/NMVS pour la vérification des médicaments",
       case_legacy_title: "Modernisation de logiciels PHP legacy pour la gestion des traitements et la préparation de doses personnalisées",
-      case_totp_title: "2FA basée sur TOTP pour protéger les données patients dans TABChat",
+      case_totp_title: "2FA basée sur TOTP pour protéger les données patients dans une application web médicale",
       webrtc_role: "Créateur et mainteneur",
       webrtc_project: "WebRTC SIP Phone — extension de navigateur click-to-call",
       webrtc_item_1: "Je développe et maintiens l’extension JavaScript/WebRTC.",
@@ -430,7 +431,7 @@
       pdms_item_3: "Розробив сервіс WWKS2, який з’єднує ПЗ для керування лікарським забезпеченням і виробництва персоналізованих блістерів з автоматизованими системами зберігання BD Rowa через асинхронний TCP-обмін і XML-повідомлення. Сервіс виконує зіставлення повідомлень, буферизацію, контроль зворотного тиску, повторні спроби та відновлення з’єднання.",
       pdms_item_4: "Інтегрував зовнішні сервіси в щоденні процеси приймання, розміщення та видавання ліків зі складу, відпуску й виробництва блістерів, повернень, контролю запасів і відстеження завдань.",
       pdms_item_5: "Пишу модульні та інтеграційні тести з PHPUnit, фікстурами й моками зовнішніх інтеграцій. Підтримую пов’язані Linux-сервіси за допомогою systemd і діагностую проблеми у продакшені.",
-      pdms_item_6: "Спроєктував і реалізував 2FA / TOTP (RFC 6238), побудовану на HOTP (RFC 4226), для медичного вебзастосунку TABChat, щоб посилити захист даних пацієнтів у контексті німецького DigiG. Рішення охоплює налаштування через QR-код у Google Authenticator і сумісних застосунках, інтеграцію через CakePHP Middleware, керовані ролями та правами сценарії активації, деактивації й примусового повторного проходження 2FA, окремі для кожного пристрою довірені сесії на 24 години з можливістю скидання адміністратором, міграції бази даних і тестування безпеки з PHPUnit.",
+      pdms_item_6: "Спроєктував і реалізував 2FA / TOTP (RFC 6238), побудовану на HOTP (RFC 4226), для медичного вебзастосунку, щоб посилити захист даних пацієнтів у контексті німецького DigiG. Рішення охоплює налаштування через QR-код у Google Authenticator і сумісних застосунках, інтеграцію через CakePHP Middleware, керовані ролями та правами сценарії активації, деактивації й примусового повторного проходження 2FA, окремі для кожного пристрою довірені сесії на 24 години з можливістю скидання адміністратором, міграції бази даних і тестування безпеки з PHPUnit.",
       technion_role: "Інженер вбудованого програмного забезпечення",
       technion_company: "Техніон — Ізраїльський технологічний інститут",
       technion_item_1: "Спроєктував і розробив інтерфейси обміну даними між модулями малих супутників на базі мікроконтролерів Atmel.",
@@ -454,7 +455,7 @@
       case_wwks2_title: "Інтеграція WWKS2 з автоматизованим зберіганням ліків",
       case_nmvs_title: "Інтеграція securPharm/NMVS для перевірки лікарських засобів",
       case_legacy_title: "Модернізація legacy PHP-ПЗ для керування лікарським забезпеченням і виробництва блістерів",
-      case_totp_title: "2FA на базі TOTP для захисту даних пацієнтів у TABChat",
+      case_totp_title: "2FA на базі TOTP для захисту даних пацієнтів у медичному вебзастосунку",
       webrtc_role: "Автор і мейнтейнер",
       webrtc_project: "WebRTC SIP Phone — браузерне розширення click-to-call",
       webrtc_item_1: "Розробляю та підтримую розширення на JavaScript/WebRTC.",
@@ -523,7 +524,7 @@
       pdms_item_3: "Разработал сервис WWKS2, который связывает ПО для управления лекарственным обеспечением и производства персонализированных блистеров с автоматизированными системами хранения BD Rowa через асинхронный TCP-обмен и XML-сообщения. Сервис отвечает за сопоставление сообщений, буферизацию, контроль обратного давления, повторные попытки и восстановление соединения.",
       pdms_item_4: "Интегрировал внешние сервисы в ежедневные процессы приёмки, размещения и выдачи лекарств со склада, отпуска и производства блистеров, возвратов, контроля запасов и отслеживания задач.",
       pdms_item_5: "Пишу модульные и интеграционные тесты с PHPUnit, фикстурами и моками внешних интеграций. Поддерживаю связанные Linux-сервисы с помощью systemd и диагностирую проблемы в продакшене.",
-      pdms_item_6: "Спроектировал и реализовал 2FA / TOTP (RFC 6238), построенную на HOTP (RFC 4226), для медицинского веб-приложения TABChat, чтобы усилить защиту данных пациентов в контексте немецкого DigiG. Решение включает настройку через QR-код в Google Authenticator и совместимых приложениях, интеграцию через CakePHP Middleware, управляемые ролями и правами сценарии активации, деактивации и принудительного повторного прохождения 2FA, отдельные для каждого устройства доверенные сессии сроком на 24 часа с возможностью сброса администратором, миграции базы данных и тестирование безопасности с PHPUnit.",
+      pdms_item_6: "Спроектировал и реализовал 2FA / TOTP (RFC 6238), построенную на HOTP (RFC 4226), для медицинского веб-приложения, чтобы усилить защиту данных пациентов в контексте немецкого DigiG. Решение включает настройку через QR-код в Google Authenticator и совместимых приложениях, интеграцию через CakePHP Middleware, управляемые ролями и правами сценарии активации, деактивации и принудительного повторного прохождения 2FA, отдельные для каждого устройства доверенные сессии сроком на 24 часа с возможностью сброса администратором, миграции базы данных и тестирование безопасности с PHPUnit.",
       technion_role: "Инженер-программист встраиваемых систем",
       technion_company: "Технион — Израильский технологический институт",
       technion_item_1: "Спроектировал и разработал интерфейсы обмена данными между модулями малых спутников на базе микроконтроллеров Atmel.",
@@ -547,7 +548,7 @@
       case_wwks2_title: "Интеграция WWKS2 с автоматизированным хранением лекарств",
       case_nmvs_title: "Интеграция securPharm/NMVS для проверки лекарственных средств",
       case_legacy_title: "Модернизация legacy PHP-ПО для управления лекарственным обеспечением и производства блистеров",
-      case_totp_title: "2FA на базе TOTP для защиты данных пациентов в TABChat",
+      case_totp_title: "2FA на базе TOTP для защиты данных пациентов в медицинском веб-приложении",
       webrtc_role: "Создатель и мейнтейнер",
       webrtc_project: "WebRTC SIP Phone — браузерное расширение click-to-call",
       webrtc_item_1: "Разрабатываю и поддерживаю расширение на JavaScript/WebRTC.",
@@ -647,8 +648,9 @@
     return "";
   }
 
-  function detectBrowserLanguage() {
+  function detectBrowserLanguage(allowedLanguages) {
     var browserLanguages = [];
+    var languages = allowedLanguages || supportedLanguages;
 
     if (Array.isArray(navigator.languages)) {
       browserLanguages = navigator.languages.slice();
@@ -660,12 +662,36 @@
 
     for (var index = 0; index < browserLanguages.length; index += 1) {
       var language = normalizeLanguage(browserLanguages[index]);
-      if (supportedLanguages.indexOf(language) !== -1) {
+      if (languages.indexOf(language) !== -1) {
         return language;
       }
     }
 
     return "en";
+  }
+
+  function resolveCaseStudyLanguage() {
+    var cookieLanguage = readLanguageCookie();
+
+    if (caseStudyLanguages.indexOf(cookieLanguage) !== -1) {
+      return cookieLanguage;
+    }
+
+    if (cookieLanguage) {
+      return "en";
+    }
+
+    return detectBrowserLanguage(caseStudyLanguages);
+  }
+
+  function initializeCaseStudyRouter(routerScript) {
+    var language = resolveCaseStudyLanguage();
+    var targetUrl = routerScript.getAttribute("data-" + language + "-url")
+      || routerScript.getAttribute("data-en-url");
+
+    if (targetUrl) {
+      window.location.replace(targetUrl + window.location.search + window.location.hash);
+    }
   }
 
   function detectPathLanguage() {
@@ -864,6 +890,13 @@
     printButton.addEventListener("click", function () {
       window.print();
     });
+  }
+
+  var caseStudyRouter = document.getElementById("case-study-router");
+
+  if (caseStudyRouter) {
+    initializeCaseStudyRouter(caseStudyRouter);
+    return;
   }
 
   try {

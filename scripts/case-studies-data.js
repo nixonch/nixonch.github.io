@@ -36,6 +36,10 @@ const localeMeta = {
 const caseStudies = [
   {
     id: "wwks2",
+    publicationTitle: "WWKS2 pharmacy warehouse integration for medication workflows",
+    publicationDescription: "Asynchronous WWKS2 integration connecting medication-management and blister-production software with automated pharmacy storage via TCP and XML.",
+    publicationImage: "/images/case-studies/wwks2-pharmacy-warehouse-integration.jpg",
+    publicationImageAlt: "Medication data flowing through a WWKS2 integration to automated pharmacy storage",
     technologies: [
       "PHP",
       "ReactPHP",
@@ -53,7 +57,7 @@ const caseStudies = [
     locales: {
       en: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-10T19:53:57+02:00",
+        dateModified: "2026-08-11T11:23:13+02:00",
         slug: "wwks2-pharmacy-warehouse-integration",
         title: "WWKS2 integration with automated medication storage",
         description: "Asynchronous WWKS2 service connecting medication-management and blister-production software with BD Rowa storage through TCP, XML, and resilient processing.",
@@ -89,7 +93,7 @@ const caseStudies = [
       },
       de: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-10T19:53:57+02:00",
+        dateModified: "2026-08-11T11:23:13+02:00",
         slug: "wwks2-apothekenlager-integration",
         title: "WWKS2-Integration mit automatisierter Arzneimittellagerung",
         description: "Asynchroner WWKS2-Dienst zur Anbindung von Medikationsmanagement und Blisterproduktion an BD-Rowa-Lagersysteme über TCP und XML.",
@@ -125,7 +129,7 @@ const caseStudies = [
       },
       es: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-10T19:53:57+02:00",
+        dateModified: "2026-08-11T11:23:13+02:00",
         slug: "integracion-wwks2-almacen-farmacia",
         title: "Integración WWKS2 con almacenamiento automatizado de medicamentos",
         description: "Servicio WWKS2 asíncrono que conecta software de medicación y producción de blísteres con almacenes BD Rowa mediante TCP, XML y procesamiento resiliente.",
@@ -163,6 +167,10 @@ const caseStudies = [
   },
   {
     id: "nmvs",
+    publicationTitle: "securPharm/NMVS medication verification integration",
+    publicationDescription: "Integration of medication-handling workflows with the German NMVS for verification, decommissioning, undo operations, and resilient error handling.",
+    publicationImage: "/images/case-studies/securpharm-nmvs-medication-verification.jpg",
+    publicationImageAlt: "Medicine package verification through a secure national verification gateway",
     technologies: [
       "securPharm",
       "NMVS",
@@ -180,7 +188,7 @@ const caseStudies = [
     locales: {
       en: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-09T00:00:00+02:00",
+        dateModified: "2026-08-11T11:23:13+02:00",
         slug: "securpharm-nmvs-medication-verification",
         title: "securPharm/NMVS medication verification integration",
         description: "Integration of medication-handling workflows with the German NMVS for verification, decommissioning, undo operations, and resilient error handling.",
@@ -216,7 +224,7 @@ const caseStudies = [
       },
       de: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-09T00:00:00+02:00",
+        dateModified: "2026-08-11T11:23:13+02:00",
         slug: "securpharm-nmvs-arzneimittelverifikation",
         title: "securPharm/NMVS-Integration zur Arzneimittelverifikation",
         description: "Integration von Abläufen der Arzneimittelhandhabung mit dem deutschen NMVS für Verifikation, Ausbuchung, Rückbuchung und robuste Fehlerbehandlung.",
@@ -252,7 +260,7 @@ const caseStudies = [
       },
       es: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-10T19:53:57+02:00",
+        dateModified: "2026-08-11T11:23:13+02:00",
         slug: "securpharm-nmvs-verificacion-medicamentos",
         title: "Integración securPharm/NMVS: experiencia transferible a SEVeM",
         description: "Integración productiva con el NMVS alemán para verificar, desactivar y revertir medicamentos, con patrones técnicos transferibles a SEVeM.",
@@ -293,6 +301,10 @@ const caseStudies = [
   },
   {
     id: "legacy",
+    publicationTitle: "Modernizing legacy PHP healthcare software",
+    publicationDescription: "Incremental modernization of legacy PHP healthcare software through controlled integrations, automated tests, database migrations, and structured logging.",
+    publicationImage: "/images/case-studies/legacy-php-healthcare-modernization.jpg",
+    publicationImageAlt: "Legacy healthcare software being incrementally transformed into modular tested components",
     technologies: [
       "PHP",
       "CakePHP",
@@ -309,7 +321,7 @@ const caseStudies = [
     locales: {
       en: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-10T19:53:57+02:00",
+        dateModified: "2026-08-11T11:23:13+02:00",
         slug: "legacy-php-healthcare-modernization",
         title: "Modernizing legacy PHP software for medication management and blister production",
         description: "Incremental modernization of medication-management and blister-production software using controlled integrations, automated tests, and structured logging.",
@@ -346,7 +358,7 @@ const caseStudies = [
       },
       de: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-10T19:53:57+02:00",
+        dateModified: "2026-08-11T11:23:13+02:00",
         slug: "legacy-php-gesundheits-it-modernisierung",
         title: "Modernisierung von Legacy-PHP-Software für Medikationsmanagement und Blisterproduktion",
         description: "Schrittweise Modernisierung von Software für Medikationsmanagement und Blisterproduktion mit kontrollierten Integrationen, Tests und Logging.",
@@ -383,7 +395,7 @@ const caseStudies = [
       },
       es: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-10T19:53:57+02:00",
+        dateModified: "2026-08-11T11:23:13+02:00",
         slug: "modernizacion-php-legacy-software-sanitario",
         title: "Modernización de software PHP legacy para gestión de la medicación y producción de blísteres",
         description: "Modernización incremental de software de medicación y producción de blísteres mediante integraciones controladas, pruebas automatizadas y logging.",
@@ -422,6 +434,10 @@ const caseStudies = [
   },
   {
     id: "totp",
+    publicationTitle: "TOTP-based 2FA for patient-data protection in a healthcare web application",
+    publicationDescription: "Implementation of TOTP-based 2FA in a healthcare web application with CakePHP, role-based access control, trusted devices, database migrations, and security testing.",
+    publicationImage: "/images/case-studies/totp-2fa-patient-data-security.jpg",
+    publicationImageAlt: "Two-factor authentication protecting role-based access to patient data",
     technologies: [
       "PHP",
       "CakePHP",
@@ -444,15 +460,15 @@ const caseStudies = [
     locales: {
       en: {
         datePublished: "2026-08-09",
-        dateModified: "2026-08-10T18:33:38+02:00",
+        dateModified: "2026-08-11T11:23:13+02:00",
         slug: "totp-2fa-patient-data-security",
-        title: "TOTP-based 2FA for patient-data protection in TABChat",
-        description: "Implementation of TOTP-based 2FA in TABChat with CakePHP, role-based access control, trusted devices, database migrations, and security testing.",
+        title: "TOTP-based 2FA for patient-data protection in a healthcare web application",
+        description: "Implementation of TOTP-based 2FA in a healthcare web application with CakePHP, role-based access control, trusted devices, database migrations, and security testing.",
         sections: [
           {
             heading: "Context",
             paragraphs: [
-              "TABChat is a cloud medical web application used with patient data. In the context of Germany's Digital-Gesetz (DigiG), the project ticket called for two-factor authentication to strengthen access protection for cloud systems that handle this data.",
+              "The project concerned a cloud medical web application that handles patient data. In the context of Germany's Digital-Gesetz (DigiG), the project ticket called for two-factor authentication to strengthen access protection for cloud systems that handle this data.",
               "The implementation had to fit the application's existing authentication flow, roles, and access rights. It also needed practical user and administrator workflows across different browsers and terminals rather than a standalone code-checking screen."
             ]
           },
@@ -481,15 +497,15 @@ const caseStudies = [
       },
       de: {
         datePublished: "2026-08-09",
-        dateModified: "2026-08-10T18:33:38+02:00",
+        dateModified: "2026-08-11T11:23:13+02:00",
         slug: "totp-2fa-patientendaten-sicherheit",
-        title: "TOTP-basierte 2FA zum Schutz von Patientendaten in TABChat",
-        description: "Implementierung einer TOTP-basierten 2FA in TABChat mit CakePHP, rollenbasierter Zugriffskontrolle, vertrauenswürdigen Geräten und Sicherheitstests.",
+        title: "TOTP-basierte 2FA zum Schutz von Patientendaten in einer medizinischen Webanwendung",
+        description: "Implementierung einer TOTP-basierten 2FA in einer medizinischen Webanwendung mit CakePHP, rollenbasierter Zugriffskontrolle, vertrauenswürdigen Geräten und Sicherheitstests.",
         sections: [
           {
             heading: "Ausgangssituation",
             paragraphs: [
-              "TABChat ist eine medizinische Cloud-Webanwendung, die mit Patientendaten arbeitet. Im Kontext des deutschen Digital-Gesetzes (DigiG) verlangte das Projektticket eine Zwei-Faktor-Authentifizierung, um den Zugang zu Cloud-Systemen mit solchen Daten besser zu schützen.",
+              "Das Projekt betraf eine medizinische Cloud-Webanwendung, die Patientendaten verarbeitet. Im Kontext des deutschen Digital-Gesetzes (DigiG) verlangte das Projektticket eine Zwei-Faktor-Authentifizierung, um den Zugang zu Cloud-Systemen mit solchen Daten besser zu schützen.",
               "Die Implementierung musste sich in den bestehenden Authentifizierungsablauf sowie in Rollen und Zugriffsrechte einfügen. Außerdem waren praxistaugliche Benutzer- und Administrationsabläufe für unterschiedliche Browser und Terminals erforderlich, nicht nur eine isolierte Codeprüfung."
             ]
           },
@@ -518,15 +534,15 @@ const caseStudies = [
       },
       es: {
         datePublished: "2026-08-09",
-        dateModified: "2026-08-10T18:33:38+02:00",
+        dateModified: "2026-08-11T11:23:13+02:00",
         slug: "totp-2fa-seguridad-datos-pacientes",
-        title: "2FA basada en TOTP para proteger datos de pacientes en TABChat",
-        description: "Implementación de 2FA basada en TOTP en TABChat con CakePHP, control de acceso por roles, dispositivos de confianza y pruebas de seguridad.",
+        title: "2FA basada en TOTP para proteger datos de pacientes en una aplicación web sanitaria",
+        description: "Implementación de 2FA basada en TOTP en una aplicación web sanitaria con CakePHP, control de acceso por roles, dispositivos de confianza y pruebas de seguridad.",
         sections: [
           {
             heading: "Contexto",
             paragraphs: [
-              "TABChat es una aplicación web sanitaria en la nube que trabaja con datos de pacientes. En el contexto de la ley alemana Digital-Gesetz (DigiG), el ticket del proyecto exigía autenticación de dos factores para reforzar el acceso a sistemas en la nube que tratan estos datos.",
+              "El proyecto abarcaba una aplicación web sanitaria en la nube que procesa datos de pacientes. En el contexto de la ley alemana Digital-Gesetz (DigiG), el ticket del proyecto exigía autenticación de dos factores para reforzar el acceso a sistemas en la nube que tratan estos datos.",
               "La implementación debía integrarse en el flujo de autenticación, los roles y los permisos existentes. También tenía que ofrecer procesos prácticos para usuarios y administradores en distintos navegadores y terminales, no limitarse a una pantalla aislada para comprobar códigos."
             ]
           },

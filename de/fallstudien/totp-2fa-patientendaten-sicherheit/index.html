@@ -2,8 +2,8 @@
 <html lang="de">
   <head>
     <meta charset="utf-8">
-    <title>TOTP-basierte 2FA zum Schutz von Patientendaten in TABChat — Nick Mitin</title>
-    <meta name="description" content="Implementierung einer TOTP-basierten 2FA in TABChat mit CakePHP, rollenbasierter Zugriffskontrolle, vertrauenswürdigen Geräten und Sicherheitstests." />
+    <title>TOTP-basierte 2FA zum Schutz von Patientendaten in einer medizinischen Webanwendung — Nick Mitin</title>
+    <meta name="description" content="Implementierung einer TOTP-basierten 2FA in einer medizinischen Webanwendung mit CakePHP, rollenbasierter Zugriffskontrolle, vertrauenswürdigen Geräten und Sicherheitstests." />
     <meta name="author" content="Nick Mitin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -24,13 +24,13 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "@id": "https://nixonch.github.io/de/fallstudien/totp-2fa-patientendaten-sicherheit/#article",
-        "headline": "TOTP-basierte 2FA zum Schutz von Patientendaten in TABChat",
-        "description": "Implementierung einer TOTP-basierten 2FA in TABChat mit CakePHP, rollenbasierter Zugriffskontrolle, vertrauenswürdigen Geräten und Sicherheitstests.",
+        "headline": "TOTP-basierte 2FA zum Schutz von Patientendaten in einer medizinischen Webanwendung",
+        "description": "Implementierung einer TOTP-basierten 2FA in einer medizinischen Webanwendung mit CakePHP, rollenbasierter Zugriffskontrolle, vertrauenswürdigen Geräten und Sicherheitstests.",
         "url": "https://nixonch.github.io/de/fallstudien/totp-2fa-patientendaten-sicherheit/",
         "mainEntityOfPage": "https://nixonch.github.io/de/fallstudien/totp-2fa-patientendaten-sicherheit/",
         "inLanguage": "de",
         "datePublished": "2026-08-09",
-        "dateModified": "2026-08-10T18:33:38+02:00",
+        "dateModified": "2026-08-11T11:23:13+02:00",
         "author": {
           "@type": "Person",
           "@id": "https://nixonch.github.io/#person",
@@ -92,13 +92,13 @@
       <a class="case-study-back" href="/" onclick="if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && canGoBackWithinSite) { event.preventDefault(); window.history.back(); }">↩ Zurück zum Lebenslauf</a>
       <header class="case-study-header">
         <p class="case-study-label">Technische Fallstudie</p>
-        <h1>TOTP-basierte 2FA zum Schutz von Patientendaten in TABChat</h1>
-        <p class="case-study-lead">Implementierung einer TOTP-basierten 2FA in TABChat mit CakePHP, rollenbasierter Zugriffskontrolle, vertrauenswürdigen Geräten und Sicherheitstests.</p>
+        <h1>TOTP-basierte 2FA zum Schutz von Patientendaten in einer medizinischen Webanwendung</h1>
+        <p class="case-study-lead">Implementierung einer TOTP-basierten 2FA in einer medizinischen Webanwendung mit CakePHP, rollenbasierter Zugriffskontrolle, vertrauenswürdigen Geräten und Sicherheitstests.</p>
       </header>
       <article class="case-study-article">
         <section class="case-study-section">
           <h2>Ausgangssituation</h2>
-          <p>TABChat ist eine medizinische Cloud-Webanwendung, die mit Patientendaten arbeitet. Im Kontext des deutschen Digital-Gesetzes (DigiG) verlangte das Projektticket eine Zwei-Faktor-Authentifizierung, um den Zugang zu Cloud-Systemen mit solchen Daten besser zu schützen.</p>
+          <p>Das Projekt betraf eine medizinische Cloud-Webanwendung, die Patientendaten verarbeitet. Im Kontext des deutschen Digital-Gesetzes (DigiG) verlangte das Projektticket eine Zwei-Faktor-Authentifizierung, um den Zugang zu Cloud-Systemen mit solchen Daten besser zu schützen.</p>
           <p>Die Implementierung musste sich in den bestehenden Authentifizierungsablauf sowie in Rollen und Zugriffsrechte einfügen. Außerdem waren praxistaugliche Benutzer- und Administrationsabläufe für unterschiedliche Browser und Terminals erforderlich, nicht nur eine isolierte Codeprüfung.</p>
         </section>
         <section class="case-study-section">

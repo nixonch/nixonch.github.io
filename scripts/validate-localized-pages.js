@@ -72,6 +72,66 @@ function getCaseStudyPage(caseStudy, language) {
   };
 }
 
+function validateCaseStudyRouter(caseStudy) {
+  for (const field of [
+    "publicationTitle",
+    "publicationDescription",
+    "publicationImage",
+    "publicationImageAlt"
+  ]) {
+    assert(
+      typeof caseStudy[field] === "string" && caseStudy[field].trim(),
+      `${caseStudy.id}: ${field} is required for publication`
+    );
+  }
+
+  const publicationImagePath = caseStudy.publicationImage.replace(/^\//, "");
+  assert(
+    fs.existsSync(path.join(projectRoot, publicationImagePath)),
+    `${caseStudy.id}: publication image is missing: ${caseStudy.publicationImage}`
+  );
+
+  const relativePath = path.join(
+    "case-studies",
+    caseStudy.locales.en.slug,
+    "index.html"
+  );
+  const html = readRequiredFile(relativePath);
+
+  assert(
+    html.includes('<meta name="robots" content="noindex, follow" />'),
+    `${relativePath}: router must not compete with localized pages in search results`
+  );
+  assert(
+    html.includes('id="case-study-router"') && html.includes('src="/js/i18n.js"'),
+    `${relativePath}: shared case-study router is missing`
+  );
+  assert(
+    html.includes(`<meta property="og:title" content="${caseStudy.publicationTitle}" />`)
+      && html.includes(`<meta property="og:description" content="${caseStudy.publicationDescription}" />`),
+    `${relativePath}: publication title or description is missing`
+  );
+
+  const publicationImageUrl = `${siteOrigin}${caseStudy.publicationImage}`;
+  assert(
+    html.includes(`<meta property="og:image" content="${publicationImageUrl}" />`)
+      && html.includes('<meta property="og:image:width" content="1200" />')
+      && html.includes('<meta property="og:image:height" content="627" />')
+      && html.includes(`<meta property="og:image:alt" content="${caseStudy.publicationImageAlt}" />`)
+      && html.includes('<meta name="twitter:card" content="summary_large_image" />')
+      && html.includes(`<meta name="twitter:image" content="${publicationImageUrl}" />`),
+    `${relativePath}: publication image metadata is incomplete`
+  );
+
+  for (const language of Object.keys(caseStudy.locales)) {
+    const targetPath = `/${localeMeta[language].directory}/${localeMeta[language].section}/${caseStudy.locales[language].slug}/`;
+    assert(
+      html.includes(`data-${language}-url="${targetPath}"`),
+      `${relativePath}: ${language} target must be ${targetPath}`
+    );
+  }
+}
+
 function validatePages() {
   const expectedUrls = [];
 
@@ -86,6 +146,8 @@ function validatePages() {
       validatePage(page, "article-structured-data");
       expectedUrls.push(page.url);
     }
+
+    validateCaseStudyRouter(caseStudy);
   }
 
   return expectedUrls;
@@ -118,5 +180,5 @@ const expectedUrls = validatePages();
 validateSitemap(expectedUrls);
 
 console.log(
-  `Static page validation passed: ${expectedUrls.length} pages and sitemap.xml.`
+  `Static page validation passed: ${expectedUrls.length + caseStudies.length} pages and ${expectedUrls.length} sitemap URLs.`
 );
