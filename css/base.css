@@ -918,9 +918,8 @@ html.i18n-pending body {
 			width: min(960px, 100%);
 			padding-right: var(--cv-inline-padding);
 			padding-left: var(--cv-inline-padding);
-			margin-right: 0;
-			margin-left: max(0px, calc(50% - 480px));
-			transition: margin-left .3s ease;
+			margin-right: auto;
+			margin-left: auto;
 		}
 
 		body > .container .container.footer {
@@ -961,7 +960,7 @@ html.i18n-pending body {
 		}
 
 		.row > .one-third.column:not(.infos) {
-			flex: 1 1 260px;
+			flex: 0 1 260px;
 		}
 
 		.row > .two-thirds.column:not(.myname) {
@@ -1042,18 +1041,14 @@ html.i18n-pending body {
 			overflow-wrap: anywhere;
 		}
 
-		.projects-title-break {
-			display: none;
-		}
-
 		@container (min-width: 1211px) {
 		body > .container {
-			width: 960px;
-			margin-left: max(251px, calc(50% - 480px));
+			width: min(960px, calc(100% - 502px));
 		}
 
-		#navi-toggle:not(:checked) ~ .container {
-			margin-left: max(0px, calc(50% - 480px));
+		.row > .two-thirds.column:not(.myname) {
+			flex-basis: calc(100% - 280px);
+			min-width: 0;
 		}
 
 		.navi-toggle-narrow {
@@ -1124,8 +1119,14 @@ h4 {
 			border-style: none;
 			margin: 0.4cm 0;
 		}
-		.column hr {
-			margin: 1.75em 0 0.5em;
+		.column > ul:has(+ hr) {
+			margin-bottom: 0;
+		}
+		.column > hr {
+			margin: 0;
+		}
+		.column > hr + h3 {
+			margin-top: 0.1cm !important;
 		}
 		li .tag {
 			font-size: 100%;
