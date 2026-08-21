@@ -57,7 +57,7 @@ const caseStudies = [
     locales: {
       en: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-11T11:23:13+02:00",
+        dateModified: "2026-08-21T21:40:45+02:00",
         slug: "wwks2-pharmacy-warehouse-integration",
         title: "WWKS2 integration with automated medication storage",
         description: "Asynchronous WWKS2 service connecting medication-management and blister-production software with BD Rowa storage through TCP, XML, and resilient processing.",
@@ -93,7 +93,7 @@ const caseStudies = [
       },
       de: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-11T11:23:13+02:00",
+        dateModified: "2026-08-21T21:40:45+02:00",
         slug: "wwks2-apothekenlager-integration",
         title: "WWKS2-Integration mit automatisierter Arzneimittellagerung",
         description: "Asynchroner WWKS2-Dienst zur Anbindung von Medikationsmanagement und Blisterproduktion an BD-Rowa-Lagersysteme über TCP und XML.",
@@ -129,7 +129,7 @@ const caseStudies = [
       },
       es: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-11T11:23:13+02:00",
+        dateModified: "2026-08-21T21:40:45+02:00",
         slug: "integracion-wwks2-almacen-farmacia",
         title: "Integración WWKS2 con almacenamiento automatizado de medicamentos",
         description: "Servicio WWKS2 asíncrono que conecta software de medicación y producción de blísteres con almacenes BD Rowa mediante TCP, XML y procesamiento resiliente.",
@@ -188,7 +188,7 @@ const caseStudies = [
     locales: {
       en: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-11T11:23:13+02:00",
+        dateModified: "2026-08-21T21:40:45+02:00",
         slug: "securpharm-nmvs-medication-verification",
         title: "securPharm/NMVS medication verification integration",
         description: "Integration of medication-handling workflows with the German NMVS for verification, decommissioning, undo operations, and resilient error handling.",
@@ -224,7 +224,7 @@ const caseStudies = [
       },
       de: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-11T11:23:13+02:00",
+        dateModified: "2026-08-21T21:40:45+02:00",
         slug: "securpharm-nmvs-arzneimittelverifikation",
         title: "securPharm/NMVS-Integration zur Arzneimittelverifikation",
         description: "Integration von Abläufen der Arzneimittelhandhabung mit dem deutschen NMVS für Verifikation, Ausbuchung, Rückbuchung und robuste Fehlerbehandlung.",
@@ -260,7 +260,7 @@ const caseStudies = [
       },
       es: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-11T11:23:13+02:00",
+        dateModified: "2026-08-21T21:40:45+02:00",
         slug: "securpharm-nmvs-verificacion-medicamentos",
         title: "Integración securPharm/NMVS: experiencia transferible a SEVeM",
         description: "Integración productiva con el NMVS alemán para verificar, desactivar y revertir medicamentos, con patrones técnicos transferibles a SEVeM.",
@@ -302,7 +302,7 @@ const caseStudies = [
   {
     id: "legacy",
     publicationTitle: "Modernizing legacy PHP healthcare software",
-    publicationDescription: "Incremental modernization of legacy PHP healthcare software through controlled integrations, automated tests, database migrations, and structured logging.",
+    publicationDescription: "Incremental modernization of legacy PHP pharmacy software through automated tests, controlled integrations, structured logging, and production operations.",
     publicationImage: "/images/case-studies/legacy-php-healthcare-modernization-v2.jpg",
     publicationImageAlt: "Legacy healthcare software being incrementally transformed into modular tested components",
     technologies: [
@@ -321,10 +321,10 @@ const caseStudies = [
     locales: {
       en: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-11T11:23:13+02:00",
+        dateModified: "2026-08-21T21:40:45+02:00",
         slug: "legacy-php-healthcare-modernization",
         title: "Modernizing legacy PHP software for medication management and blister production",
-        description: "Incremental modernization of medication-management and blister-production software using controlled integrations, automated tests, and structured logging.",
+        description: "Incremental modernization of legacy PHP pharmacy software through automated tests, controlled integrations, structured logging, and production operations.",
         sections: [
           {
             heading: "Context",
@@ -358,10 +358,10 @@ const caseStudies = [
       },
       de: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-11T11:23:13+02:00",
+        dateModified: "2026-08-21T21:40:45+02:00",
         slug: "legacy-php-gesundheits-it-modernisierung",
         title: "Modernisierung von Legacy-PHP-Software für Medikationsmanagement und Blisterproduktion",
-        description: "Schrittweise Modernisierung von Software für Medikationsmanagement und Blisterproduktion mit kontrollierten Integrationen, Tests und Logging.",
+        description: "Schrittweise Modernisierung von Legacy-PHP-Software für Apotheken mit Tests, kontrollierten Integrationen, strukturiertem Logging und Produktionsbetrieb.",
         sections: [
           {
             heading: "Ausgangssituation",
@@ -395,10 +395,10 @@ const caseStudies = [
       },
       es: {
         datePublished: "2026-07-30",
-        dateModified: "2026-08-11T11:23:13+02:00",
+        dateModified: "2026-08-21T21:40:45+02:00",
         slug: "modernizacion-php-legacy-software-sanitario",
         title: "Modernización de software PHP legacy para gestión de la medicación y producción de blísteres",
-        description: "Modernización incremental de software de medicación y producción de blísteres mediante integraciones controladas, pruebas automatizadas y logging.",
+        description: "Modernización incremental de software PHP legacy para farmacias con pruebas, integraciones controladas, logging estructurado y operación en producción.",
         sections: [
           {
             heading: "Contexto",
@@ -434,8 +434,8 @@ const caseStudies = [
   },
   {
     id: "totp",
-    publicationTitle: "TOTP-based 2FA for patient-data protection in a healthcare web application",
-    publicationDescription: "Implementation of TOTP-based 2FA in a healthcare web application with CakePHP, role-based access control, trusted devices, database migrations, and security testing.",
+    publicationTitle: "TOTP-based 2FA for patient data protection in healthcare software",
+    publicationDescription: "TOTP-based 2FA protecting patient data in a CakePHP healthcare application with role-based access, trusted devices, migrations, and security testing.",
     publicationImage: "/images/case-studies/totp-2fa-patient-data-security-v2.jpg",
     publicationImageAlt: "Two-factor authentication protecting role-based access to patient data",
     technologies: [
@@ -460,10 +460,10 @@ const caseStudies = [
     locales: {
       en: {
         datePublished: "2026-08-09",
-        dateModified: "2026-08-11T11:23:13+02:00",
+        dateModified: "2026-08-21T21:40:45+02:00",
         slug: "totp-2fa-patient-data-security",
-        title: "TOTP-based 2FA for patient-data protection in a healthcare web application",
-        description: "Implementation of TOTP-based 2FA in a healthcare web application with CakePHP, role-based access control, trusted devices, database migrations, and security testing.",
+        title: "TOTP-based 2FA for patient data protection in healthcare software",
+        description: "TOTP-based 2FA protecting patient data in a CakePHP healthcare application with role-based access, trusted devices, migrations, and security testing.",
         sections: [
           {
             heading: "Context",
@@ -497,10 +497,10 @@ const caseStudies = [
       },
       de: {
         datePublished: "2026-08-09",
-        dateModified: "2026-08-11T11:23:13+02:00",
+        dateModified: "2026-08-21T21:40:45+02:00",
         slug: "totp-2fa-patientendaten-sicherheit",
-        title: "TOTP-basierte 2FA zum Schutz von Patientendaten in einer medizinischen Webanwendung",
-        description: "Implementierung einer TOTP-basierten 2FA in einer medizinischen Webanwendung mit CakePHP, rollenbasierter Zugriffskontrolle, vertrauenswürdigen Geräten und Sicherheitstests.",
+        title: "TOTP-2FA zum Schutz von Patientendaten in Gesundheitssoftware",
+        description: "TOTP-basierte 2FA zum Schutz von Patientendaten in einer CakePHP-Anwendung mit Rollenrechten, vertrauenswürdigen Geräten, Migrationen und Sicherheitstests.",
         sections: [
           {
             heading: "Ausgangssituation",
@@ -534,10 +534,10 @@ const caseStudies = [
       },
       es: {
         datePublished: "2026-08-09",
-        dateModified: "2026-08-11T11:23:13+02:00",
+        dateModified: "2026-08-21T21:40:45+02:00",
         slug: "totp-2fa-seguridad-datos-pacientes",
-        title: "2FA basada en TOTP para proteger datos de pacientes en una aplicación web sanitaria",
-        description: "Implementación de 2FA basada en TOTP en una aplicación web sanitaria con CakePHP, control de acceso por roles, dispositivos de confianza y pruebas de seguridad.",
+        title: "2FA con TOTP para proteger datos de pacientes en software sanitario",
+        description: "2FA basada en TOTP para proteger datos de pacientes en una aplicación CakePHP con roles, dispositivos de confianza, migraciones y pruebas de seguridad.",
         sections: [
           {
             heading: "Contexto",

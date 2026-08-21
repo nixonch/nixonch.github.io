@@ -388,6 +388,7 @@ function renderCaseStudyPage(caseStudy, language) {
     "@id": `${pageUrl}#article`,
     headline: content.title,
     description: content.description,
+    image: getCaseStudyPublicationImageUrl(caseStudy),
     url: pageUrl,
     mainEntityOfPage: pageUrl,
     inLanguage: language,
