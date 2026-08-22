@@ -301,7 +301,7 @@ const caseStudies = [
   },
   {
     id: "legacy",
-    publicationTitle: "Modernizing legacy PHP healthcare software",
+    publicationTitle: "Modernizing Legacy PHP Backends for Pharmacy and Healthcare Software",
     publicationDescription: "Incremental modernization of legacy PHP pharmacy software through automated tests, controlled integrations, structured logging, and production operations.",
     publicationImage: "/images/case-studies/legacy-php-healthcare-modernization-v2.jpg",
     publicationImageAlt: "Legacy healthcare software being incrementally transformed into modular tested components",
