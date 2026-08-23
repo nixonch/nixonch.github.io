@@ -843,7 +843,7 @@
     }
 
     function updateSidebarMode() {
-      var nextWideSidebar = document.body.clientWidth >= 1211;
+      var nextWideSidebar = document.documentElement.clientWidth >= 1211;
 
       if (nextWideSidebar !== wideSidebar) {
         sidebarToggle.checked = nextWideSidebar;

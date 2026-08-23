@@ -620,7 +620,7 @@ html.i18n-pending body {
 	}
 	.summary {
 		background-color: black;
-		width: 251px;
+		width: var(--sidebar-width, 251px);
 		position: fixed;
 		top: 0;
 		bottom: 0;
@@ -761,14 +761,6 @@ html.i18n-pending body {
 		padding: 6em 2em ;
 		margin: 10em 2em;
 	}
-	@media screen {
-		.education-tail:target {
-			min-height: 100vh;
-		}
-		#education:target + .education-tail {
-			min-height: calc(100vh - 3em - 1px);
-		}
-	}
 	.star-3:before {
 		content: "★★★";
 		padding-right: 1em;
@@ -806,6 +798,14 @@ html.i18n-pending body {
 		padding-left: 20px;
 	}
 	@media screen {
+		.education-tail:target {
+			min-height: 100vh;
+		}
+
+		#education:target + .education-tail {
+			min-height: calc(100vh - 3em - 1px);
+		}
+
 		.print-cv-control {
 			position: sticky;
 			top: 12px;
@@ -817,6 +817,7 @@ html.i18n-pending body {
 		}
 
 		.print-cv-button {
+			--print-cv-offset: clamp(0px, calc(50cqi - 480px), 40px);
 			box-sizing: border-box;
 			display: grid;
 			place-items: center;
@@ -833,6 +834,8 @@ html.i18n-pending body {
 			text-shadow: none;
 			cursor: pointer;
 			pointer-events: auto;
+			transform: translateX(var(--print-cv-offset));
+			transition: color .25s ease, transform .3s ease;
 		}
 
 		.print-cv-button span {
@@ -855,7 +858,7 @@ html.i18n-pending body {
 			transform: scale(1.08);
 		}
 
-		@media (max-width: 767px) {
+		@container (max-width: 767px) {
 			.print-cv-button {
 				border: 1px solid #dadada;
 				border-radius: 4px;
@@ -878,19 +881,10 @@ html.i18n-pending body {
 			}
 		}
 
-		@media (min-width: 1100px) {
-			.print-cv-button {
-				transform: translateX(100%);
-			}
-		}
-
-		@media (min-width: 1211px) and (max-width: 1258px) {
-			#navi-toggle:checked ~ .container .print-cv-button {
-				transform: none;
-			}
-		}
-
 		body {
+			--central-element-width: 960px;
+			--sidebar-width: 251px;
+			--sidebar-gap: 0px;
 			container-type: inline-size;
 		}
 
@@ -900,32 +894,39 @@ html.i18n-pending body {
 			top: 0;
 			bottom: 0;
 			left: 0;
-			width: 251px;
-			box-shadow: 4px 0 18px 0 rgba(0, 0, 0, 0.5);
+			width: var(--sidebar-width);
+			box-shadow: none;
 			pointer-events: none;
-			transform: translateX(calc(-100% - 20px));
-			transition: transform .3s ease;
+			transform: translateX(calc(-100% - var(--sidebar-gap)));
+			transition: transform .3s ease, box-shadow .3s ease;
 			z-index: 1999;
 		}
 
 		body:has(#navi-toggle:checked)::after {
+			box-shadow: 4px 0 18px 0 rgba(0, 0, 0, 0.5);
 			transform: translateX(0);
 		}
 
 		body > .container {
-			--cv-inline-padding: clamp(12px, 2cqi, 20px);
 			box-sizing: border-box;
-			width: min(960px, 100%);
-			padding-right: var(--cv-inline-padding);
-			padding-left: var(--cv-inline-padding);
-			margin-right: auto;
-			margin-left: auto;
+			width: 100%;
+			min-width: 0;
+			padding: 0;
+			margin: 0;
 		}
 
-		body > .container .container.footer {
+		body > .container > .centralelement {
+			--cv-inline-padding: clamp(12px, 2cqi, 20px);
+			box-sizing: border-box;
+			padding-right: var(--cv-inline-padding);
+			padding-left: var(--cv-inline-padding);
+		}
+
+		.centralelement .footer {
+			box-sizing: border-box;
 			width: 100%;
-			margin-right: 0;
-			margin-left: 0;
+			padding: 0;
+			margin: 0;
 		}
 
 		.row {
@@ -944,8 +945,8 @@ html.i18n-pending body {
 			content: none;
 		}
 
-		.container .column,
-		.container .columns {
+		.centralelement .column,
+		.centralelement .columns {
 			box-sizing: border-box;
 			display: block;
 			float: none;
@@ -954,8 +955,8 @@ html.i18n-pending body {
 			margin-left: 0;
 		}
 
-		.container .one-third.column,
-		.container .two-thirds.column {
+		.centralelement .one-third.column,
+		.centralelement .two-thirds.column {
 			width: auto;
 		}
 
@@ -986,19 +987,19 @@ html.i18n-pending body {
 			background-color: rgba(0, 0, 0, 0.65);
 		}
 
-		#navi-toggle:checked ~ .container .summary {
+		#navi-toggle:checked ~ .summary {
 			background-color: rgba(0, 0, 0, 0.85);
 			overflow-x: hidden;
 			overflow-y: auto;
 			transform: translateX(0);
 		}
 
-		#navi-toggle:checked ~ .container .summary > .navi-toggle {
+		#navi-toggle:checked ~ .summary > .navi-toggle {
 			background: transparent;
 			transform: translateX(-20%);
 		}
 
-		#navi-toggle:checked ~ .container .summary > .navi-toggle:after {
+		#navi-toggle:checked ~ .summary > .navi-toggle:after {
 			content: '\2715';
 			font-size: 1.2em;
 		}
@@ -1007,16 +1008,16 @@ html.i18n-pending body {
 			display: none;
 		}
 
-		#navi-toggle:checked ~ .container .language-switcher-sidebar {
+		#navi-toggle:checked ~ .summary .language-switcher-sidebar {
 			display: flex;
 			position: static;
 			width: max-content;
 			margin: 1.2em auto 0;
 		}
 
-		html:not(.i18n-pending) #navi-toggle:checked ~ .container .summary .toc > a,
-		html:not(.i18n-pending) #navi-toggle:checked ~ .container .summary > .LI-profile-badge,
-		html:not(.i18n-pending) #navi-toggle:checked ~ .container .summary > .language-switcher-sidebar {
+		html:not(.i18n-pending) #navi-toggle:checked ~ .summary .toc > a,
+		html:not(.i18n-pending) #navi-toggle:checked ~ .summary > .LI-profile-badge,
+		html:not(.i18n-pending) #navi-toggle:checked ~ .summary > .language-switcher-sidebar {
 			animation: sidebar-item-in .5s ease var(--sidebar-item-delay) backwards;
 		}
 
@@ -1042,8 +1043,13 @@ html.i18n-pending body {
 		}
 
 		@container (min-width: 1211px) {
-		body > .container {
-			width: min(960px, calc(100% - 502px));
+		#navi-toggle:checked ~ .container > .leftelement,
+		#navi-toggle:checked ~ .container > .rightelement {
+			flex-basis: calc(var(--sidebar-width) + var(--sidebar-gap));
+		}
+
+		#navi-toggle:checked ~ .container .print-cv-button {
+			--print-cv-offset: clamp(0px, calc(100cqi - var(--central-element-width) - var(--sidebar-width) - var(--sidebar-gap)), 40px);
 		}
 
 		.row > .two-thirds.column:not(.myname) {
@@ -1059,14 +1065,14 @@ html.i18n-pending body {
 			display: block;
 		}
 
-		#navi-toggle:checked ~ .container .summary {
+		#navi-toggle:checked ~ .summary {
 			background-color: black;
 			overflow-x: hidden;
 			overflow-y: auto;
 			transform: translateX(0);
 		}
 
-		#navi-toggle:not(:checked) ~ .container .summary {
+		#navi-toggle:not(:checked) ~ .summary {
 			overflow: visible;
 			transform: translateX(-100%);
 		}
@@ -1230,7 +1236,19 @@ h4 {
 			left: 0;
 		}
 		.container {
+			display: block !important;
+			width: 100% !important;
 			padding:0 !important;
+			margin: 0 !important;
+		}
+		.leftelement,
+		.rightelement {
+			display: none !important;
+		}
+		.centralelement {
+			box-sizing: border-box;
+			width: 100% !important;
+			padding: 0 !important;
 			margin: 0 !important;
 		}
 		.one-third.column:not(.infos) {

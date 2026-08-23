@@ -106,11 +106,7 @@
       <button type="button" data-language="ru" lang="ru" title="Русский" aria-label="Русский" aria-pressed="false"><span class="language-flag language-flag-ru" aria-hidden="true"></span></button>
     </nav>
     <input type="checkbox" id="navi-toggle" hidden>
-    <div class="container">
-      <div class="print-cv-control noprint">
-        <button type="button" class="print-cv-button" data-print-cv title="Print CV" aria-label="Print CV"><span aria-hidden="true">🖨</span></button>
-      </div>
-      <div class="summary">
+    <aside class="summary">
         <label for="navi-toggle" class="navi-toggle navi-toggle-wide noprint" title="Toggle sidebar" aria-label="Toggle sidebar"></label>
         <label for="navi-toggle" class="navi-toggle navi-toggle-narrow noprint" title="Toggle sidebar" aria-label="Toggle sidebar"></label>
         <div class="toc">
@@ -134,7 +130,14 @@
           <button type="button" data-language="uk" lang="uk" title="Українська" aria-label="Українська" aria-pressed="false"><span class="language-flag language-flag-uk" aria-hidden="true"></span></button>
           <button type="button" data-language="ru" lang="ru" title="Русский" aria-label="Русский" aria-pressed="false"><span class="language-flag language-flag-ru" aria-hidden="true"></span></button>
         </nav>
-      </div>
+    </aside>
+
+    <div class="container">
+      <div class="leftelement" aria-hidden="true"></div>
+      <main class="centralelement">
+        <div class="print-cv-control noprint">
+          <button type="button" class="print-cv-button" data-print-cv title="Print CV" aria-label="Print CV"><span aria-hidden="true">🖨</span></button>
+        </div>
 
       <div class="row">
         <div class="two-thirds column myname">
@@ -410,7 +413,7 @@
         </div>
         <hr>
 
-        <div class="container footer noprint">
+        <footer class="footer noprint">
           <div class="row">
             <div class="one-third column">
               &nbsp;
@@ -419,8 +422,10 @@
               <span data-i18n="last_updated">Обновлено: 29 июля 2026</span>
             </div>
           </div>
-        </div>
+        </footer>
       </div>
+      </main>
+      <div class="rightelement" aria-hidden="true"></div>
     </div>
 
     <script src="../js/i18n.js" onerror="document.documentElement.classList.remove('i18n-pending')"></script>
