@@ -714,6 +714,13 @@ html.i18n-pending body {
 	.summary .toc > a:nth-of-type(7) { --sidebar-item-delay: .7s; }
 	.summary .toc > a:nth-of-type(8) { --sidebar-item-delay: .8s; }
 	.summary > .LI-profile-badge { --sidebar-item-delay: .9s; }
+	.summary > .LI-profile-badge {
+		overflow: hidden;
+	}
+	.summary > .LI-profile-badge iframe {
+		transform: translateY(-48px);
+		margin-bottom: -48px;
+	}
 	.summary > .language-switcher-sidebar { --sidebar-item-delay: 1s; }
 	.summary .toc > a:hover {
 		background-color: transparent;
