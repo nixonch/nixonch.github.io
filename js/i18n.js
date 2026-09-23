@@ -53,12 +53,12 @@
       present: "Present",
       pdms_role: "Software Engineer",
       pdms_company: "Pharmazeutische Datenmanagement + Service GmbH, Germany",
-      pdms_summary: "Build and maintain business-critical software for pharmacies and blister centers, covering medication management, blister production, pharmaceutical logistics, and automated medication storage.",
-      pdms_item_1: "Work on both modern and legacy CakePHP applications, including systems built with CakePHP's Table and Entity models.",
+      pdms_summary: "Built and maintained business-critical software for pharmacies and blister centers, covering medication management, blister production, pharmaceutical logistics, and automated medication storage.",
+      pdms_item_1: "Worked on both modern and legacy CakePHP applications, including systems built with CakePHP's Table and Entity models.",
       pdms_item_2: "Built a securPharm/NMVS integration with JSON-RPC, HTTP/cURL, and HMAC-signed requests. It validates GS1/DataMatrix codes with GTIN and PPN identifiers, supports medication verification, decommissioning, and undo actions, and includes error handling, structured logging, and fallback workflows.",
       pdms_item_3: "Built a WWKS2 service that connects medication-management and blister-production software to BD Rowa automated storage systems using asynchronous TCP communication and XML messages. It handles message correlation, buffering, backpressure, retries, and connection recovery.",
       pdms_item_4: "Connected external services to day-to-day workflows for goods receipt, medication storage and retrieval, dispensing and blister production, returns, stock control, and task tracking.",
-      pdms_item_5: "Write unit and integration tests with PHPUnit, fixtures, and mocked integrations. Maintain the supporting Linux services with systemd and troubleshoot production issues.",
+      pdms_item_5: "Wrote unit and integration tests with PHPUnit, fixtures, and mocked integrations. Maintained the supporting Linux services with systemd and troubleshot production issues.",
       pdms_item_6: "Designed and implemented 2FA / TOTP (RFC 6238), built on HOTP (RFC 4226), for a medical web application to strengthen patient-data protection in the context of Germany's DigiG. The solution includes QR provisioning for Google Authenticator and compatible apps, CakePHP middleware integration, RBAC-controlled activation, deactivation, and forced reauthentication, 24-hour trusted-device sessions with administrator revocation, database migrations, and PHPUnit security tests.",
       technion_role: "Embedded Software Engineer",
       technion_company: "Technion – Israel Institute of Technology",
@@ -105,7 +105,7 @@
       degree_label: "Degree:",
       degree_name: "Master's degree in Automation and Computer-Integrated Technologies",
       university_website: "University website:",
-      last_updated: "Last updated: 29 July 2026"
+      last_updated: "Last updated: 24 September 2026"
     },
     de: {
       meta_title: "Nick Mitin — Senior Softwareentwickler",
@@ -145,12 +145,12 @@
       present: "heute",
       pdms_role: "Softwareentwickler",
       pdms_company: "Pharmazeutische Datenmanagement + Service GmbH, Deutschland",
-      pdms_summary: "Ich entwickle und betreue geschäftskritische Software für Apotheken und Blisterzentren in den Bereichen Medikationsmanagement, Blisterproduktion, Pharmalogistik und automatisierte Arzneimittellagerung.",
-      pdms_item_1: "Ich arbeite sowohl an modernen als auch an gewachsenen CakePHP-Anwendungen, darunter Systeme mit den Table- und Entity-Modellen von CakePHP.",
+      pdms_summary: "Ich entwickelte und betreute geschäftskritische Software für Apotheken und Blisterzentren in den Bereichen Medikationsmanagement, Blisterproduktion, Pharmalogistik und automatisierte Arzneimittellagerung.",
+      pdms_item_1: "Ich arbeitete sowohl an modernen als auch an gewachsenen CakePHP-Anwendungen, darunter Systeme mit den Table- und Entity-Modellen von CakePHP.",
       pdms_item_2: "Ich habe eine securPharm-/NMVS-Integration mit JSON-RPC, HTTP/cURL und HMAC-signierten Anfragen entwickelt. Sie validiert GS1-/DataMatrix-Codes mit GTIN- und PPN-Kennungen, unterstützt Verifikation sowie Aus- und Rückbuchung von Arzneimittelpackungen und umfasst Fehlerbehandlung, strukturiertes Logging und Ausweichabläufe.",
       pdms_item_3: "Ich habe einen WWKS2-Dienst entwickelt, der Software für Medikationsmanagement und Blisterproduktion über asynchrone TCP-Kommunikation und XML-Nachrichten mit automatisierten Lagersystemen von BD Rowa verbindet. Er kümmert sich um Nachrichtenzuordnung, Pufferung, Backpressure, Wiederholungsversuche und die Wiederherstellung abgebrochener Verbindungen.",
       pdms_item_4: "Ich habe externe Dienste in die täglichen Abläufe für Wareneingang, Ein- und Auslagerung von Arzneimitteln, Abgabe und Blisterproduktion, Rückgaben, Bestandskontrolle und Aufgabenverfolgung eingebunden.",
-      pdms_item_5: "Ich schreibe Unit- und Integrationstests mit PHPUnit, Fixtures und gemockten Anbindungen, betreue die zugehörigen Linux-Dienste mit systemd und analysiere Probleme im Produktivbetrieb.",
+      pdms_item_5: "Ich schrieb Unit- und Integrationstests mit PHPUnit, Fixtures und gemockten Anbindungen, betreute die zugehörigen Linux-Dienste mit systemd und analysierte Probleme im Produktivbetrieb.",
       pdms_item_6: "Ich habe 2FA / TOTP (RFC 6238), aufbauend auf HOTP (RFC 4226), für eine medizinische Webanwendung konzipiert und umgesetzt, um den Schutz von Patientendaten im Kontext des deutschen DigiG zu stärken. Dazu gehören die Einrichtung per QR-Code für Google Authenticator und kompatible Apps, die Integration über CakePHP-Middleware, rollen- und rechtegesteuerte Abläufe für Aktivierung, Deaktivierung und erzwungene erneute Authentifizierung, je Gerät getrennte vertrauenswürdige Sitzungen mit 24 Stunden Gültigkeit und administrativer Rücksetzung, Datenbankmigrationen und Sicherheitstests mit PHPUnit.",
       technion_role: "Embedded-Softwareentwickler",
       technion_company: "Technion – Israel Institute of Technology",
@@ -197,7 +197,7 @@
       degree_label: "Abschluss:",
       degree_name: "Master in Automatisierung und computerintegrierten Technologien",
       university_website: "Website der Universität:",
-      last_updated: "Zuletzt aktualisiert: 29. Juli 2026"
+      last_updated: "Zuletzt aktualisiert: 24. September 2026"
     },
     es: {
       meta_title: "Nick Mitin — Ingeniero de software sénior",
@@ -237,12 +237,12 @@
       present: "Actualidad",
       pdms_role: "Ingeniero de software",
       pdms_company: "Pharmazeutische Datenmanagement + Service GmbH, Alemania",
-      pdms_summary: "Desarrollo y mantengo software crítico para farmacias y centros de producción de blísteres, que abarca la gestión de la medicación, la producción de blísteres personalizados, la logística farmacéutica y el almacenamiento automatizado de medicamentos.",
-      pdms_item_1: "Trabajo tanto con aplicaciones CakePHP modernas como con sistemas heredados, incluidos proyectos basados en los modelos Table y Entity de CakePHP.",
+      pdms_summary: "Desarrollé y mantuve software crítico para farmacias y centros de producción de blísteres, que abarca la gestión de la medicación, la producción de blísteres personalizados, la logística farmacéutica y el almacenamiento automatizado de medicamentos.",
+      pdms_item_1: "Trabajé tanto con aplicaciones CakePHP modernas como con sistemas heredados, incluidos proyectos basados en los modelos Table y Entity de CakePHP.",
       pdms_item_2: "Desarrollé para el mercado alemán una integración con securPharm/NMVS mediante JSON-RPC, HTTP/cURL y peticiones firmadas con HMAC. Valida códigos GS1/DataMatrix con identificadores GTIN y PPN, permite verificar y desactivar envases, así como revertir esas operaciones, e incluye gestión de errores, registro estructurado y flujos alternativos. Al basarse en el marco europeo EMVS, este patrón de integración es transferible al entorno español SEVeM.",
       pdms_item_3: "Desarrollé un servicio WWKS2 que conecta software de gestión de la medicación y producción de blísteres con los sistemas automatizados de almacenamiento BD Rowa mediante comunicación TCP asíncrona y mensajes XML. Gestiona la correlación de mensajes, el almacenamiento en búfer, la contrapresión, los reintentos y la recuperación de la conexión.",
       pdms_item_4: "Integré servicios externos en los flujos diarios de recepción, almacenamiento y retirada de medicamentos, dispensación y producción de blísteres, devoluciones, control de existencias y seguimiento de tareas.",
-      pdms_item_5: "Escribo pruebas unitarias y de integración con PHPUnit, fixtures e integraciones simuladas. También mantengo los servicios Linux asociados con systemd y diagnostico incidencias en producción.",
+      pdms_item_5: "Escribí pruebas unitarias y de integración con PHPUnit, fixtures e integraciones simuladas. También mantuve los servicios Linux asociados con systemd y diagnostiqué incidencias en producción.",
       pdms_item_6: "Diseñé e implementé 2FA / TOTP (RFC 6238), basado en HOTP (RFC 4226), para una aplicación web sanitaria, con el fin de reforzar la protección de los datos de pacientes en el contexto de la ley alemana DigiG. Incluye configuración mediante código QR para Google Authenticator y aplicaciones compatibles, integración con middleware de CakePHP, flujos de activación, desactivación y nueva autenticación forzada controlados por roles y permisos, sesiones de confianza independientes por dispositivo durante 24 horas y revocables por un administrador, migraciones de base de datos y pruebas de seguridad con PHPUnit.",
       technion_role: "Ingeniero de software embebido",
       technion_company: "Technion – Instituto de Tecnología de Israel",
@@ -289,7 +289,7 @@
       degree_label: "Titulación:",
       degree_name: "Máster en Automatización y Tecnologías Integradas por Ordenador",
       university_website: "Web de la universidad:",
-      last_updated: "Última actualización: 29 de julio de 2026"
+      last_updated: "Última actualización: 24 de septiembre de 2026"
     },
     fr: {
       meta_title: "Nick Mitin — Ingénieur logiciel senior",
@@ -329,12 +329,12 @@
       present: "aujourd’hui",
       pdms_role: "Ingénieur logiciel",
       pdms_company: "Pharmazeutische Datenmanagement + Service GmbH, Allemagne",
-      pdms_summary: "Je développe et maintiens des logiciels critiques pour les pharmacies et les centres de préparation de doses, couvrant la gestion des traitements, la production de doses personnalisées, la logistique pharmaceutique et le stockage automatisé de médicaments.",
-      pdms_item_1: "Je travaille sur des applications CakePHP modernes comme historiques, notamment des systèmes construits avec les modèles Table et Entity de CakePHP.",
+      pdms_summary: "J’ai développé et maintenu des logiciels critiques pour les pharmacies et les centres de préparation de doses, couvrant la gestion des traitements, la production de doses personnalisées, la logistique pharmaceutique et le stockage automatisé de médicaments.",
+      pdms_item_1: "J’ai travaillé sur des applications CakePHP modernes comme historiques, notamment des systèmes construits avec les modèles Table et Entity de CakePHP.",
       pdms_item_2: "J’ai développé une intégration securPharm/NMVS utilisant JSON-RPC, HTTP/cURL et des requêtes signées par HMAC. Elle valide les codes GS1/DataMatrix comportant des identifiants GTIN et PPN, prend en charge la vérification et la désactivation des boîtes ainsi que l’annulation de ces opérations, avec gestion des erreurs, journalisation structurée et scénarios de secours.",
       pdms_item_3: "J’ai développé un service WWKS2 qui relie les logiciels de gestion des traitements et de production de doses personnalisées aux systèmes de stockage automatisé BD Rowa via des communications TCP asynchrones et des messages XML. Il gère la corrélation des messages, la mise en mémoire tampon, la contre-pression, les nouvelles tentatives et le rétablissement de la connexion.",
       pdms_item_4: "J’ai intégré des services externes aux processus quotidiens de réception, de stockage et de déstockage des médicaments, de délivrance et de préparation de doses personnalisées, de retour, de contrôle des stocks et de suivi des tâches.",
-      pdms_item_5: "J’écris des tests unitaires et d’intégration avec PHPUnit, des fixtures et des intégrations simulées. Je maintiens également les services Linux associés avec systemd et diagnostique les incidents en production.",
+      pdms_item_5: "J’ai écrit des tests unitaires et d’intégration avec PHPUnit, des fixtures et des intégrations simulées. J’ai également maintenu les services Linux associés avec systemd et diagnostiqué les incidents en production.",
       pdms_item_6: "J’ai conçu et mis en œuvre la 2FA / TOTP (RFC 6238), fondée sur HOTP (RFC 4226), pour une application web médicale afin de renforcer la protection des données patients dans le contexte de la loi allemande DigiG. La solution comprend l’enrôlement par QR code dans Google Authenticator et les applications compatibles, l’intégration via le middleware CakePHP, des parcours d’activation, de désactivation et de nouvelle authentification forcée soumis aux rôles et aux droits, des sessions de confiance distinctes par appareil, valables 24 heures et révocables par un administrateur, les migrations de base de données et les tests de sécurité avec PHPUnit.",
       technion_role: "Ingénieur logiciel embarqué",
       technion_company: "Technion – Institut israélien de technologie",
@@ -381,7 +381,7 @@
       degree_label: "Diplôme :",
       degree_name: "Master en automatisation et technologies intégrées par ordinateur",
       university_website: "Site de l’université :",
-      last_updated: "Dernière mise à jour : 29 juillet 2026"
+      last_updated: "Dernière mise à jour : 24 septembre 2026"
     },
     uk: {
       meta_title: "Nick Mitin — Старший інженер-програміст",
@@ -421,12 +421,12 @@
       present: "дотепер",
       pdms_role: "Інженер-програміст",
       pdms_company: "Pharmazeutische Datenmanagement + Service GmbH, Німеччина",
-      pdms_summary: "Розробляю та підтримую критично важливе для бізнесу ПЗ для аптек і блістер-центрів, що охоплює керування лікарським забезпеченням, виробництво персоналізованих блістерів, фармацевтичну логістику й автоматизоване зберігання ліків.",
-      pdms_item_1: "Працюю як із сучасними, так і з успадкованими застосунками на CakePHP, зокрема із системами, побудованими на моделях Table та Entity.",
+      pdms_summary: "Розробляв та підтримував критично важливе для бізнесу ПЗ для аптек і блістер-центрів, що охоплює керування лікарським забезпеченням, виробництво персоналізованих блістерів, фармацевтичну логістику й автоматизоване зберігання ліків.",
+      pdms_item_1: "Працював як із сучасними, так і з успадкованими застосунками на CakePHP, зокрема із системами, побудованими на моделях Table та Entity.",
       pdms_item_2: "Розробив інтеграцію із securPharm/NMVS на базі JSON-RPC, HTTP/cURL і запитів із HMAC-підписом. Вона перевіряє коди GS1/DataMatrix з ідентифікаторами GTIN і PPN, підтримує перевірку та виведення упаковок з обігу, а також скасування цих операцій, обробку помилок, структуроване логування й резервні сценарії.",
       pdms_item_3: "Розробив сервіс WWKS2, який з’єднує ПЗ для керування лікарським забезпеченням і виробництва персоналізованих блістерів з автоматизованими системами зберігання BD Rowa через асинхронний TCP-обмін і XML-повідомлення. Сервіс виконує зіставлення повідомлень, буферизацію, контроль зворотного тиску, повторні спроби та відновлення з’єднання.",
       pdms_item_4: "Інтегрував зовнішні сервіси в щоденні процеси приймання, розміщення та видавання ліків зі складу, відпуску й виробництва блістерів, повернень, контролю запасів і відстеження завдань.",
-      pdms_item_5: "Пишу модульні та інтеграційні тести з PHPUnit, фікстурами й моками зовнішніх інтеграцій. Підтримую пов’язані Linux-сервіси за допомогою systemd і діагностую проблеми у продакшені.",
+      pdms_item_5: "Писав модульні та інтеграційні тести з PHPUnit, фікстурами й моками зовнішніх інтеграцій. Підтримував пов’язані Linux-сервіси за допомогою systemd і діагностував проблеми у продакшені.",
       pdms_item_6: "Спроєктував і реалізував 2FA / TOTP (RFC 6238), побудовану на HOTP (RFC 4226), для медичного вебзастосунку, щоб посилити захист даних пацієнтів у контексті німецького DigiG. Рішення охоплює налаштування через QR-код у Google Authenticator і сумісних застосунках, інтеграцію через CakePHP Middleware, керовані ролями та правами сценарії активації, деактивації й примусового повторного проходження 2FA, окремі для кожного пристрою довірені сесії на 24 години з можливістю скидання адміністратором, міграції бази даних і тестування безпеки з PHPUnit.",
       technion_role: "Інженер вбудованого програмного забезпечення",
       technion_company: "Техніон — Ізраїльський технологічний інститут",
@@ -473,7 +473,7 @@
       degree_label: "Ступінь:",
       degree_name: "Магістр з автоматизації та комп’ютерно-інтегрованих технологій",
       university_website: "Сайт університету:",
-      last_updated: "Оновлено: 29 липня 2026"
+      last_updated: "Оновлено: 24 вересня 2026"
     },
     ru: {
       meta_title: "Nick Mitin — Старший инженер-программист",
@@ -513,12 +513,12 @@
       present: "по н. в.",
       pdms_role: "Инженер-программист",
       pdms_company: "Pharmazeutische Datenmanagement + Service GmbH, Германия",
-      pdms_summary: "Разрабатываю и поддерживаю критически важное для бизнеса ПО для аптек и блистер-центров, охватывающее управление лекарственным обеспечением, производство персонализированных блистеров, фармацевтическую логистику и автоматизированное хранение лекарств.",
-      pdms_item_1: "Работаю как с современными, так и с унаследованными приложениями на CakePHP, включая системы, построенные на моделях Table и Entity.",
+      pdms_summary: "Разрабатывал и поддерживал критически важное для бизнеса ПО для аптек и блистер-центров, охватывающее управление лекарственным обеспечением, производство персонализированных блистеров, фармацевтическую логистику и автоматизированное хранение лекарств.",
+      pdms_item_1: "Работал как с современными, так и с унаследованными приложениями на CakePHP, включая системы, построенные на моделях Table и Entity.",
       pdms_item_2: "Разработал интеграцию с securPharm/NMVS на базе JSON-RPC, HTTP/cURL и запросов с HMAC-подписью. Она проверяет коды GS1/DataMatrix с идентификаторами GTIN и PPN, поддерживает проверку и вывод упаковок из обращения, а также отмену этих операций, обработку ошибок, структурированное логирование и резервные сценарии.",
       pdms_item_3: "Разработал сервис WWKS2, который связывает ПО для управления лекарственным обеспечением и производства персонализированных блистеров с автоматизированными системами хранения BD Rowa через асинхронный TCP-обмен и XML-сообщения. Сервис отвечает за сопоставление сообщений, буферизацию, контроль обратного давления, повторные попытки и восстановление соединения.",
       pdms_item_4: "Интегрировал внешние сервисы в ежедневные процессы приёмки, размещения и выдачи лекарств со склада, отпуска и производства блистеров, возвратов, контроля запасов и отслеживания задач.",
-      pdms_item_5: "Пишу модульные и интеграционные тесты с PHPUnit, фикстурами и моками внешних интеграций. Поддерживаю связанные Linux-сервисы с помощью systemd и диагностирую проблемы в продакшене.",
+      pdms_item_5: "Писал модульные и интеграционные тесты с PHPUnit, фикстурами и моками внешних интеграций. Поддерживал связанные Linux-сервисы с помощью systemd и диагностировал проблемы в продакшене.",
       pdms_item_6: "Спроектировал и реализовал 2FA / TOTP (RFC 6238), построенную на HOTP (RFC 4226), для медицинского веб-приложения, чтобы усилить защиту данных пациентов в контексте немецкого DigiG. Решение включает настройку через QR-код в Google Authenticator и совместимых приложениях, интеграцию через CakePHP Middleware, управляемые ролями и правами сценарии активации, деактивации и принудительного повторного прохождения 2FA, отдельные для каждого устройства доверенные сессии сроком на 24 часа с возможностью сброса администратором, миграции базы данных и тестирование безопасности с PHPUnit.",
       technion_role: "Инженер-программист встраиваемых систем",
       technion_company: "Технион — Израильский технологический институт",
@@ -565,7 +565,7 @@
       degree_label: "Степень:",
       degree_name: "Магистр автоматизации и компьютерно-интегрированных технологий",
       university_website: "Сайт университета:",
-      last_updated: "Обновлено: 29 июля 2026"
+      last_updated: "Обновлено: 24 сентября 2026"
     }
   };
 
